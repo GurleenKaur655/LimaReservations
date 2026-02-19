@@ -16,6 +16,8 @@
     <modules>
         <module>common-domain</module>
         <module>common-web</module>
+        <module>common-application</module>
+        <module>common-infrastructure</module>
     </modules>
 
     <properties>

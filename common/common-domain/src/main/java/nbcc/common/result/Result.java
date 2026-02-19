@@ -1,16 +1,8 @@
 package nbcc.common.result;
 
-import java.util.Collection;
-import java.util.List;
-import nbcc.common.validation.ValidationError;
-
 public interface Result<T> {
 
     T getValue();
-
-    default Collection<ValidationError> getValidationErrors(){
-        return List.of();
-    }
 
     default boolean isEmpty() {
         return !hasValue();
@@ -20,17 +12,8 @@ public interface Result<T> {
         return getValue() != null;
     }
 
-    default boolean hasValidationErrors() {
-
-        if(getValidationErrors() == null){
-            return false;
-        }
-
-        return !getValidationErrors().isEmpty();
-    }
-
     default boolean isSuccessful() {
-        return !hasValidationErrors();
+        return !hasValue();
     }
 
     default boolean isError() {
