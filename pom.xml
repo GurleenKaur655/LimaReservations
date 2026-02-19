@@ -9,10 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>persistence</module>
-        <module>domain</module>
-        <module>application</module>
-        <module>web</module>
+        <module>restaurant</module>
+        <module>app-web</module>
     </modules>
 
     <properties>
