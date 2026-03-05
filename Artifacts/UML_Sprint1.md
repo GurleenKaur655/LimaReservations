@@ -44,8 +44,6 @@ classDiagram
             +BigDecimal price
             +Boolean active
             +Boolean archived
-            +LocalDateTime createdDate
-            +LocalDateTime updatedDate
             +Long version
         }
         class DiningTable {

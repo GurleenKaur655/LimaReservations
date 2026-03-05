@@ -1,5 +1,8 @@
 package nbcc.resto.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
@@ -10,9 +13,8 @@ public class Event {
 
     private Long id;
 
-
+    @NotBlank
     private String name;
-
 
     private String description;
 
@@ -22,17 +24,15 @@ public class Event {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate endDate;
 
+    @NotNull
     private Integer durationMinutes;
 
+    @NotNull
     private BigDecimal price;
 
     private Boolean active;
 
     private Boolean archived;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
 
     private Long version;
 
@@ -43,14 +43,13 @@ public class Event {
     public Event(Event event) {
         this(event.getId(), event.getName(), event.getDescription(), event.getStartDate(), event.getEndDate(),
                 event.getDurationMinutes(), event.getPrice(), event.getActive(), event.getArchived(),
-                 event.getCreatedAt(), event.getUpdatedAt(), event.getVersion());
+                event.getVersion());
     } //this calls another constructor in this same class with these exact parameters
 
     public Event(Long id, String name, String description,
                  LocalDate startDate, LocalDate endDate,
                  Integer durationMinutes, BigDecimal price,
                  Boolean active, Boolean archived,
-                 LocalDateTime createdAt, LocalDateTime updatedAt,
                  Long version) {
 
         this.id = id;
@@ -62,8 +61,6 @@ public class Event {
         this.price = price;
         this.active = active;
         this.archived = archived;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
         this.version = version;
     }
 
@@ -148,23 +145,6 @@ public class Event {
         return this;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public Event setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public Event setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
 
     public Long getVersion() {
         return version;
