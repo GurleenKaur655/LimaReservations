@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+    <meta charset="UTF-8">
+    <title>Dining Tables</title>
+</head>
+
+<body>
+
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
+
+<div class="container">
+
+    <main role="main" class="pb-3">
+
+        <p th:if="${viewModel.message}" th:text="${viewModel.message}" class="alert alert-warning"></p>
+
+        <div class="card shadow-sm">
+
+            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+
+                <h5 class="card-title mb-0 text-dark">🍽 Dining Tables</h5>
+
+                <a th:if="${viewModel.canAdd}" th:href="@{/diningTable/create}" class="btn btn-success btn-sm">
+                    <strong>+</strong> Add Table
+                </a>
+
+            </div>
+
+            <div class="card-body p-0" th:unless="${viewModel.isEmpty()}">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover table-striped mb-0">
+
+                        <thead class="table-dark">
+                        <tr>
+                            <th class="fw-bold">Table Name</th>
+                            <th class="fw-bold">Capacity</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <tr th:each="table : ${viewModel.tables}" class="align-middle">
+
+                            <td>
+                                <strong class="text-primary" th:text="${table.name}"></strong>
+                            </td>
+
+                            <td>
+                                <span class="badge bg-info text-dark"
+                                      th:text="${table.capacity}"></span>
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="card-body text-center py-5" th:if="${viewModel.isEmpty()}">
+
+                <div class="text-muted">
+
+                    <div class="display-1 mb-3">🍽</div>
+
+                    <h5>No Tables Found</h5>
+
+                    <p class="mb-3">Create your first dining table.</p>
+
+                    <a th:href="@{/diningTable/create}" class="btn btn-primary">
+                        <strong>+</strong> Add Table
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
