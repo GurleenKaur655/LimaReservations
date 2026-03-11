@@ -7,6 +7,7 @@ import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class DiningTableRepositoryAdapter implements DiningTableRepository{
@@ -23,6 +24,12 @@ public class DiningTableRepositoryAdapter implements DiningTableRepository{
     public List<DiningTable> getAll() {
         var entities = diningTableJPARepository.findAll();
         return diningTableMapper.toDTO(entities);
+    }
+
+    @Override
+    public Optional<DiningTable> get(Long id) {
+        var entity = diningTableJPARepository.findById(id);
+        return diningTableMapper.toDTO(entity);
     }
 
 

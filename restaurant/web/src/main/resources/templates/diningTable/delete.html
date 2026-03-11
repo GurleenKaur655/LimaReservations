@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+    <title>Delete Dining Table</title>
+</head>
+
+<body>
+
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
+
+<div class="container">
+
+    <main role="main" class="pb-3">
+
+        <div class="row justify-content-center mt-4">
+
+            <div class="col-md-6">
+
+                <div class="card shadow-sm border-danger">
+
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0">Delete Dining Table</h5>
+                    </div>
+
+                    <div class="card-body">
+
+                        <p class="mb-3 text-danger">
+                            <strong>Warning:</strong> You are about to delete this dining table.
+                        </p>
+
+                        <p>Please confirm you want to remove the following table:</p>
+
+                        <hr>
+
+                        <div class="mb-3">
+
+                            <p>
+                                <strong>Table Name:</strong>
+                                <span th:text="${table.name}"></span>
+                            </p>
+
+                            <p>
+                                <strong>Capacity:</strong>
+                                <span th:text="${table.capacity}"></span>
+                            </p>
+
+                        </div>
+
+                        <hr>
+
+                        <form th:action="@{/diningTable/delete/{id}(id=${table.id})}" method="post">
+
+                            <button type="submit" class="btn btn-danger">
+                                Delete Table
+                            </button>
+
+                            <a th:href="@{/diningTable}" class="btn btn-secondary ms-2">
+                                Cancel
+                            </a>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

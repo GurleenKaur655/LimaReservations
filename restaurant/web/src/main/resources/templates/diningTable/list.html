@@ -25,7 +25,7 @@
 
                 <h5 class="card-title mb-0 text-dark">🍽 Dining Tables</h5>
 
-                <a th:if="${viewModel.canAdd}" th:href="@{/diningTable/create}" class="btn btn-success btn-sm">
+                <a th:href="@{/diningTable/create}" class="btn btn-success btn-sm">
                     <strong>+</strong> Add Table
                 </a>
 
@@ -39,8 +39,9 @@
 
                         <thead class="table-dark">
                         <tr>
-                            <th class="fw-bold">Table Name</th>
-                            <th class="fw-bold">Capacity</th>
+                            <th>Table Name</th>
+                            <th>Capacity</th>
+                            <th style="width:160px;">Actions</th>
                         </tr>
                         </thead>
 
@@ -53,8 +54,23 @@
                             </td>
 
                             <td>
-                                <span class="badge bg-info text-dark"
-                                      th:text="${table.capacity}"></span>
+<span class="badge bg-info text-dark"
+      th:text="${table.capacity}">
+</span>
+                            </td>
+
+                            <td>
+
+                                <a class="btn btn-outline-primary btn-sm"
+                                   th:href="@{/diningTable/edit/{id}(id=${table.id})}">
+                                    Edit
+                                </a>
+
+                                <a class="btn btn-outline-danger btn-sm"
+                                   th:href="@{/diningTable/delete/{id}(id=${table.id})}">
+                                    Delete
+                                </a>
+
                             </td>
 
                         </tr>
@@ -64,7 +80,6 @@
                     </table>
 
                 </div>
-
             </div>
 
             <div class="card-body text-center py-5" th:if="${viewModel.isEmpty()}">

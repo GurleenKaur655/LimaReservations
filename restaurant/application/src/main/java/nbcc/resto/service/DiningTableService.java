@@ -9,6 +9,7 @@ import java.util.Collection;
 public interface DiningTableService {
     Result<Collection<DiningTable>> getAll();
 
+    ValidatedResult<DiningTable> get(Long id);
 
     ValidatedResult<DiningTable> create(DiningTable table);
 

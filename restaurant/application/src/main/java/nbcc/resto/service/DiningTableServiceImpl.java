@@ -37,6 +37,16 @@ public class DiningTableServiceImpl implements  DiningTableService {
         }
     }
 
+    @Override
+    public ValidatedResult<DiningTable> get(Long id) {
+        try {
+            return ValidationResults.success(diningTableRepository.get(id));
+        } catch (Exception e) {
+            logger.error("Error retrieving table with id: {}", id, e);
+            return ValidationResults.error(e);
+        }
+    }
+
 
     @Override
     public ValidatedResult<DiningTable> create(DiningTable table) {
