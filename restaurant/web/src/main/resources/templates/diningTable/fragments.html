@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="table" type="nbcc.resto.dto.DiningTable"*/-->
+
+<th:block th:fragment="input" th:object="${table}">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">🍽 Dining Table Information</h5>
+        </div>
+
+        <div class="card-body">
+
+            <div class="alert alert-danger" th:if="${#fields.hasGlobalErrors()}" role="alert">
+                <strong>Error!</strong>
+                <div th:each="err : ${#fields.globalErrors}" th:text="${err}"></div>
+            </div>
+
+            <input type="hidden" th:field="*{id}"/>
+            <input type="hidden" th:field="*{version}"/>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">
+                    Table Name
+                    <input th:field="*{name}" class="form-control mt-1"
+                           placeholder="Leave blank to auto-generate name"/>
+                </label>
+                <div class="text-danger small mt-1" th:errors="*{name}"></div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">
+                    Capacity
+                    <input type="number" th:field="*{capacity}"
+                           class="form-control mt-1"
+                           placeholder="Enter seating capacity"/>
+                </label>
+                <div class="text-danger small mt-1" th:errors="*{capacity}"></div>
+            </div>
+
+        </div>
+    </div>
+</th:block>
+
+</body>
+</html>
