@@ -40,7 +40,7 @@ public class EventEntity {
 
     private Boolean active;
 
-    private Boolean archived;
+    private Boolean archived = false;
 
     @CreatedDate
     @Column(updatable = false, nullable = false)

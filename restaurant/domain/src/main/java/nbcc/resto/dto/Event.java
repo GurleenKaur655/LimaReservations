@@ -32,9 +32,32 @@ public class Event {
 
     private Boolean active;
 
-    private Boolean archived;
+
+    private Boolean archived = false;
 
     private Long version;
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public Event setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
+        return this;
+    }
+
+    public LocalDateTime getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
+    public Event setLastUpdatedDate(LocalDateTime lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+        return this;
+    }
+
+    private LocalDateTime createdDate;
+
+    private LocalDateTime lastUpdatedDate;
 
     public Event() {
 
@@ -43,14 +66,14 @@ public class Event {
     public Event(Event event) {
         this(event.getId(), event.getName(), event.getDescription(), event.getStartDate(), event.getEndDate(),
                 event.getDurationMinutes(), event.getPrice(), event.getActive(), event.getArchived(),
-                event.getVersion());
+                event.getVersion(), event.getCreatedDate(), event.getLastUpdatedDate());
     } //this calls another constructor in this same class with these exact parameters
 
     public Event(Long id, String name, String description,
                  LocalDate startDate, LocalDate endDate,
                  Integer durationMinutes, BigDecimal price,
                  Boolean active, Boolean archived,
-                 Long version) {
+                 Long version, LocalDateTime createdDate, LocalDateTime lastUpdatedDate) {
 
         this.id = id;
         this.name = name;
@@ -62,6 +85,8 @@ public class Event {
         this.active = active;
         this.archived = archived;
         this.version = version;
+        this.createdDate = createdDate;
+        this.lastUpdatedDate = lastUpdatedDate;
     }
 
     public Long getId() {
@@ -153,5 +178,9 @@ public class Event {
     public Event setVersion(Long version) {
         this.version = version;
         return this;
+    }
+
+    public boolean isArchived(){
+        return Boolean.TRUE.equals(archived);
     }
 }

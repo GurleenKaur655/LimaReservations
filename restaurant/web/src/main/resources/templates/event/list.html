@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+    <meta charset="UTF-8">
+    <title>Event</title>
+</head>
+<body>
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        <form th:action="@{/event/search}" method="get">
+
+            <label> Name
+                <input type="text" name="name" placeholder="Search by name">
+            </label>
+
+            <label> Start Date
+                <input type="date" name="startDate">
+            </label>
+
+            <label> End Date
+                <input type="date" name="endDate">
+            </label>
+
+            <button type="submit">Search</button>
+
+        </form>
+        <p th:if="${viewModel.message}" th:text="${viewModel.message}" class="alert alert-warning"></p>
+        <div class="card shadow-sm">
+            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0 text-dark">Event Collection</h5>
+                <a th:if="${viewModel.canAdd}" th:href="@{/event/create}" class="btn btn-success btn-sm">
+                    <strong>+</strong> Add Event
+                </a>
+            </div>
+            <div class="card-body p-0" th:unless="${viewModel.isEmpty()}">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped mb-0">
+                        <thead class="table-dark">
+                        <tr>
+                            <th class="fw-bold">Name</th>
+                            <th class="fw-bold">Start Date</th>
+                            <th class="fw-bold">End Date</th>
+                            <th class="fw-bold text-center">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="event: ${viewModel.events}" class="align-middle">
+                            <td>
+                                <a class="text-primary" th:href="@{/event/{id}(id=${event.id})}" th:text="${event.name}"></a>
+                            </td>
+                            <td>
+                                <span class="badge bg-light text-dark border" th:text="${event.startDate}"></span>
+                            </td>
+                            <td>
+                                <span class="badge bg-light text-dark border" th:text="${event.endDate}"></span>
+                            </td>
+                            <td>
+                                <span class="badge bg-light text-dark border" th:text="${event.price}"></span>
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a th:if="${viewModel.canEdit}" th:href="@{/event/edit/{id}(id=${event.id})}"
+                                       class="btn btn-outline-warning" title="Edit Event">
+                                        ✏️ Edit
+                                    </a>
+                                    <a th:if="${viewModel.canDelete}" th:href="@{/event/delete/{id}(id=${event.id})}"
+                                       class="btn btn-outline-danger" title="Delete Event">
+                                        🗑️ Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-body text-center py-5" th:if="${viewModel.isEmpty()}">
+                <div class="text-muted">
+                    <div class="display-1 mb-3">♪</div>
+                    <h5>No Events Found</h5>
+                    <p class="mb-3">Have your own event to add?</p>
+                    <a th:href="@{/event/create}" class="btn btn-primary">
+                        <strong>+</strong> Add Your Event
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

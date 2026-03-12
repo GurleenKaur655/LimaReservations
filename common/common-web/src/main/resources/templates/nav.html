@@ -9,10 +9,17 @@
     <nav th:fragment="navbar" class="navbar navbar-expand-lg">
         <!--/*@thymesVar id="navViewModel" type="nbcc.common.viewmodel.NavViewModel"*/-->
         <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/}">Home</a>
+            <img th:src="@{/TheLimaLounge.png}" alt="The Lima Lounge Logo"  style="max-width: 100px; height: auto;" />
+            <a class="navbar-brand" th:href="@{/}">The Lima Lounge</a>
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item nav-link px-2" th:if="${navViewModel.showTables}">
                     <a th:href="@{/diningTable}">Dining table</a>
+                </li>
+                <li class="nav-item nav-link px-2" th:if="${navViewModel.showEvent}">
+                    <a th:href="@{/event}">Event</a>
+                </li>
+                <li class="nav-item nav-link px-2" th:if="${navViewModel.showEvent}">
+                    <a th:href="@{/event/create}">Add Event</a>
                 </li>
             </ul>
             <ul class="navbar-nav flex-grow-1">
@@ -23,11 +30,11 @@
                     <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
                 <li class="nav-item" th:if="${navViewModel.showUserName}">
-                    <span class="nav-link" th:text="*{navViewModel.username}"></span>
+                    <span class="nav-link" th:text="'Hi, ' + ${navViewModel.username}"></span>
                 </li>
                 <li class="nav-item" th:if="${navViewModel.showLogoutButton}">
                     <form class="form-inline" th:action="@{/logout}" method="post">
-                        <input class="nav-link btn btn-link text-dark" type="submit" value="Logout"/>
+                        <input class="btn btn-success rounded-pill shadow" type="submit" value="Logout"/>
                     </form>
                 </li>
             </ul>

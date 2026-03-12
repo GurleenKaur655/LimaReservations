@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+    <title>Event Details</title>
+</head>
+<body>
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="row">
+            <div class="col-md-8">
+                <div th:replace="~{event/fragments :: details}"></div>
+            </div>
+        </div>
+        <div>
+            <a th:href="@{/event}">Event List</a>
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -2,7 +2,9 @@ package nbcc.resto.mapper;
 
 import nbcc.resto.dto.Event;
 import nbcc.resto.entity.EventEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EventMapper implements EntityMapper<Event, EventEntity> {
 
     public EventMapper() {
@@ -24,7 +26,10 @@ public class EventMapper implements EntityMapper<Event, EventEntity> {
                 .setDurationMinutes(entity.getDurationMinutes())
                 .setActive(entity.getActive())
                 .setArchived(entity.getArchived())
-                .setVersion(entity.getVersion());
+                .setVersion(entity.getVersion())
+                .setCreatedDate(entity.getCreatedAt())
+                .setLastUpdatedDate(entity.getUpdatedAt());
+
     }
 
 
@@ -44,6 +49,8 @@ public class EventMapper implements EntityMapper<Event, EventEntity> {
                 .setDurationMinutes(dto.getDurationMinutes())
                 .setActive(dto.getActive())
                 .setArchived(dto.getArchived())
-                .setVersion(dto.getVersion());
+                .setVersion(dto.getVersion())
+                .setCreatedAt(dto.getCreatedDate())
+                .setUpdatedAt(dto.getLastUpdatedDate());
     }
 }
