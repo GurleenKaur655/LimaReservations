@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Input</title>
+    <th:block th:replace="~{partial :: bootstrap}"/>
 </head>
 <body>
 
@@ -10,10 +11,9 @@
 
 <th:block th:fragment="input" th:object="${table}">
     <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h5 class="card-title mb-0">🍽 Dining Table Information</h5>
+        <div class="card-header bg-light">
+            <h5 class="mb-0" style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A; letter-spacing: 0.5px;">Dining Table Details</h5>
         </div>
-
         <div class="card-body">
 
             <div class="alert alert-danger" th:if="${#fields.hasGlobalErrors()}" role="alert">
@@ -25,22 +25,15 @@
             <input type="hidden" th:field="*{version}"/>
 
             <div class="mb-3">
-                <label class="form-label fw-bold">
-                    Table Name
-                    <input th:field="*{name}" class="form-control mt-1"
-                           placeholder="Leave blank to auto-generate name"/>
-                </label>
+                <label class="form-label fw-bold small text-muted">Table Name</label>
+                <input th:field="*{name}" class="form-control" placeholder="Have a good name? or Should I give one?"/>
                 <div class="text-danger small mt-1" th:errors="*{name}"></div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label fw-bold">
-                    Capacity
-                    <input type="number" th:field="*{capacity}"
-                           class="form-control mt-1"
-                           placeholder="Enter seating capacity"/>
-                </label>
-                <div class="alert alert-danger  small mt-1" th:errors="*{capacity}"></div>
+                <label class="form-label fw-bold small text-muted">Capacity</label>
+                <input type="number" th:field="*{capacity}" class="form-control" placeholder="Enter seating capacity"/>
+                <div class="text-danger small mt-1" th:errors="*{capacity}"></div>
             </div>
 
         </div>
