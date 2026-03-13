@@ -6,38 +6,38 @@
 </head>
 <body>
 <header>
-    <nav th:fragment="navbar" class="navbar navbar-expand-lg">
+    <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-custom">
         <!--/*@thymesVar id="navViewModel" type="nbcc.common.viewmodel.NavViewModel"*/-->
         <div class="container-fluid">
             <img th:src="@{/TheLimaLounge.png}" alt="The Lima Lounge Logo"  style="max-width: 100px; height: auto;" />
             <a class="navbar-brand" th:href="@{/}">The Lima Lounge</a>
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item nav-link px-2" th:if="${navViewModel.showTables}">
-                    <a th:href="@{/diningTable}">Dining table</a>
+                    <a class="nav-link-left" th:href="@{/diningTable}">Dining table</a>
                 </li>
                 <li class="nav-item nav-link px-2" th:if="${navViewModel.showEvent}">
-                    <a th:href="@{/event}">Event</a>
+                    <a class="nav-link-left" th:href="@{/event}">Event</a>
                 </li>
                 <li class="nav-item nav-link px-2" th:if="${navViewModel.showEvent}">
-                    <a th:href="@{/event/create}">Add Event</a>
+                    <a class="nav-link-left" th:href="@{/event/create}">Add Event</a>
                 </li>
                 <li class="nav-item nav-link px-2" th:if="${navViewModel.showSeating}">
-                    <a th:href="@{/seating}">Seating</a>
+                    <a class="nav-link-left" th:href="@{/seating}">Seating</a>
                 </li>
             </ul>
-            <ul class="navbar-nav flex-grow-1">
+            <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item" th:if="${navViewModel.showRegisterLink}">
-                    <a class="nav-link" th:href="@{/register}">Register</a>
+                    <a class="nav-link" th:href="@{/register}">REGISTER</a>
                 </li>
                 <li class="nav-item" th:if="${navViewModel.showLoginLink}">
-                    <a class="nav-link" th:href="@{/login}">Login</a>
+                    <a class="nav-link" th:href="@{/login}">LOGIN</a>
                 </li>
-                <li class="nav-item" th:if="${navViewModel.showUserName}">
-                    <span class="nav-link" th:text="'Hi, ' + ${navViewModel.username}"></span>
+                <li class="nav-item px-3" th:if="${navViewModel.showUserName}">
+                    <span class="nav-link fw-bold" th:text="'Hi, ' + ${navViewModel.username} + '!'"></span>
                 </li>
                 <li class="nav-item" th:if="${navViewModel.showLogoutButton}">
-                    <form class="form-inline" th:action="@{/logout}" method="post">
-                        <input class="btn btn-success rounded-pill shadow" type="submit" value="Logout"/>
+                    <form class="form-inline m-0" th:action="@{/logout}" method="post">
+                        <input class="btn btn-success rounded-pill shadow-sm px-4" type="submit" value="Logout"/>
                     </form>
                 </li>
             </ul>
