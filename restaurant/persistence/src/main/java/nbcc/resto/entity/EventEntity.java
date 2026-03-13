@@ -54,7 +54,6 @@ public class EventEntity {
     private Long version;
 
     public EventEntity() {
-
     }
 
     public Long getId() {
