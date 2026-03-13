@@ -55,4 +55,9 @@ public class DiningTableRepositoryAdapter implements DiningTableRepository{
     public void delete(Long id) {
         diningTableJPARepository.deleteById(id);
     }
+
+    @Override
+    public Boolean exists(String name) {
+        return diningTableJPARepository.existsByNameIgnoreCase(name);
+    }
 }

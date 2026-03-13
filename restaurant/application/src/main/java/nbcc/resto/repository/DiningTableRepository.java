@@ -16,4 +16,6 @@ public interface DiningTableRepository {
     DiningTable update(DiningTable table) throws ConcurrencyException;
 
     void delete(Long id);
+
+    Boolean exists(String name);
 }

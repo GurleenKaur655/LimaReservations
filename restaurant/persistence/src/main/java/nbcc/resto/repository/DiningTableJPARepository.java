@@ -4,4 +4,5 @@ import nbcc.resto.entity.DiningTableEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DiningTableJPARepository extends JpaRepository<DiningTableEntity,Long> {
+    boolean existsByNameIgnoreCase(String name);
 }

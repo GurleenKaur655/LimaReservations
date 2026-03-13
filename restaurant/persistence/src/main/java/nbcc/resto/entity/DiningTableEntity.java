@@ -1,6 +1,7 @@
 package nbcc.resto.entity;
 
 import jakarta.persistence.*;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -15,6 +16,8 @@ public class DiningTableEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @Column(unique = true)
     private String name;
 
     @Column(nullable = false)
@@ -27,6 +30,9 @@ public class DiningTableEntity {
 
     @Version
     private Long version;
+
+    public DiningTableEntity() {
+    }
 
     public Long getVersion() {
         return version;
