@@ -2,6 +2,7 @@ package nbcc.resto.validation;
 
 import nbcc.common.service.AnnotationValidationService;
 import nbcc.common.validation.ValidationError;
+import nbcc.resto.dto.DiningTable;
 import nbcc.resto.dto.Event;
 import nbcc.resto.repository.EventRepository;
 import org.springframework.stereotype.Service;
@@ -23,11 +24,24 @@ public class EventValidationService {
     public Collection<ValidationError> validate(Event event) {
         var errors = new ArrayList<ValidationError>();
         errors.addAll(annotationValidationService.validate(event));
+        errors.addAll(validateDates(event));
         errors.addAll(validateUniqueName(event));
         return errors;
     }
 
 
+    public Collection<ValidationError> validateDates(Event event) {
+        if (event.getName() == null || event.getName().isBlank()) {
+            return List.of();
+        }
+        if (event.getEndDate() == null || event.getEndDate().isBefore(event.getStartDate())) {
+            return List.of(new ValidationError("End date must be after start date"));
+        }
+        if (event.getStartDate() == null || event.getStartDate().isAfter(event.getEndDate())) {
+            return List.of(new ValidationError("Start date must be before end date"));
+        }
+        return List.of();
+    }
     public Collection<ValidationError> validateUniqueName(Event event) {
         if (event.getName() == null || event.getName().isBlank()) {
             return List.of();

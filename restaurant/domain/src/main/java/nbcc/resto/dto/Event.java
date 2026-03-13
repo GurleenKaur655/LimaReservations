@@ -1,8 +1,6 @@
 package nbcc.resto.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
@@ -13,21 +11,25 @@ public class Event {
 
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Name is required")
     private String name;
 
     private String description;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Start Date is required")
     private LocalDate startDate;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "End Date is required")
     private LocalDate endDate;
 
-    @NotNull
+    @NotNull(message = "Duration is required")
+    @Positive(message = "Duration of more than 0 minutes required")
     private Integer durationMinutes;
 
-    @NotNull
+    @NotNull(message = "Price is required.")
+    @PositiveOrZero(message = "Price must be zero or greater")
     private BigDecimal price;
 
     private Boolean active;

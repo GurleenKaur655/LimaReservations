@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import nbcc.auth.service.LoginService;
 import nbcc.resto.dto.Event;
 import nbcc.resto.service.EventService;
+import nbcc.resto.service.SeatingService;
 import nbcc.resto.viewmodel.EventListViewModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,11 +27,14 @@ public class EventController {
 
     private final EventService eventService;
 
+    private final SeatingService seatingService;
+
     private final Logger logger = LoggerFactory.getLogger(EventController.class);
 
-    public EventController(LoginService loginService, EventService eventService) {
+    public EventController(LoginService loginService, EventService eventService, SeatingService seatingService) {
         this.loginService = loginService;
         this.eventService = eventService;
+        this.seatingService = seatingService;
     }
 
 
@@ -137,8 +141,9 @@ public class EventController {
             model.addAttribute("message", "The event you are trying to delete was not found");
             return "error/errorPage";
         }
-
+        var seatingResult = seatingService.getAll(id);
         model.addAttribute("event", result.getValue());
+        model.addAttribute("eventSeating", seatingResult.getValue());
         return "event/delete";
     }
 

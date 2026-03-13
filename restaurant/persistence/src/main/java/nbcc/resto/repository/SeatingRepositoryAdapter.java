@@ -39,6 +39,11 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
         var entities = seatingJPARepository.findByTableId(tableId);
         return seatingMapper.toDTO(entities);
     }
+    @Override
+    public List<Seating> getAll(Long eventId) {
+        var entities = seatingJPARepository.findAllByEventId(eventId);
+        return seatingMapper.toDTO(entities);
+    }
 
     @Override
     public Seating create(Seating seating) {

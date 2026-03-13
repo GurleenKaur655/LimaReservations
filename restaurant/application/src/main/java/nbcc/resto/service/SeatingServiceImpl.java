@@ -35,6 +35,15 @@ public class SeatingServiceImpl implements SeatingService {
             return ValidationResults.error(e);
         }
     }
+    @Override
+    public ValidatedResult<Collection<Seating>> getAll(Long eventId) {
+        try {
+            return ValidationResults.success(seatingRepository.getAll(eventId));
+        } catch (Exception e) {
+            logger.error("Error retrieving all songs for event with id: {}", eventId, e);
+            return ValidationResults.error(e);
+        }
+    }
 
     @Override
     public ValidatedResult<Seating> create(Seating seating) {

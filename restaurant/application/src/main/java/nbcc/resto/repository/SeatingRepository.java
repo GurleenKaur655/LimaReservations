@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface SeatingRepository {
 
     List<Seating> getAll();
+    List<Seating> getAll(Long eventId);
     Optional<Seating> get(Long id);
     List<Seating> getByTableId(Long tableId);
     Seating create(Seating seating);

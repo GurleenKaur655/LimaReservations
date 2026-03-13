@@ -8,4 +8,5 @@ import java.util.List;
 public interface SeatingJPARepository extends JpaRepository<SeatingEntity, Long> {
     boolean existsByNameIgnoreCase(String name);
     List<SeatingEntity> findByTableId(Long tableId);
+    List<SeatingEntity> findAllByEventId(Long eventId);
 }

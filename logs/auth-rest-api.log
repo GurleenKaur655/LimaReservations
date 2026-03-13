@@ -1,0 +1,318 @@
+2026-03-13T00:00:59.712-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m45s968ms).
+2026-03-13T00:18:33.236-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m33s480ms).
+2026-03-13T01:26:31.111-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m27s).
+2026-03-13T01:31:27.621-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m56s486ms).
+2026-03-13T02:28:56.441-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s417ms).
+2026-03-13T02:31:24.316-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m27s875ms).
+2026-03-13T02:40:15.169-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m50s736ms).
+2026-03-13T02:56:51.451-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m6s271ms).
+2026-03-13T03:01:51.927-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m30s472ms).
+2026-03-13T03:17:47.164-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s237ms).
+2026-03-13T03:19:24.044-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s859ms).
+2026-03-13T03:30:11.558-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m47s514ms).
+2026-03-13T03:37:33.473-03:00  WARN 14403 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m21s889ms).
+2026-03-13T03:38:06.628-03:00  INFO 14403 --- [NBCC-Auth] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13T03:38:06.632-03:00  INFO 14403 --- [NBCC-Auth] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-13T03:38:06.636-03:00  INFO 14403 --- [NBCC-Auth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T03:38:06.639-03:00  INFO 14403 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-13T03:38:06.640-03:00  INFO 14403 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-13T16:22:02.702-03:00  INFO 23275 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Starting AuthApplication using Java 21.0.9 with PID 23275 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-auth-rest-api/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
+2026-03-13T16:22:02.707-03:00 DEBUG 23275 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-13T16:22:02.707-03:00  INFO 23275 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-03-13T16:22:03.048-03:00  INFO 23275 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13T16:22:03.063-03:00  INFO 23275 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2026-03-13T16:22:03.464-03:00  INFO 23275 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-13T16:22:03.470-03:00  INFO 23275 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-13T16:22:03.471-03:00  INFO 23275 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-13T16:22:03.489-03:00  INFO 23275 --- [NBCC-Auth] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 744 ms
+2026-03-13T16:22:03.555-03:00  INFO 23275 --- [NBCC-Auth] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13T16:22:03.583-03:00  INFO 23275 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-13T16:22:03.771-03:00  INFO 23275 --- [NBCC-Auth] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13T16:22:03.788-03:00  INFO 23275 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-13T16:22:03.950-03:00  INFO 23275 --- [NBCC-Auth] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@141234df
+2026-03-13T16:22:03.951-03:00  INFO 23275 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-13T16:22:04.004-03:00  INFO 23275 --- [NBCC-Auth] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13T16:22:04.384-03:00  INFO 23275 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T16:22:04.423-03:00  INFO 23275 --- [NBCC-Auth] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T16:22:04.473-03:00  INFO 23275 --- [NBCC-Auth] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13T16:22:04.597-03:00  WARN 23275 --- [NBCC-Auth] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-13T16:22:04.878-03:00  INFO 23275 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-13T16:22:04.882-03:00  INFO 23275 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Started AuthApplication in 2.464 seconds (process running for 3.165)
+2026-03-13T16:22:04.883-03:00  WARN 23275 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-13T16:22:04.883-03:00  WARN 23275 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-13T16:22:24.156-03:00  INFO 23275 --- [NBCC-Auth] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13T16:22:24.156-03:00  INFO 23275 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-13T16:22:24.157-03:00  INFO 23275 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-13T16:27:49.234-03:00  WARN 23275 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m45s154ms).
+2026-03-13T16:33:57.180-03:00  WARN 23275 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s902ms).
+2026-03-13T16:36:14.084-03:00  INFO 23275 --- [NBCC-Auth] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13T16:36:14.088-03:00  INFO 23275 --- [NBCC-Auth] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-13T16:36:14.091-03:00  INFO 23275 --- [NBCC-Auth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T16:36:14.096-03:00  INFO 23275 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-13T16:36:14.100-03:00  INFO 23275 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-13T16:36:16.006-03:00  INFO 23446 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Starting AuthApplication using Java 21.0.9 with PID 23446 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-auth-rest-api/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
+2026-03-13T16:36:16.012-03:00 DEBUG 23446 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-13T16:36:16.012-03:00  INFO 23446 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-03-13T16:36:16.348-03:00  INFO 23446 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13T16:36:16.366-03:00  INFO 23446 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interface.
+2026-03-13T16:36:16.801-03:00  INFO 23446 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-13T16:36:16.806-03:00  INFO 23446 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-13T16:36:16.807-03:00  INFO 23446 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-13T16:36:16.831-03:00  INFO 23446 --- [NBCC-Auth] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 776 ms
+2026-03-13T16:36:16.907-03:00  INFO 23446 --- [NBCC-Auth] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13T16:36:16.929-03:00  INFO 23446 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-13T16:36:17.101-03:00  INFO 23446 --- [NBCC-Auth] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13T16:36:17.115-03:00  INFO 23446 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-13T16:36:17.256-03:00  INFO 23446 --- [NBCC-Auth] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3794b7b1
+2026-03-13T16:36:17.257-03:00  INFO 23446 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-13T16:36:17.291-03:00  INFO 23446 --- [NBCC-Auth] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13T16:36:17.623-03:00  INFO 23446 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T16:36:17.646-03:00  INFO 23446 --- [NBCC-Auth] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T16:36:17.697-03:00  INFO 23446 --- [NBCC-Auth] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13T16:36:17.854-03:00  WARN 23446 --- [NBCC-Auth] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-13T16:36:18.192-03:00  INFO 23446 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-13T16:36:18.196-03:00  INFO 23446 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Started AuthApplication in 2.456 seconds (process running for 2.981)
+2026-03-13T16:36:18.198-03:00  WARN 23446 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-13T16:36:18.198-03:00  WARN 23446 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-13T16:36:27.564-03:00  INFO 23446 --- [NBCC-Auth] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13T16:36:27.564-03:00  INFO 23446 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-13T16:36:27.566-03:00  INFO 23446 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-13T16:43:29.082-03:00  INFO 23446 --- [NBCC-Auth] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13T16:43:29.086-03:00  INFO 23446 --- [NBCC-Auth] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-13T16:43:29.091-03:00  INFO 23446 --- [NBCC-Auth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T16:43:29.093-03:00  INFO 23446 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-13T16:43:29.098-03:00  INFO 23446 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-13T17:16:15.693-03:00  INFO 23839 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Starting AuthApplication using Java 21.0.9 with PID 23839 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-auth-rest-api/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
+2026-03-13T17:16:15.699-03:00 DEBUG 23839 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-13T17:16:15.699-03:00  INFO 23839 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-03-13T17:16:16.033-03:00  INFO 23839 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13T17:16:16.052-03:00  INFO 23839 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interface.
+2026-03-13T17:16:16.514-03:00  INFO 23839 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-13T17:16:16.520-03:00  INFO 23839 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-13T17:16:16.521-03:00  INFO 23839 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-13T17:16:16.547-03:00  INFO 23839 --- [NBCC-Auth] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 806 ms
+2026-03-13T17:16:16.642-03:00  INFO 23839 --- [NBCC-Auth] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13T17:16:16.673-03:00  INFO 23839 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-13T17:16:16.870-03:00  INFO 23839 --- [NBCC-Auth] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13T17:16:16.889-03:00  INFO 23839 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-13T17:16:17.047-03:00  INFO 23839 --- [NBCC-Auth] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65698020
+2026-03-13T17:16:17.048-03:00  INFO 23839 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-13T17:16:17.089-03:00  INFO 23839 --- [NBCC-Auth] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13T17:16:17.444-03:00  INFO 23839 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T17:16:17.470-03:00  INFO 23839 --- [NBCC-Auth] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:16:17.514-03:00  INFO 23839 --- [NBCC-Auth] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13T17:16:17.642-03:00  WARN 23839 --- [NBCC-Auth] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-13T17:16:17.963-03:00  INFO 23839 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-13T17:16:17.968-03:00  INFO 23839 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Started AuthApplication in 2.509 seconds (process running for 3.035)
+2026-03-13T17:16:17.969-03:00  WARN 23839 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-13T17:16:17.969-03:00  WARN 23839 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-13T17:16:30.500-03:00  INFO 23839 --- [NBCC-Auth] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13T17:16:30.501-03:00  INFO 23839 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-13T17:16:30.501-03:00  INFO 23839 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-03-13T17:25:00.712-03:00  INFO 23839 --- [NBCC-Auth] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13T17:25:00.720-03:00  INFO 23839 --- [NBCC-Auth] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-13T17:25:00.724-03:00  INFO 23839 --- [NBCC-Auth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:25:00.727-03:00  INFO 23839 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-13T17:25:00.730-03:00  INFO 23839 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-13T17:25:53.815-03:00  INFO 24388 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Starting AuthApplication using Java 21.0.9 with PID 24388 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-auth-rest-api/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
+2026-03-13T17:25:53.819-03:00 DEBUG 24388 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-13T17:25:53.819-03:00  INFO 24388 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-03-13T17:25:54.153-03:00  INFO 24388 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13T17:25:54.171-03:00  INFO 24388 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interface.
+2026-03-13T17:25:54.573-03:00  INFO 24388 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-13T17:25:54.579-03:00  INFO 24388 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-13T17:25:54.579-03:00  INFO 24388 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-13T17:25:54.597-03:00  INFO 24388 --- [NBCC-Auth] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 742 ms
+2026-03-13T17:25:54.664-03:00  INFO 24388 --- [NBCC-Auth] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13T17:25:54.693-03:00  INFO 24388 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-13T17:25:54.898-03:00  INFO 24388 --- [NBCC-Auth] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13T17:25:54.915-03:00  INFO 24388 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-13T17:25:55.071-03:00  INFO 24388 --- [NBCC-Auth] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4942e6af
+2026-03-13T17:25:55.072-03:00  INFO 24388 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-13T17:25:55.107-03:00  INFO 24388 --- [NBCC-Auth] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13T17:25:55.478-03:00  INFO 24388 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T17:25:55.502-03:00  INFO 24388 --- [NBCC-Auth] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:25:55.548-03:00  INFO 24388 --- [NBCC-Auth] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13T17:25:55.673-03:00  WARN 24388 --- [NBCC-Auth] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-13T17:25:55.949-03:00  INFO 24388 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-13T17:25:55.953-03:00  INFO 24388 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Started AuthApplication in 2.376 seconds (process running for 3.069)
+2026-03-13T17:25:55.954-03:00  WARN 24388 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-13T17:25:55.954-03:00  WARN 24388 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-13T17:26:52.007-03:00  INFO 24388 --- [NBCC-Auth] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13T17:26:52.008-03:00  INFO 24388 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-13T17:26:52.009-03:00  INFO 24388 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-13T17:30:38.171-03:00  INFO 24388 --- [NBCC-Auth] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13T17:30:38.174-03:00  INFO 24388 --- [NBCC-Auth] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-13T17:30:38.178-03:00  INFO 24388 --- [NBCC-Auth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:30:38.181-03:00  INFO 24388 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-13T17:30:38.183-03:00  INFO 24388 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-13T17:33:06.549-03:00  INFO 24455 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Starting AuthApplication using Java 21.0.9 with PID 24455 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-auth-rest-api/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
+2026-03-13T17:33:06.554-03:00 DEBUG 24455 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-13T17:33:06.555-03:00  INFO 24455 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-03-13T17:33:06.918-03:00  INFO 24455 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13T17:33:06.937-03:00  INFO 24455 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interface.
+2026-03-13T17:33:07.370-03:00  INFO 24455 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-13T17:33:07.375-03:00  INFO 24455 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-13T17:33:07.376-03:00  INFO 24455 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-13T17:33:07.397-03:00  INFO 24455 --- [NBCC-Auth] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 804 ms
+2026-03-13T17:33:07.470-03:00  INFO 24455 --- [NBCC-Auth] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13T17:33:07.501-03:00  INFO 24455 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-13T17:33:07.709-03:00  INFO 24455 --- [NBCC-Auth] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13T17:33:07.730-03:00  INFO 24455 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-13T17:33:07.872-03:00  INFO 24455 --- [NBCC-Auth] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4942e6af
+2026-03-13T17:33:07.873-03:00  INFO 24455 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-13T17:33:07.909-03:00  INFO 24455 --- [NBCC-Auth] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13T17:33:08.269-03:00  INFO 24455 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T17:33:08.293-03:00  INFO 24455 --- [NBCC-Auth] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:33:08.350-03:00  INFO 24455 --- [NBCC-Auth] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13T17:33:08.485-03:00  WARN 24455 --- [NBCC-Auth] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-13T17:33:08.799-03:00  INFO 24455 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-13T17:33:08.803-03:00  INFO 24455 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Started AuthApplication in 2.481 seconds (process running for 2.993)
+2026-03-13T17:33:08.804-03:00  WARN 24455 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-13T17:33:08.804-03:00  WARN 24455 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-13T17:33:19.101-03:00  INFO 24455 --- [NBCC-Auth] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13T17:33:19.101-03:00  INFO 24455 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-13T17:33:19.102-03:00  INFO 24455 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-03-13T17:35:10.749-03:00  INFO 24455 --- [NBCC-Auth] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13T17:35:10.753-03:00  INFO 24455 --- [NBCC-Auth] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-13T17:35:10.756-03:00  INFO 24455 --- [NBCC-Auth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:35:10.757-03:00  INFO 24455 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-13T17:35:10.760-03:00  INFO 24455 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-13T17:35:12.583-03:00  INFO 24505 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Starting AuthApplication using Java 21.0.9 with PID 24505 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-auth-rest-api/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
+2026-03-13T17:35:12.584-03:00 DEBUG 24505 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-13T17:35:12.585-03:00  INFO 24505 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-03-13T17:35:12.991-03:00  INFO 24505 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13T17:35:13.013-03:00  INFO 24505 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2026-03-13T17:35:13.437-03:00  INFO 24505 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-13T17:35:13.443-03:00  INFO 24505 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-13T17:35:13.443-03:00  INFO 24505 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-13T17:35:13.459-03:00  INFO 24505 --- [NBCC-Auth] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 843 ms
+2026-03-13T17:35:13.536-03:00  INFO 24505 --- [NBCC-Auth] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13T17:35:13.562-03:00  INFO 24505 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-13T17:35:13.805-03:00  INFO 24505 --- [NBCC-Auth] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13T17:35:13.824-03:00  INFO 24505 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-13T17:35:13.976-03:00  INFO 24505 --- [NBCC-Auth] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@104392ba
+2026-03-13T17:35:13.977-03:00  INFO 24505 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-13T17:35:14.013-03:00  INFO 24505 --- [NBCC-Auth] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13T17:35:14.349-03:00  INFO 24505 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T17:35:14.375-03:00  INFO 24505 --- [NBCC-Auth] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:35:14.424-03:00  INFO 24505 --- [NBCC-Auth] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13T17:35:14.565-03:00  WARN 24505 --- [NBCC-Auth] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-13T17:35:14.879-03:00  INFO 24505 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-13T17:35:14.882-03:00  INFO 24505 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Started AuthApplication in 2.529 seconds (process running for 3.012)
+2026-03-13T17:35:14.884-03:00  WARN 24505 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-13T17:35:14.884-03:00  WARN 24505 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-13T17:35:21.473-03:00  INFO 24505 --- [NBCC-Auth] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13T17:35:21.473-03:00  INFO 24505 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-13T17:35:21.474-03:00  INFO 24505 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-13T17:43:30.116-03:00  INFO 24505 --- [NBCC-Auth] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-13T17:43:30.120-03:00  INFO 24505 --- [NBCC-Auth] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-13T17:43:30.124-03:00  INFO 24505 --- [NBCC-Auth] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:43:30.126-03:00  INFO 24505 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-13T17:43:30.129-03:00  INFO 24505 --- [NBCC-Auth] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-13T17:43:31.792-03:00  INFO 24575 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Starting AuthApplication using Java 21.0.9 with PID 24575 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-auth-rest-api/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
+2026-03-13T17:43:31.794-03:00 DEBUG 24575 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-13T17:43:31.794-03:00  INFO 24575 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : No active profile set, falling back to 1 default profile: "default"
+2026-03-13T17:43:32.126-03:00  INFO 24575 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-13T17:43:32.149-03:00  INFO 24575 --- [NBCC-Auth] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2026-03-13T17:43:32.575-03:00  INFO 24575 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-13T17:43:32.580-03:00  INFO 24575 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-13T17:43:32.580-03:00  INFO 24575 --- [NBCC-Auth] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-13T17:43:32.598-03:00  INFO 24575 --- [NBCC-Auth] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 773 ms
+2026-03-13T17:43:32.660-03:00  INFO 24575 --- [NBCC-Auth] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-13T17:43:32.688-03:00  INFO 24575 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-13T17:43:32.871-03:00  INFO 24575 --- [NBCC-Auth] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-13T17:43:32.885-03:00  INFO 24575 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-13T17:43:33.037-03:00  INFO 24575 --- [NBCC-Auth] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57617a75
+2026-03-13T17:43:33.038-03:00  INFO 24575 --- [NBCC-Auth] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-13T17:43:33.071-03:00  INFO 24575 --- [NBCC-Auth] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-13T17:43:33.407-03:00  INFO 24575 --- [NBCC-Auth] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-13T17:43:33.433-03:00  INFO 24575 --- [NBCC-Auth] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-13T17:43:33.486-03:00  INFO 24575 --- [NBCC-Auth] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-13T17:43:33.664-03:00  WARN 24575 --- [NBCC-Auth] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-13T17:43:33.964-03:00  INFO 24575 --- [NBCC-Auth] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-13T17:43:33.968-03:00  INFO 24575 --- [NBCC-Auth] [main] nbcc.auth.AuthApplication                : Started AuthApplication in 2.449 seconds (process running for 2.98)
+2026-03-13T17:43:33.969-03:00  WARN 24575 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-03-13T17:43:33.969-03:00  WARN 24575 --- [NBCC-Auth] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-03-13T17:43:45.573-03:00  INFO 24575 --- [NBCC-Auth] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-13T17:43:45.573-03:00  INFO 24575 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-13T17:43:45.574-03:00  INFO 24575 --- [NBCC-Auth] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-13T18:00:32.240-03:00  WARN 24575 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m29s24ms).
+2026-03-13T18:07:43.384-03:00  WARN 24575 --- [NBCC-Auth] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m11s113ms).
