@@ -1,49 +1,69 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
     <title>Seating</title>
 </head>
 
 <body>
 
-<h1>Seating</h1>
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
 
-<div th:if="${viewModel.canAdd}">
-    <a th:href="@{/seating/create}">Create Seating</a>
+<div class="container">
+
+    <main role="main" class="pb-3">
+
+        <h1>Seating</h1>
+
+        <div th:if="${viewModel.canAdd}" class="mb-3">
+            <a th:href="@{/seating/create}" class="btn btn-primary">Create Seating</a>
+        </div>
+
+        <div th:if="${!viewModel.isEmpty()}">
+
+            <div th:each="entry : ${viewModel.seatingsByEventName}">
+                <h3 th:text="${entry.key}">Event Name</h3>
+
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Seating Name</th>
+                        <th>Dining Table</th>
+                        <th>Start Time</th>
+                        <th>Duration</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="seating : ${entry.value}">
+                        <td th:text="${seating.name}">Seating Name</td>
+                        <td th:text="${seating.table.name}">Table Name</td>
+                        <td th:text="${#temporals.format(seating.startDateTime,'yyyy-MM-dd HH:mm')}">Start Time</td>
+                        <td th:text="${seating.durationMinutes}">Duration</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <br>
+            </div>
+
+        </div>
+
+        <div th:if="${viewModel.isEmpty()}">
+            <p>No seating available.</p>
+        </div>
+
+        <div class="mt-3">
+            <a th:href="@{/}" class="btn btn-secondary">Go Back</a>
+        </div>
+
+    </main>
+
 </div>
 
-<br>
-
-<div th:if="${!viewModel.isEmpty()}">
-
-    <div th:each="entry : ${viewModel.seatingsByEventName}">
-        <h2 th:text="${entry.key}">Event Name</h2>
-
-        <table border="1">
-            <thead>
-            <tr>
-                <th>Seating Name</th>
-                <th>Dining Table</th>
-                <th>Start Time</th>
-                <th>Duration</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="seating : ${entry.value}">
-                <td th:text="${seating.name}">Seating Name</td>
-                <td th:text="${seating.table.name}">Table Name</td>
-                <td th:text="${#temporals.format(seating.startDateTime,'yyyy-MM-dd HH:mm')}">Start Time</td>
-                <td th:text="${seating.durationMinutes}">Duration</td>
-            </tr>
-            </tbody>
-        </table>
-        <br>
-    </div>
-
-</div>
-<div th:if="${viewModel.isEmpty()}">
-    <p>No seating available.</p>
-</div>
 </body>
 </html>

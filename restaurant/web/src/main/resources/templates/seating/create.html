@@ -31,37 +31,39 @@
                     <div class="form-group mb-3">
                         <label>Name</label>
                         <input type="text" class="form-control" th:field="*{name}"/>
-                        <div class="text-danger"
-                             th:if="${#fields.hasErrors('name')}"
-                             th:errors="*{name}">
-                        </div>
+                        <div class="alert alert-danger  small mt-1" th:errors="*{name}"></div>
                     </div>
 
                     <div class="form-group mb-3">
                         <label>Event</label>
+
                         <select class="form-control" th:field="*{event.id}">
-                            <option value="">Select Event</option>
+                            <option value="" disabled selected class="text-muted">
+                                Select Event
+                            </option>
+
                             <option th:each="event : ${events}"
                                     th:value="${event.id}"
                                     th:text="${event.name}">
                             </option>
                         </select>
+
+                        <div class="alert alert-danger small mt-1" th:errors="*{event.id}"></div>
                     </div>
 
                     <div class="form-group mb-3">
                         <label>Dining Table</label>
                         <select class="form-control" th:field="*{table.id}">
-                            <option value="">Select Table</option>
+                            <option value="" disabled selected class="text-muted" >
+                                Select Dining Table
+                            </option>
                             <option th:each="table : ${tables}"
                                     th:value="${table.id}"
                                     th:text="${table.name}">
                             </option>
                         </select>
 
-                        <div class="text-danger"
-                             th:if="${#fields.hasErrors('table')}"
-                             th:errors="*{table}">
-                        </div>
+                        <div class="alert alert-danger  small mt-1" th:errors="*{table.id}"></div>
                     </div>
 
                     <div class="form-group mb-3">
@@ -70,10 +72,7 @@
                                class="form-control"
                                th:field="*{startDateTime}"/>
 
-                        <div class="text-danger"
-                             th:if="${#fields.hasErrors('startDateTime')}"
-                             th:errors="*{startDateTime}">
-                        </div>
+                        <div class="alert alert-danger  small mt-1" th:errors="*{startDateTime}"></div>
                     </div>
 
                     <div class="form-group mb-3">
@@ -82,10 +81,7 @@
                                class="form-control"
                                th:field="*{durationMinutes}"/>
 
-                        <div class="text-danger"
-                             th:if="${#fields.hasErrors('durationMinutes')}"
-                             th:errors="*{durationMinutes}">
-                        </div>
+                        <div class="alert alert-danger  small mt-1" th:errors="*{durationMinutes}"></div>
                     </div>
 
                     <div class="form-group mt-3">

@@ -12,11 +12,13 @@ public class Seating {
 
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Name cannot be blank")
     private String name;
 
+    @NotNull(message = "Start Date and Time cannot be blank")
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime startDateTime;
+
 
     @Positive
     private Integer durationMinutes;

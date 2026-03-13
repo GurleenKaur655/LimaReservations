@@ -81,7 +81,7 @@ public class DiningTableController {
     }
 
     @PostMapping("/edit/{id}")
-    public String edit(@ModelAttribute("diningTable") DiningTable table, BindingResult br, Model model) {
+    public String edit(@ModelAttribute("table") DiningTable table, BindingResult br, Model model) {
 
         var result = diningTableService.update(table);
 

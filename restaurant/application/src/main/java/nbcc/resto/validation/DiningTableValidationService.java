@@ -24,19 +24,10 @@ public class DiningTableValidationService {
     public Collection<ValidationError> validate(DiningTable table) {
         var errors = new ArrayList<ValidationError>();
         errors.addAll(annotationValidationService.validate(table));
-        errors.addAll(validateCapacity(table));
         errors.addAll(validateUniqueName(table));
         return errors;
     }
 
-    public Collection<ValidationError> validateCapacity(DiningTable table) {
-
-        if (table.getCapacity() != null && table.getCapacity() > 0) {
-            return List.of();
-        }
-
-        return List.of(new ValidationError("Capacity must be a number greater than 0"));
-    }
 
     public Collection<ValidationError> validateUniqueName(DiningTable table) {
         if (table.getName() == null || table.getName().isBlank()) {
