@@ -6,6 +6,7 @@ import nbcc.resto.dto.Seating;
 
 import java.util.Collection;
 
+
 public interface SeatingService {
     Result<Collection<Seating>> getAll();
     ValidatedResult<Seating> create(Seating seating);

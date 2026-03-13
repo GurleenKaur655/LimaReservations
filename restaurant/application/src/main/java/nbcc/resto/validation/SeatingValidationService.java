@@ -4,11 +4,13 @@ import nbcc.common.service.AnnotationValidationService;
 import nbcc.common.validation.ValidationError;
 import nbcc.resto.dto.Seating;
 import nbcc.resto.repository.SeatingRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+@Service
 public class SeatingValidationService {
 
     private final AnnotationValidationService annotationValidationService;

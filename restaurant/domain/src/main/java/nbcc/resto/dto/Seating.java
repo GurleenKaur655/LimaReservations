@@ -15,9 +15,9 @@ public class Seating {
     @NotBlank
     private String name;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime startDateTime;
 
-    @NotNull
     @Positive
     private Integer durationMinutes;
 

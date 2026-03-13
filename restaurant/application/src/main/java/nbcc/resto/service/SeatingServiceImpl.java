@@ -8,19 +8,22 @@ import nbcc.resto.repository.SeatingRepository;
 import nbcc.resto.validation.SeatingValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.stereotype.Service;
 import java.util.Collection;
 
+@Service
 public class SeatingServiceImpl implements SeatingService {
 
     private final Logger logger = LoggerFactory.getLogger(SeatingServiceImpl.class);
 
     private final SeatingRepository seatingRepository;
     private final SeatingValidationService  validationService;
+    private final EventService eventService;
 
-    public SeatingServiceImpl(SeatingRepository seatingRepository, SeatingValidationService seatingValidationService) {
+    public SeatingServiceImpl(SeatingRepository seatingRepository, SeatingValidationService seatingValidationService, EventService eventService) {
         this.seatingRepository = seatingRepository;
         this.validationService = seatingValidationService;
+        this.eventService = eventService;
     }
 
     @Override
@@ -36,6 +39,17 @@ public class SeatingServiceImpl implements SeatingService {
     @Override
     public ValidatedResult<Seating> create(Seating seating) {
         try {
+
+            if (seating.getEvent() != null && seating.getEvent().getId() != null) {
+                var eventResult = eventService.get(seating.getEvent().getId());
+                var event = eventResult.getValue();
+                seating.setEvent(event);
+
+                if (seating.getDurationMinutes() == null) {
+                    seating.setDurationMinutes(event.getDurationMinutes());
+                }
+            }
+
             var errors = validationService.validate(seating);
 
             if (errors.isEmpty()) {
@@ -49,4 +63,6 @@ public class SeatingServiceImpl implements SeatingService {
             return ValidationResults.error(seating);
         }
     }
+
+
 }

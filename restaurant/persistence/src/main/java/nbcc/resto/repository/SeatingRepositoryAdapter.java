@@ -2,18 +2,24 @@ package nbcc.resto.repository;
 
 import nbcc.resto.dto.Seating;
 import nbcc.resto.mapper.SeatingMapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class SeatingRepositoryAdapter implements SeatingRepository {
 
     private final SeatingMapper seatingMapper;
     private final SeatingJPARepository seatingJPARepository;
+    private final EventJPARepository eventJPARepository;
+    private final DiningTableJPARepository diningTableJPARepository;
 
-    public SeatingRepositoryAdapter(SeatingMapper seatingMapper, SeatingJPARepository seatingJPARepository) {
+    public SeatingRepositoryAdapter(SeatingMapper seatingMapper, SeatingJPARepository seatingJPARepository, EventJPARepository eventJPARepository, DiningTableJPARepository diningTableJPARepository) {
         this.seatingMapper = seatingMapper;
         this.seatingJPARepository = seatingJPARepository;
+        this.eventJPARepository = eventJPARepository;
+        this.diningTableJPARepository = diningTableJPARepository;
     }
 
     @Override
@@ -37,6 +43,15 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
     @Override
     public Seating create(Seating seating) {
         var entity = seatingMapper.toEntity(seating);
+        var event = eventJPARepository.findById(seating.getEvent().getId())
+                .orElseThrow();
+
+        var table = diningTableJPARepository.findById(seating.getTable().getId())
+                .orElseThrow();
+
+        entity.setEvent(event);
+        entity.setTable(table);
+
         entity = seatingJPARepository.save(entity);
         return seatingMapper.toDTO(entity);
     }

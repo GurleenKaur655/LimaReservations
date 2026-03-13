@@ -2,7 +2,9 @@ package nbcc.resto.mapper;
 
 import nbcc.resto.dto.Seating;
 import nbcc.resto.entity.SeatingEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SeatingMapper implements EntityMapper<Seating, SeatingEntity>{
 
     private final DiningTableMapper diningTableMapper;
