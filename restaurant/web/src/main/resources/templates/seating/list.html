@@ -2,15 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>Seating</title>
-    <th:block th:replace="~{partial :: bootstrap}"/>
 </head>
 
 <body>
-<header>
-    <nav th:replace="~{nav :: navbar}"></nav>
-</header>
+
 <h1>Seating</h1>
 
 <div th:if="${viewModel.canAdd}">

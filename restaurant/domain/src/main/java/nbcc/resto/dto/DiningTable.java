@@ -10,8 +10,8 @@ public class DiningTable {
     private String name;
 
 
-    @Positive
-    @NotNull
+    @Positive(message = "Capacity must be greater than 0")
+    @NotNull(message = "Capacity cannot be blank")
     private Integer capacity;
 
     private Long version;
