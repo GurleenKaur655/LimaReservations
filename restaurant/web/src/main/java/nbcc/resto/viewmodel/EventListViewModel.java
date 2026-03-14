@@ -13,6 +13,8 @@ public class EventListViewModel {
 
     private final Collection<Event> events;
 
+
+
     public EventListViewModel(Collection<Event> events, boolean canManage) {
         this(events, canManage, null);
     }
@@ -48,4 +50,5 @@ public class EventListViewModel {
     public boolean isEmpty() {
         return  events.isEmpty();
     }
+
 }

@@ -4,6 +4,7 @@ import nbcc.common.service.AnnotationValidationService;
 import nbcc.common.validation.ValidationError;
 import nbcc.resto.dto.Seating;
 import nbcc.resto.repository.SeatingRepository;
+import nbcc.resto.service.EventService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,16 +16,19 @@ public class SeatingValidationService {
 
     private final AnnotationValidationService annotationValidationService;
     private final SeatingRepository seatingRepository;
+    private final EventService eventService;
 
-    public SeatingValidationService(AnnotationValidationService annotationValidationService, SeatingRepository seatingRepository) {
+    public SeatingValidationService(AnnotationValidationService annotationValidationService, SeatingRepository seatingRepository, EventService eventService) {
         this.annotationValidationService = annotationValidationService;
         this.seatingRepository = seatingRepository;
+        this.eventService = eventService;
     }
 
     public Collection<ValidationError> validate(Seating seating) {
         var errors = new ArrayList<ValidationError>();
         errors.addAll(annotationValidationService.validate(seating));
         errors.addAll(validateUniqueName(seating));
+        errors.addAll(validateDuration(seating));
         errors.addAll(validateTableAvailability(seating));
         return errors;
     }
@@ -49,6 +53,21 @@ public class SeatingValidationService {
 
         if (seatingRepository.exists(seating.getName())) {
             return List.of(new ValidationError("Name must be unique"));
+        }
+
+        return List.of();
+    }
+
+    public Collection<ValidationError> validateDuration(Seating seating) {
+        if (seating.getDurationMinutes() == null) {
+            return List.of();
+        }
+        var eventId = eventService.get(seating.getEvent().getId());
+        var eventDuration = eventId.getValue().getDurationMinutes();
+
+        if (seating.getDurationMinutes() >  eventDuration) {
+            return List.of(new ValidationError("Duration cannot be greater than Event Duration"));
+
         }
 
         return List.of();
@@ -86,4 +105,5 @@ public class SeatingValidationService {
 
         return List.of();
     }
+
 }

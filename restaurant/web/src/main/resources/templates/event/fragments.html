@@ -95,7 +95,7 @@
                 </dd>
 
                 <dt class="col-sm-4 text-muted small">Price</dt>
-                <dd class="col-sm-8 fw-semibold" th:text="*{price}"></dd>
+                <dd class="col-sm-8 fw-semibold" th:text="'$' + *{price}"></dd>
 
                 <dt class="col-sm-4 text-muted small">Created Date</dt>
                 <dd class="col-sm-8" th:text="*{createdDate}"></dd>
