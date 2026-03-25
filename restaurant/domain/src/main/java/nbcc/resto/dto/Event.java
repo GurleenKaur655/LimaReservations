@@ -39,24 +39,6 @@ public class Event {
 
     private Long version;
 
-    public LocalDateTime getCreatedDate() {
-        return createdDate;
-    }
-
-    public Event setCreatedDate(LocalDateTime createdDate) {
-        this.createdDate = createdDate;
-        return this;
-    }
-
-    public LocalDateTime getLastUpdatedDate() {
-        return lastUpdatedDate;
-    }
-
-    public Event setLastUpdatedDate(LocalDateTime lastUpdatedDate) {
-        this.lastUpdatedDate = lastUpdatedDate;
-        return this;
-    }
-
     private LocalDateTime createdDate;
 
     private LocalDateTime lastUpdatedDate;
@@ -90,6 +72,26 @@ public class Event {
         this.createdDate = createdDate;
         this.lastUpdatedDate = lastUpdatedDate;
     }
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public Event setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
+        return this;
+    }
+
+    public LocalDateTime getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
+    public Event setLastUpdatedDate(LocalDateTime lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+        return this;
+    }
+
+
 
     public Long getId() {
         return id;

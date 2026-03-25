@@ -24,6 +24,9 @@
                 <li class="nav-item nav-link px-2" th:if="${navViewModel.showSeating}">
                     <a class="nav-link-left" th:href="@{/seating}">Seating</a>
                 </li>
+                <li class="nav-item nav-link px-2" th:if="${navViewModel.showMenu}">
+                    <a class="nav-link-left" th:href="@{/menu}">Menu</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item" th:if="${navViewModel.showRegisterLink}">

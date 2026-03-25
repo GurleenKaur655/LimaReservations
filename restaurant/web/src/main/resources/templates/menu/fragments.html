@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Input</title>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+</head>
+<body>
+
+<!--/*@thymesVar id="menu" type="nbcc.resto.dto.Menu"*/-->
+
+<th:block th:fragment="input" th:object="${menu}">
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+            <h5 class="mb-0"
+                style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A; letter-spacing: 0.5px;">
+                Menu Details
+            </h5>
+        </div>
+
+        <div class="card-body">
+
+            <!-- GLOBAL ERRORS -->
+            <div class="alert alert-danger"
+                 th:if="${#fields.hasGlobalErrors()}"
+                 role="alert">
+                <strong>Error!</strong>
+                <div th:each="err : ${#fields.globalErrors}" th:text="${err}"></div>
+            </div>
+
+            <!-- HIDDEN FIELDS -->
+            <input type="hidden" th:field="*{id}"/>
+            <input type="hidden" th:field="*{version}"/>
+
+            <!-- NAME -->
+            <div class="mb-3">
+                <label class="form-label fw-bold small text-muted">
+                    Menu Name
+                </label>
+
+                <input th:field="*{name}"
+                       class="form-control"
+                       placeholder="Enter menu name"/>
+
+                <div class="text-danger small mt-1"
+                     th:errors="*{name}"></div>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="mb-3">
+                <label class="form-label fw-bold small text-muted">
+                    Description
+                </label>
+
+                <textarea th:field="*{description}"
+                          class="form-control"
+                          placeholder="description"
+                          rows="3"></textarea>
+
+                <div class="text-danger small mt-1"
+                     th:errors="*{description}"></div>
+            </div>
+
+        </div>
+    </div>
+</th:block>
+
+<th:block th:fragment="details" th:object="${menu}">
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+            <h5 class="mb-0"
+                style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A; letter-spacing: 0.5px;">
+                Menu Details
+            </h5>
+        </div>
+
+        <div class="card-body">
+
+            <dl class="row">
+
+                <dt class="col-sm-4 text-muted small">Menu Name</dt>
+                <dd class="col-sm-8 fw-bold" th:text="*{name}"></dd>
+
+                <dt class="col-sm-4 text-muted small">Description</dt>
+                <dd class="col-sm-8">
+                    <span th:if="*{description != null and description != ''}"
+                          th:text="*{description}"></span>
+
+                    <span th:if="*{description == null or description == ''}"
+                          class="text-muted">
+                        No description provided
+                    </span>
+                </dd>
+
+            </dl>
+
+        </div>
+    </div>
+</th:block>
+
+</body>
+</html>
