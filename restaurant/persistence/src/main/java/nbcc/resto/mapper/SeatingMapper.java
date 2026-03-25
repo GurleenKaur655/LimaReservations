@@ -30,7 +30,8 @@ public class SeatingMapper implements EntityMapper<Seating, SeatingEntity>{
                 .setEvent(eventMapper.toDTO(entity.getEvent()))
                 .setTable(diningTableMapper.toDTO(entity.getTable()))
                 .setCreatedDate(entity.getCreatedAt())
-                .setVersion(entity.getVersion());
+                .setVersion(entity.getVersion())
+                .setArchived(entity.getArchived());
     }
 
     @Override
@@ -47,6 +48,7 @@ public class SeatingMapper implements EntityMapper<Seating, SeatingEntity>{
                 .setEvent(eventMapper.toEntity(dto.getEvent()))
                 .setTable(diningTableMapper.toEntity(dto.getTable()))
                 .setCreatedAt(dto.getCreatedDate())
-                .setVersion(dto.getVersion());
+                .setVersion(dto.getVersion())
+                .setArchived(dto.getArchived());
     }
 }

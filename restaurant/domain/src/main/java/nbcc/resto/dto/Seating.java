@@ -23,6 +23,15 @@ public class Seating {
     @Positive
     private Integer durationMinutes;
 
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public Seating setArchived(Boolean archived) {
+        this.archived = archived;
+        return this;
+    }
+
     private Event event;
 
     private DiningTable table;
@@ -30,6 +39,7 @@ public class Seating {
     private Long version;
 
     private LocalDateTime createdDate;
+    private Boolean archived = false;
 
 
 

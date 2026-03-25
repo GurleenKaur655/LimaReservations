@@ -28,8 +28,12 @@ public class SeatingEntity {
     @NotNull
     private LocalDateTime startDateTime;
 
+
     @NotNull
     private Integer durationMinutes;
+
+    private Boolean archived = false;
+
 
     @ManyToOne
     @JoinColumn(name = "event_id", foreignKey = @ForeignKey(name = "fk_seating_event"))
@@ -41,6 +45,7 @@ public class SeatingEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private DiningTableEntity table;
 
+
     @CreatedDate
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
@@ -49,6 +54,14 @@ public class SeatingEntity {
     private Long version;
 
     public SeatingEntity() {
+    }
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public SeatingEntity setArchived(Boolean archived) {
+        this.archived = archived;
+        return this;
     }
 
     public Long getId() {

@@ -54,8 +54,12 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <a th:href="@{/diningTable/delete/{id}(id=${seating.table.id})}"
-                                       class="btn btn-outline-danger" title="Delete Table">🗑️ Delete Table</a>
+<!--                                    <a th:href="@{/diningTable/delete/{id}(id=${seating.table.id})}"-->
+<!--                                       class="btn btn-outline-danger" title="Delete Table">🗑️ Delete Table</a>-->
+                                    <a th:if="${viewModel.canEdit}" th:href="@{/seating/edit/{id}(id=${seating.id})}"
+                                       class="btn btn-outline-warning" title="Edit Seating">✏️ Edit</a>
+                                    <a th:if="${viewModel.canDelete}" th:href="@{/seating/delete/{id}(id=${seating.id})}"
+                                       class="btn btn-outline-danger" title="Delete Seating">🗑️ Delete</a>
                                 </td>
                             </tr>
                             </tbody>

@@ -2,6 +2,7 @@ package nbcc.resto.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import nbcc.auth.service.LoginService;
+import nbcc.resto.dto.Event;
 import nbcc.resto.dto.Seating;
 import nbcc.resto.service.DiningTableService;
 import nbcc.resto.service.EventService;
@@ -75,6 +76,73 @@ public class SeatingController {
             return "redirect:/seating";
         }
 
+    @GetMapping("/edit/{id}")
+    public String edit(@PathVariable Long id, Model model) {
+
+        var result = seatingService.get(id);
+
+        if (result.isError()) {
+            return "error/errorPage";
+        }
+
+        if (result.isEmpty()) {
+            model.addAttribute("message", "The event you are trying to edit was not found");
+            return "error/errorPage";
+        }
+
+        model.addAttribute("seating", result.getValue());
+        model.addAttribute("events", eventService.getAll().getValue());
+        model.addAttribute("tables", diningTableService.getAll().getValue());
+        return "seating/edit";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String edit(@ModelAttribute("seating") Seating seating, BindingResult br, Model model) {
+
+        var result = seatingService.update(seating);
+
+        if (result.isError()) {
+            return "error/errorPage";
+        }
+
+        if (result.isInvalid()) {
+            addErrorsToBindingResults(br, result);
+            model.addAttribute("seating", result.getValue());
+            model.addAttribute("events", eventService.getAll().getValue());
+            model.addAttribute("tables", diningTableService.getAll().getValue());
+            return "seating/edit";
+        }
+
+        return "redirect:/seating";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable long id, Model model) {
+
+        var result = seatingService.get(id);
+        if (result.isError()) {
+            return "error/errorPage";
+        }
+
+        if (result.isEmpty()) {
+            model.addAttribute("message", "The seating you are trying to delete was not found");
+            return "error/errorPage";
+        }
+        model.addAttribute("seating", result.getValue());
+        return "seating/delete";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+
+        var result = seatingService.delete(id);
+        if (result.isError()) {
+            return "error/errorPage";
+        }
+
+        return "redirect:/seating";
+    }
+
         @ExceptionHandler(Exception.class)
         @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
         public String exceptionHandler(Model model, Exception ex, HttpServletRequest request){
@@ -82,5 +150,8 @@ public class SeatingController {
             model.addAttribute("message", "Unexpected Error Occurred");
             return "error/errorPage";
         }
+
+
+
 
 }

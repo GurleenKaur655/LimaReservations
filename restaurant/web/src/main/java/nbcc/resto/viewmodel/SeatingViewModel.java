@@ -11,6 +11,8 @@ public class SeatingViewModel {
 
     private final boolean canAdd;
     private final String message;
+    private final boolean canEdit;
+    private final boolean canDelete;
 
     private final Collection<Seating> seatings;
     private final Map<String, List<Seating>> seatingsByEventName;
@@ -26,6 +28,8 @@ public class SeatingViewModel {
                 .toList();
         this.canAdd = canManage;
         this.message = message;
+        this.canEdit = canManage;
+        this.canDelete = canManage;
 
 
         this.seatingsByEventName = this.seatings.stream()
@@ -43,6 +47,12 @@ public class SeatingViewModel {
     public boolean isCanAdd() {
         return canAdd;
     }
+
+    public boolean isCanEdit() {
+        return canEdit;
+    }
+
+    public boolean isCanDelete() { return canDelete; }
 
     public String getMessage() {
         return message;

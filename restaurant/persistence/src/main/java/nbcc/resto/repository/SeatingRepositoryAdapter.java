@@ -1,7 +1,9 @@
 package nbcc.resto.repository;
 
+import nbcc.common.exception.ConcurrencyException;
 import nbcc.resto.dto.Seating;
 import nbcc.resto.mapper.SeatingMapper;
+import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -59,6 +61,34 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
 
         entity = seatingJPARepository.save(entity);
         return seatingMapper.toDTO(entity);
+    }
+
+    @Override
+    public Seating update(Seating seating) throws ConcurrencyException {
+        try {
+            var entity = seatingMapper.toEntity(seating);
+            var event = eventJPARepository.findById(seating.getEvent().getId()).orElseThrow();
+            var table = diningTableJPARepository.findById(seating.getTable().getId()).orElseThrow();
+            entity.setEvent(event);
+            entity.setTable(table);
+            entity = seatingJPARepository.save(entity);
+            return seatingMapper.toDTO(entity);
+        } catch (ConcurrencyFailureException e) {
+            throw new ConcurrencyException(e);
+        }
+    }
+
+    @Override
+    public void delete(Long id) {
+        seatingJPARepository.deleteById(id);
+    }
+
+    @Override
+    public void archive(Long id) {
+        seatingJPARepository.findById(id).ifPresent(seatingEntity -> {
+            seatingEntity.setArchived(true);
+            seatingJPARepository.save(seatingEntity);
+        });
     }
 
     @Override
