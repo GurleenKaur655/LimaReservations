@@ -100,4 +100,15 @@ public class MenuServiceImpl implements MenuService {
             return ValidationResults.error(e);
         }
     }
+
+    @Override
+    public ValidatedResult<Collection<Menu>> search(String name) {
+        try {
+
+            return ValidationResults.success(menuRepository.search(name));
+        } catch (Exception e) {
+            logger.error("Error searching for menus", e);
+            return ValidationResults.error(e);
+        }
+    }
 }

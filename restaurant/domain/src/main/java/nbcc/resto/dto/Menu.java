@@ -18,10 +18,16 @@ public class Menu {
     public Menu() {
     }
 
-    public Menu(Long id, String name, String description) {
+    public Menu(Menu menu) {
+        this(menu.getId(), menu.getName(), menu.getDescription(), menu.getVersion());
+    }
+
+    public Menu(Long id, String name, String description, Long version) {
+        this();
         this.id = id;
         this.name = name;
         this.description = description;
+        this.version = version;
     }
 
     public Long getId() {

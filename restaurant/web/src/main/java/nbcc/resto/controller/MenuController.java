@@ -5,9 +5,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import nbcc.auth.service.LoginService;
 import nbcc.resto.dto.Event;
 import nbcc.resto.dto.Menu;
+import nbcc.resto.dto.MenuItem;
 import nbcc.resto.service.DiningTableService;
+import nbcc.resto.service.MenuItemService;
 import nbcc.resto.service.MenuService;
 import nbcc.resto.viewmodel.EventListViewModel;
+import nbcc.resto.viewmodel.MenuItemListViewModel;
 import nbcc.resto.viewmodel.MenuViewModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
 
 import static nbcc.common.validation.ModelErrorConverter.addErrorsToBindingResults;
 
@@ -29,10 +34,12 @@ public class MenuController {
     private static final Logger logger = LoggerFactory.getLogger(MenuController.class);
     private final MenuService menuService;
     private final LoginService loginService;
+    private final MenuItemService menuItemService;
 
-    public MenuController(MenuService menuService, LoginService loginService) {
+    public MenuController(MenuService menuService, LoginService loginService, MenuItemService menuItemService) {
         this.menuService = menuService;
         this.loginService = loginService;
+        this.menuItemService = menuItemService;
     }
 
     @GetMapping
@@ -47,6 +54,8 @@ public class MenuController {
 
         MenuViewModel viewModel = new MenuViewModel(result.getValue(), loginService.isLoggedIn());
         model.addAttribute("viewModel", viewModel);
+        model.addAttribute("searchName", null);
+
         return "menu/list";
     }
 
@@ -106,7 +115,7 @@ public class MenuController {
             return "error/errorPage";
         }
 
-        model.addAttribute("menu", result.getValue());
+        loadModel(result.getValue(), model, true);
         return "menu/edit";
     }
 
@@ -121,7 +130,7 @@ public class MenuController {
 
         if (result.isInvalid()) {
             addErrorsToBindingResults(br, result);
-            model.addAttribute("menu", result.getValue());
+           loadModel(menu, model, true);
             return "menu/edit";
         }
 
@@ -156,6 +165,35 @@ public class MenuController {
         return "redirect:/menu";
     }
 
+
+    @GetMapping("/search")
+    public String search(
+            @RequestParam(required = false) String name, Model model) {
+
+        var result = menuService.search(name);
+
+        MenuViewModel viewModel = new MenuViewModel(result.getValue(), loginService.isLoggedIn());
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("searchName", name);
+
+        return "menu/list";
+    }
+
+    private void loadModel(Menu menu, Model model) {
+        loadModel(menu, model, false);
+    }
+
+    private void loadModel(Menu menu, Model model, boolean showManage) {
+
+        if (showManage) {
+            model.addAttribute("menuItem", new MenuItem(menu));
+        }
+
+        model.addAttribute("menu", menu);
+        var menuItemResult = menuItemService.getAll(menu.getId());
+        model.addAttribute("menuItemListViewModel",
+                new MenuItemListViewModel(menuItemResult.getValue(), menu.getId(), showManage && loginService.isLoggedIn(), null));
+    }
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)

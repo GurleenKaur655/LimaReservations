@@ -58,6 +58,12 @@ public class MenuRepositoryAdapter implements MenuRepository {
     }
 
     @Override
+    public List<Menu> search(String name) {
+        var menus = menuJPARepository.search(name);
+        return menuMapper.toDTO(menus);
+    }
+
+    @Override
     public Boolean exists(String name) {
         return menuJPARepository.existsByNameIgnoreCase(name);
     }

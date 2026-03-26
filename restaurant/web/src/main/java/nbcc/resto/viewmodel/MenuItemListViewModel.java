@@ -57,6 +57,10 @@ public class MenuItemListViewModel implements Iterable<MenuItem>{
         return message;
     }
 
+    public boolean isEmpty() {
+        return menuItems.isEmpty();
+    }
+
     public Collection<MenuItem> getMenuItems() {
         return menuItems;
     }

@@ -1,7 +1,7 @@
 package nbcc.resto.entity;
 
 import jakarta.persistence.*;
-import org.jetbrains.annotations.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -16,7 +16,8 @@ public class MenuEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotBlank
+    @Column(unique = true)
     private String name;
 
     private String description;
@@ -40,11 +41,11 @@ public class MenuEntity {
         return this;
     }
 
-    public @NotNull String getName() {
+    public String getName() {
         return name;
     }
 
-    public MenuEntity setName(@NotNull String name) {
+    public MenuEntity setName(String name) {
         this.name = name;
         return this;
     }

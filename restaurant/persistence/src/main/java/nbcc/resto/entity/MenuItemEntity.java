@@ -1,6 +1,7 @@
 package nbcc.resto.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,10 +18,11 @@ public class MenuItemEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @NotBlank
+    @Column(unique = true)
     private String name;
 
-    @Column(nullable = false)
+    @NotBlank
     private String description;
 
     @Version
@@ -36,11 +38,13 @@ public class MenuItemEntity {
     private MenuEntity menu;
 
 
-    public MenuItemEntity() {
-    }
 
     public MenuItemEntity(MenuEntity menu) {
         this.menu = menu;
+    }
+
+    public MenuItemEntity() {
+
     }
 
     public Long getId() {

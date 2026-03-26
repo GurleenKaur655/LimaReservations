@@ -14,7 +14,6 @@
 <div class="container mt-4">
     <main role="main" class="pb-3">
 
-
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0" style="font-size: 1.8rem; font-weight: 700;">
                 Menus
@@ -27,11 +26,32 @@
             </a>
         </div>
 
+        <form th:action="@{/menu/search}" method="get" class="card shadow-sm p-3 mb-4">
+            <div class="row g-2 align-items-end">
+                <div class="col-md-10">
+                    <label class="form-label fw-bold small text-muted">Search Menu</label>
+                    <input type="text"
+                           name="name"
+                           th:value="${searchName}"
+                           placeholder="Search by menu name"
+                           class="form-control form-control-sm"/>
+                </div>
+
+                <div class="col-md-2 d-flex gap-2">
+                    <button type="submit" class="btn btn-dark btn-sm w-100">
+                        Search
+                    </button>
+
+                    <a th:href="@{/menu}" class="btn btn-outline-secondary btn-sm w-100">
+                        Clear
+                    </a>
+                </div>
+            </div>
+        </form>
 
         <p th:if="${viewModel.message}"
            th:text="${viewModel.message}"
            class="alert alert-warning"></p>
-
 
         <div th:unless="${viewModel.isEmpty()}">
             <div class="card shadow-sm">
@@ -49,14 +69,12 @@
                             <tbody>
                             <tr th:each="menu : ${viewModel.menus}" class="align-middle">
 
-
                                 <td>
                                     <a class="text-dark text-decoration-none fw-bold"
                                        th:href="@{/menu/{id}(id=${menu.id})}"
                                        th:text="${menu.name}">
                                     </a>
                                 </td>
-
 
                                 <td>
                                     <div class="btn-group btn-group-sm">
@@ -91,7 +109,6 @@
             </div>
         </div>
 
-
         <div th:if="${viewModel.isEmpty()}">
             <div class="card shadow-sm">
                 <div class="card-body text-center py-5">
@@ -100,16 +117,26 @@
                         <div class="display-1 mb-3">🍽️</div>
 
                         <h5 style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 700;">
-                            No Menus Found
+                            <span th:if="${searchName != null and !#strings.isEmpty(searchName)}">
+                                No menus match your search
+                            </span>
+                            <span th:if="${searchName == null or #strings.isEmpty(searchName)}">
+                                No Menus Found
+                            </span>
                         </h5>
 
-                        <p class="mb-3">Create your first menu</p>
 
-                        <a th:if="${viewModel.canAdd}"
+                        <p class="mb-3"
+                           th:if="${searchName == null or #strings.isEmpty(searchName)}">
+                            Create your first menu
+                        </p>
+
+                        <a th:if="${viewModel.canAdd and (searchName == null or #strings.isEmpty(searchName))}"
                            th:href="@{/menu/create}"
                            class="btn btn-primary">
                             <strong>+</strong> Add Menu
                         </a>
+
                     </div>
 
                 </div>

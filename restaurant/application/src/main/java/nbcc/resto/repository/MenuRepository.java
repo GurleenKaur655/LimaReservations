@@ -1,7 +1,6 @@
 package nbcc.resto.repository;
 
 import nbcc.common.exception.ConcurrencyException;
-import nbcc.resto.dto.DiningTable;
 import nbcc.resto.dto.Menu;
 
 import java.util.List;
@@ -18,6 +17,8 @@ public interface MenuRepository {
     Menu update(Menu menu) throws ConcurrencyException;
 
     void delete(Long id);
+
+    List<Menu> search(String name);
 
     Boolean exists(String name);
 }

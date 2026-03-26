@@ -2,6 +2,7 @@ package nbcc.resto.service;
 
 import nbcc.common.result.Result;
 import nbcc.common.result.ValidatedResult;
+import nbcc.resto.dto.Event;
 import nbcc.resto.dto.Menu;
 
 import java.util.Collection;
@@ -17,4 +18,6 @@ public interface MenuService {
     ValidatedResult<Menu> update(Menu menu);
 
     ValidatedResult<Void> delete(Long id);
+
+    ValidatedResult<Collection<Menu>> search(String name);
 }

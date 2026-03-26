@@ -1,20 +1,26 @@
-2026-03-25T01:19:07.496-03:00  INFO 24532 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 24532 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
-2026-03-25T01:19:07.514-03:00 DEBUG 24532 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-03-25T01:19:07.517-03:00  INFO 24532 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-03-25T01:19:10.527-03:00  INFO 24532 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-03-25T01:19:10.838-03:00  INFO 24532 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 282 ms. Found 4 JPA repository interfaces.
-2026-03-25T01:19:15.321-03:00  INFO 24532 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-03-25T01:19:15.354-03:00  INFO 24532 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-03-25T01:19:15.355-03:00  INFO 24532 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-03-25T01:19:15.476-03:00  INFO 24532 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7681 ms
-2026-03-25T01:19:15.985-03:00  INFO 24532 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-03-25T01:19:16.180-03:00  INFO 24532 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-03-25T01:19:17.774-03:00  INFO 24532 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-03-25T01:19:17.873-03:00  INFO 24532 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-03-25T01:19:18.541-03:00  INFO 24532 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38874eb5
-2026-03-25T01:19:18.546-03:00  INFO 24532 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-03-25T01:19:18.650-03:00  WARN 24532 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-03-25T01:19:18.698-03:00  INFO 24532 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-03-26T00:07:51.642-03:00  INFO 14492 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26T00:07:51.701-03:00  INFO 14492 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-26T00:07:51.714-03:00  INFO 14492 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T00:07:51.721-03:00  INFO 14492 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-26T00:07:51.741-03:00  INFO 14492 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-26T00:08:18.775-03:00  INFO 13080 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 13080 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-03-26T00:08:18.786-03:00 DEBUG 13080 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-26T00:08:18.789-03:00  INFO 13080 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-03-26T00:08:22.645-03:00  INFO 13080 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26T00:08:22.839-03:00  INFO 13080 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 167 ms. Found 5 JPA repository interfaces.
+2026-03-26T00:08:25.571-03:00  INFO 13080 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-26T00:08:25.614-03:00  INFO 13080 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-26T00:08:25.615-03:00  INFO 13080 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-26T00:08:25.693-03:00  INFO 13080 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6525 ms
+2026-03-26T00:08:25.860-03:00  WARN 13080 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [EFFEF41C36D99325C7E13EE7F9DBDB89]
+2026-03-26T00:08:26.101-03:00  INFO 13080 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26T00:08:26.228-03:00  INFO 13080 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-26T00:08:27.307-03:00  INFO 13080 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26T00:08:27.384-03:00  INFO 13080 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-26T00:08:28.051-03:00  INFO 13080 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43549c6c
+2026-03-26T00:08:28.055-03:00  INFO 13080 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-26T00:08:28.152-03:00  WARN 13080 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-26T00:08:28.201-03:00  INFO 13080 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
@@ -26,24 +32,581 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-03-25T01:19:20.746-03:00  INFO 24532 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-03-25T01:19:21.058-03:00  INFO 24532 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-03-25T01:19:21.517-03:00  INFO 24532 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-03-25T01:19:23.988-03:00  WARN 24532 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-03-25T01:19:24.132-03:00  INFO 24532 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-03-25T01:19:25.340-03:00  INFO 24532 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-03-25T01:19:25.349-03:00  INFO 24532 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 20.092 seconds (process running for 23.484)
-2026-03-25T01:25:06.802-03:00  INFO 24532 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-25T01:25:06.802-03:00  INFO 24532 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-03-25T01:25:06.806-03:00  INFO 24532 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-03-25T01:25:16.026-03:00 DEBUG 24532 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
-2026-03-25T01:25:30.573-03:00 DEBUG 24532 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuServiceImpl       : Validation errors for menu create nbcc.resto.dto.Menu@fb9c382: [ValidationError{field='name', message='Name is required', value=}]
-2026-03-25T01:26:06.430-03:00 DEBUG 24532 --- [Restaurant-Project] [http-nio-8080-exec-5] nbcc.resto.service.MenuServiceImpl       : Validation errors for menu update nbcc.resto.dto.Menu@53684274: [ValidationError{field='name', message='Name is required', value=}]
-2026-03-25T01:26:48.844-03:00 DEBUG 24532 --- [Restaurant-Project] [http-nio-8080-exec-8] nbcc.resto.service.MenuServiceImpl       : Validation errors for menu update nbcc.resto.dto.Menu@33d5ad6: [ValidationError{field='null', message='Name must be unique', value=null}]
-2026-03-25T01:26:54.844-03:00 DEBUG 24532 --- [Restaurant-Project] [http-nio-8080-exec-10] nbcc.resto.service.MenuServiceImpl       : Validation errors for menu update nbcc.resto.dto.Menu@375dbcae: [ValidationError{field='null', message='Name must be unique', value=null}]
-2026-03-25T01:27:41.346-03:00 DEBUG 24532 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuServiceImpl       : Menu with id 2 deleted
-2026-03-25T01:36:46.555-03:00  INFO 24532 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-03-25T01:36:46.615-03:00  INFO 24532 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-03-25T01:36:46.658-03:00  INFO 24532 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-03-25T01:36:46.668-03:00  INFO 24532 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-03-25T01:36:46.763-03:00  INFO 24532 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-26T00:08:30.634-03:00  INFO 13080 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26T00:08:30.814-03:00  INFO 13080 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T00:08:31.272-03:00  INFO 13080 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26T00:08:33.940-03:00  WARN 13080 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26T00:08:34.124-03:00  INFO 13080 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-03-26T00:08:35.658-03:00  INFO 13080 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-26T00:08:35.667-03:00  INFO 13080 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 18.898 seconds (process running for 21.426)
+2026-03-26T00:14:32.202-03:00  INFO 13080 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26T00:14:32.217-03:00  INFO 13080 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-26T00:14:32.230-03:00  INFO 13080 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T00:14:32.237-03:00  INFO 13080 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-26T00:14:32.263-03:00  INFO 13080 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-26T00:14:48.903-03:00  INFO 24748 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 24748 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-03-26T00:14:48.914-03:00 DEBUG 24748 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-26T00:14:48.916-03:00  INFO 24748 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-03-26T00:14:51.511-03:00  INFO 24748 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26T00:14:51.761-03:00  INFO 24748 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 206 ms. Found 5 JPA repository interfaces.
+2026-03-26T00:14:54.802-03:00  INFO 24748 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-26T00:14:54.833-03:00  INFO 24748 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-26T00:14:54.834-03:00  INFO 24748 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-26T00:14:54.937-03:00  INFO 24748 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5722 ms
+2026-03-26T00:14:55.562-03:00  INFO 24748 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26T00:14:55.804-03:00  INFO 24748 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-26T00:14:57.274-03:00  INFO 24748 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26T00:14:57.351-03:00  INFO 24748 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-26T00:14:58.085-03:00  INFO 24748 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68f75a35
+2026-03-26T00:14:58.091-03:00  INFO 24748 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-26T00:14:58.199-03:00  WARN 24748 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-26T00:14:58.248-03:00  INFO 24748 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.43
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26T00:15:00.863-03:00  INFO 24748 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26T00:15:01.019-03:00  INFO 24748 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T00:15:01.372-03:00  INFO 24748 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26T00:15:03.618-03:00  WARN 24748 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26T00:15:03.755-03:00  INFO 24748 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-03-26T00:15:05.896-03:00  INFO 24748 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-26T00:15:05.908-03:00  INFO 24748 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 19.503 seconds (process running for 22.043)
+2026-03-26T00:15:06.036-03:00  INFO 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26T00:15:06.037-03:00  INFO 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-26T00:15:06.039-03:00  INFO 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-26T00:15:14.505-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-8] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-03-26T00:15:23.937-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-8] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 3
+2026-03-26T00:15:24.018-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-8] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item create nbcc.resto.dto.MenuItem@451e8ee2: [ValidationError{field='name', message='Name is required', value=}, ValidationError{field='description', message='Description is required', value=}]
+2026-03-26T00:15:29.346-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 3
+2026-03-26T00:15:32.329-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-5] n.resto.controller.MenuItemController    : loading menu item for edit with menuItemId: 8, and menuId: 3
+2026-03-26T00:15:35.300-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-8] n.resto.controller.MenuItemController    : attempting to edit menu item: 8, which belongs to menuId: 3
+2026-03-26T00:15:35.309-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-8] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item update nbcc.resto.dto.MenuItem@56c1ca4a: [ValidationError{field='description', message='Description is required', value=}]
+2026-03-26T00:15:39.085-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] n.resto.controller.MenuItemController    : attempting to edit menu item: 8, which belongs to menuId: 3
+2026-03-26T00:15:39.086-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item update nbcc.resto.dto.MenuItem@5236c94d: [ValidationError{field='description', message='Description is required', value=}, ValidationError{field='name', message='Name is required', value=}]
+2026-03-26T00:15:43.079-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-3] n.resto.controller.MenuItemController    : attempting to edit menu item: 8, which belongs to menuId: 3
+2026-03-26T00:15:45.593-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-8] n.resto.controller.MenuItemController    : loading menu item for delete with menuItemId: 8, and menuId: 3
+2026-03-26T00:15:47.682-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] n.resto.controller.MenuItemController    : attempting to delete menu item: 8, which belongs to menuId: 3
+2026-03-26T00:15:47.708-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-1] nbcc.resto.service.MenuItemServiceImpl   : Menu item with id 8 deleted
+2026-03-26T00:16:18.393-03:00 DEBUG 24748 --- [Restaurant-Project] [http-nio-8080-exec-5] n.resto.controller.MenuItemController    : loading menu item for delete with menuItemId: 3, and menuId: 3
+2026-03-26T01:01:03.213-03:00  INFO 24748 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26T01:01:03.230-03:00  INFO 24748 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-26T01:01:03.252-03:00  INFO 24748 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:01:03.262-03:00  INFO 24748 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-26T01:01:03.289-03:00  INFO 24748 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-26T01:01:16.370-03:00  INFO 24200 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 24200 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-03-26T01:01:16.383-03:00 DEBUG 24200 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-26T01:01:16.385-03:00  INFO 24200 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-03-26T01:01:18.364-03:00  INFO 24200 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26T01:01:18.518-03:00  INFO 24200 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 5 JPA repository interfaces.
+2026-03-26T01:01:22.136-03:00  INFO 24200 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-26T01:01:22.186-03:00  INFO 24200 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-26T01:01:22.187-03:00  INFO 24200 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-26T01:01:22.313-03:00  INFO 24200 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5741 ms
+2026-03-26T01:01:22.620-03:00  WARN 24200 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [7F071F8726E0E83843A530C284CEC1CA]
+2026-03-26T01:01:23.331-03:00  INFO 24200 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26T01:01:23.585-03:00  INFO 24200 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-26T01:01:26.575-03:00  INFO 24200 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26T01:01:26.795-03:00  INFO 24200 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-26T01:01:28.053-03:00  INFO 24200 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7676b2b9
+2026-03-26T01:01:28.057-03:00  INFO 24200 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-26T01:01:28.284-03:00  WARN 24200 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-26T01:01:28.387-03:00  INFO 24200 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.43
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26T01:01:33.692-03:00  INFO 24200 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26T01:01:33.935-03:00  INFO 24200 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:01:34.657-03:00  INFO 24200 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26T01:01:40.041-03:00  WARN 24200 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26T01:01:40.322-03:00  INFO 24200 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-03-26T01:01:42.802-03:00  INFO 24200 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-26T01:01:42.820-03:00  INFO 24200 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 28.137 seconds (process running for 30.704)
+2026-03-26T01:04:15.592-03:00  INFO 24200 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26T01:04:15.592-03:00  INFO 24200 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-26T01:04:15.595-03:00  INFO 24200 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-26T01:04:15.955-03:00  WARN 24200 --- [Restaurant-Project] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler nbcc.resto.controller.MenuController#exceptionHandler(Model, Exception, HttpServletRequest)
+
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.handleDeniedInvocation(PreAuthorizeAuthorizationManager.java:96) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.handle(AuthorizationManagerBeforeMethodInterceptor.java:290) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.3.jar:7.0.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.3.jar:7.0.3]
+	at nbcc.resto.controller.MenuController$$SpringCGLIB$$0.exceptionHandler(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:460) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:72) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:176) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:78) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1227) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1035) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.15.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.15.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:245) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:239) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-03-26T01:04:21.604-03:00 DEBUG 24200 --- [Restaurant-Project] [http-nio-8080-exec-5] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-03-26T01:10:07.139-03:00  INFO 24200 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26T01:10:07.150-03:00  INFO 24200 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-26T01:10:07.163-03:00  INFO 24200 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:10:07.171-03:00  INFO 24200 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-26T01:10:07.184-03:00  INFO 24200 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-26T01:10:18.902-03:00  INFO 25008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 25008 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-03-26T01:10:18.910-03:00 DEBUG 25008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-26T01:10:18.912-03:00  INFO 25008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-03-26T01:10:20.820-03:00  INFO 25008 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26T01:10:20.985-03:00  INFO 25008 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 5 JPA repository interfaces.
+2026-03-26T01:10:24.445-03:00  INFO 25008 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-26T01:10:24.486-03:00  INFO 25008 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-26T01:10:24.487-03:00  INFO 25008 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-26T01:10:24.598-03:00  INFO 25008 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5478 ms
+2026-03-26T01:10:24.819-03:00  WARN 25008 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [40267D5200DD215325FC5FD88C979F0B]
+2026-03-26T01:10:25.236-03:00  INFO 25008 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26T01:10:25.444-03:00  INFO 25008 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-26T01:10:27.338-03:00  INFO 25008 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26T01:10:27.462-03:00  INFO 25008 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-26T01:10:28.461-03:00  INFO 25008 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d5e051e
+2026-03-26T01:10:28.466-03:00  INFO 25008 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-26T01:10:28.596-03:00  WARN 25008 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-26T01:10:28.655-03:00  INFO 25008 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.43
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26T01:10:32.476-03:00  INFO 25008 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26T01:10:32.696-03:00  INFO 25008 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:10:33.320-03:00  INFO 25008 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26T01:10:37.685-03:00  WARN 25008 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26T01:10:37.926-03:00  INFO 25008 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-03-26T01:10:40.074-03:00  INFO 25008 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-26T01:10:40.088-03:00  INFO 25008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 23.127 seconds (process running for 25.378)
+2026-03-26T01:10:45.170-03:00  INFO 25008 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26T01:10:45.170-03:00  INFO 25008 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-26T01:10:45.172-03:00  INFO 25008 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-26T01:10:45.386-03:00  WARN 25008 --- [Restaurant-Project] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler nbcc.resto.controller.MenuController#exceptionHandler(Model, Exception, HttpServletRequest)
+
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.handleDeniedInvocation(PreAuthorizeAuthorizationManager.java:96) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.handle(AuthorizationManagerBeforeMethodInterceptor.java:290) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.3.jar:7.0.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.3.jar:7.0.3]
+	at nbcc.resto.controller.MenuController$$SpringCGLIB$$0.exceptionHandler(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:460) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:72) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:176) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:78) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1227) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1035) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.15.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.15.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:245) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:239) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-03-26T01:10:52.096-03:00 DEBUG 25008 --- [Restaurant-Project] [http-nio-8080-exec-6] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-03-26T01:10:52.096-03:00 DEBUG 25008 --- [Restaurant-Project] [http-nio-8080-exec-7] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-03-26T01:16:40.190-03:00 DEBUG 25008 --- [Restaurant-Project] [http-nio-8080-exec-2] nbcc.resto.service.MenuServiceImpl       : Menu with id 5 deleted
+2026-03-26T01:17:32.431-03:00  INFO 25008 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26T01:17:32.441-03:00  INFO 25008 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-26T01:17:32.453-03:00  INFO 25008 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:17:32.462-03:00  INFO 25008 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-26T01:17:32.476-03:00  INFO 25008 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-26T01:17:40.288-03:00  INFO 9044 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 9044 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-03-26T01:17:40.297-03:00 DEBUG 9044 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-26T01:17:40.299-03:00  INFO 9044 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-03-26T01:17:42.333-03:00  INFO 9044 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26T01:17:42.493-03:00  INFO 9044 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 5 JPA repository interfaces.
+2026-03-26T01:17:45.839-03:00  INFO 9044 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-26T01:17:45.880-03:00  INFO 9044 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-26T01:17:45.885-03:00  INFO 9044 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-26T01:17:46.002-03:00  INFO 9044 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5447 ms
+2026-03-26T01:17:46.220-03:00  WARN 9044 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [CF7A0F870E1B222FEE79AC73F5F118DB]
+2026-03-26T01:17:46.588-03:00  INFO 9044 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26T01:17:46.804-03:00  INFO 9044 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-26T01:17:48.772-03:00  INFO 9044 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26T01:17:48.947-03:00  INFO 9044 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-26T01:17:50.071-03:00  INFO 9044 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41d84abb
+2026-03-26T01:17:50.077-03:00  INFO 9044 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-26T01:17:50.234-03:00  WARN 9044 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-26T01:17:50.302-03:00  INFO 9044 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.43
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26T01:17:53.414-03:00  INFO 9044 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26T01:17:53.647-03:00  INFO 9044 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:17:54.327-03:00  INFO 9044 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26T01:17:58.206-03:00  WARN 9044 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26T01:17:58.452-03:00  INFO 9044 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-03-26T01:18:00.692-03:00  INFO 9044 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-26T01:18:00.706-03:00  INFO 9044 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 22.063 seconds (process running for 24.215)
+2026-03-26T01:18:02.940-03:00  INFO 9044 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-26T01:18:02.940-03:00  INFO 9044 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-26T01:18:02.942-03:00  INFO 9044 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-03-26T01:18:03.270-03:00  WARN 9044 --- [Restaurant-Project] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler nbcc.resto.controller.DiningTableController#exceptionHandler(Model, Exception, HttpServletRequest)
+
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.handleDeniedInvocation(PreAuthorizeAuthorizationManager.java:96) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.handle(AuthorizationManagerBeforeMethodInterceptor.java:290) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.3.jar:7.0.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.3.jar:7.0.3]
+	at nbcc.resto.controller.DiningTableController$$SpringCGLIB$$0.exceptionHandler(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:460) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:72) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:176) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:78) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1227) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1035) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-11.0.15.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.15.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:245) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:239) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:118) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-03-26T01:18:08.587-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-5] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-03-26T01:19:05.930-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-3] n.resto.controller.MenuItemController    : loading menu item for edit with menuItemId: 1, and menuId: 3
+2026-03-26T01:19:12.991-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-6] n.resto.controller.MenuItemController    : attempting to edit menu item: 1, which belongs to menuId: 3
+2026-03-26T01:19:22.029-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-10] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 3
+2026-03-26T01:19:22.052-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-10] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item create nbcc.resto.dto.MenuItem@676e4315: [ValidationError{field='name', message='Name is required', value=}, ValidationError{field='description', message='Description is required', value=}]
+2026-03-26T01:19:26.852-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-6] n.resto.controller.MenuItemController    : loading menu item for edit with menuItemId: 1, and menuId: 3
+2026-03-26T01:19:29.507-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to edit menu item: 1, which belongs to menuId: 3
+2026-03-26T01:19:29.509-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item update nbcc.resto.dto.MenuItem@37c47dc2: [ValidationError{field='name', message='Name is required', value=}]
+2026-03-26T01:19:31.589-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-2] n.resto.controller.MenuItemController    : attempting to edit menu item: 1, which belongs to menuId: 3
+2026-03-26T01:19:31.591-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-2] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item update nbcc.resto.dto.MenuItem@5ccfb9bb: [ValidationError{field='description', message='Description is required', value=}, ValidationError{field='name', message='Name is required', value=}]
+2026-03-26T01:19:37.016-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-8] n.resto.controller.MenuItemController    : attempting to load new menu item for creation with menuId: 3
+2026-03-26T01:19:37.059-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to load new menu item for creation with menuId: 3
+2026-03-26T01:19:41.475-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-2] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 3
+2026-03-26T01:19:43.579-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-6] n.resto.controller.MenuItemController    : loading menu item for delete with menuItemId: 9, and menuId: 3
+2026-03-26T01:19:46.989-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to delete menu item: 9, which belongs to menuId: 3
+2026-03-26T01:19:47.039-03:00 DEBUG 9044 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuItemServiceImpl   : Menu item with id 9 deleted
+2026-03-26T01:22:08.501-03:00  INFO 9044 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26T01:22:08.561-03:00  INFO 9044 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-26T01:22:08.761-03:00  INFO 9044 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:22:08.768-03:00  INFO 9044 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-26T01:22:08.792-03:00  INFO 9044 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-26T01:22:26.428-03:00  INFO 13156 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 13156 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-03-26T01:22:26.436-03:00 DEBUG 13156 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-26T01:22:26.438-03:00  INFO 13156 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-03-26T01:22:28.504-03:00  INFO 13156 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-26T01:22:28.667-03:00  INFO 13156 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 142 ms. Found 5 JPA repository interfaces.
+2026-03-26T01:22:31.972-03:00  INFO 13156 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-26T01:22:32.023-03:00  INFO 13156 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-26T01:22:32.024-03:00  INFO 13156 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-26T01:22:32.175-03:00  INFO 13156 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5549 ms
+2026-03-26T01:22:32.448-03:00  WARN 13156 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [B7E4BC28F8892C8788D34CFC977E987C]
+2026-03-26T01:22:32.880-03:00  INFO 13156 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-26T01:22:33.121-03:00  INFO 13156 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-26T01:22:34.964-03:00  INFO 13156 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-26T01:22:35.067-03:00  INFO 13156 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-26T01:22:35.825-03:00  INFO 13156 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62dfe152
+2026-03-26T01:22:35.829-03:00  INFO 13156 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-26T01:22:36.042-03:00  WARN 13156 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-26T01:22:36.147-03:00  INFO 13156 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.43
+	Default catalog/schema: restaurant/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-26T01:22:39.136-03:00  INFO 13156 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-26T01:22:39.315-03:00  INFO 13156 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T01:22:39.759-03:00  INFO 13156 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-26T10:08:01.120-03:00  WARN 13156 --- [Restaurant-Project] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h45m38s612ms376µs100ns).
+2026-03-26T10:08:06.898-03:00  WARN 13156 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-26T10:08:07.256-03:00  INFO 13156 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-03-26T10:08:10.905-03:00  INFO 13156 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-26T10:08:10.939-03:00  INFO 13156 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 31546.32 seconds (process running for 31562.5)
+2026-03-26T10:18:31.293-03:00  INFO 13156 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-26T10:18:31.305-03:00  INFO 13156 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-26T10:18:31.313-03:00  INFO 13156 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-26T10:18:31.319-03:00  INFO 13156 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-26T10:18:31.328-03:00  INFO 13156 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
