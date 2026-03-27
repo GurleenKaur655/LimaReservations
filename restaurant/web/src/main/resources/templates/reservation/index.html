@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+    <meta charset="UTF-8">
+    <title>Reservations</title>
+</head>
+<body>
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
+<div class="container mt-4">
+    <main role="main" class="pb-3">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0" style="font-size: 1.8rem; font-weight: 700; color: #1a1a1a;">Reserve a Seat</h4>
+        </div>
+
+        <!-- Track Reservation -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h6 class="fw-bold small text-muted text-uppercase mb-2">Already have a reservation? :)</h6>
+                <form th:action="@{/reservation/track}" method="get" class="d-flex gap-2">
+                    <input type="text" name="uuid" class="form-control form-control-sm"
+                           placeholder="Enter your reservation tracking code"/>
+                    <button type="submit" class="btn btn-outline-dark btn-sm text-nowrap">Track Reservation</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- No Events -->
+        <div th:if="${events == null or #lists.isEmpty(events)}">
+            <div class="card shadow-sm">
+                <div class="card-body text-center py-5">
+                    <div class="text-muted">
+                        <div class="display-1 mb-3">♪</div>
+                        <h5 style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 700;">No Events Available</h5>
+                        <p class="mb-0">Check back soon for upcoming events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Cards -->
+        <div th:each="event : ${events}"
+             th:with="eventSeatings=${seatingsByEventId[event.id]}"
+             class="card shadow-sm mb-4">
+
+            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <h5 class="mb-0" style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A;">
+                    ♪ <span th:text="${event.name}"></span>
+                </h5>
+                <span class="badge bg-light text-dark border" th:text="'$' + ${event.price}"></span>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <!-- Left: Event Details -->
+                    <div class="col-md-6 border-end">
+                        <h6 class="fw-bold small text-muted text-uppercase mb-2">Event Details</h6>
+                        <dl class="row mb-0">
+                            <dt class="col-sm-5 text-muted small">Description</dt>
+                            <dd class="col-sm-7" th:text="${event.description}"></dd>
+
+                            <dt class="col-sm-5 text-muted small">Start Date</dt>
+                            <dd class="col-sm-7">
+                                <span class="badge bg-light text-dark border" th:text="${event.startDate}"></span>
+                            </dd>
+
+                            <dt class="col-sm-5 text-muted small">End Date</dt>
+                            <dd class="col-sm-7">
+                                <span class="badge bg-light text-dark border" th:text="${event.endDate}"></span>
+                            </dd>
+
+                            <dt class="col-sm-5 text-muted small">Duration</dt>
+                            <dd class="col-sm-7" th:text="${event.durationMinutes} + ' min'"></dd>
+                        </dl>
+                    </div>
+
+                    <!-- Right: Menu Details -->
+                    <div class="col-md-6">
+                        <h6 class="fw-bold small text-muted text-uppercase mb-2">Menu</h6>
+
+                        <div th:if="${event.menu == null}">
+                            <p class="text-muted small fst-italic">No menu assigned.</p>
+                        </div>
+
+                        <div th:unless="${event.menu == null}">
+                            <p class="fw-semibold mb-1" th:text="${event.menu.name}"></p>
+                            <p class="text-muted small mb-1"
+                               th:if="${event.menu.description != null and !#strings.isEmpty(event.menu.description)}"
+                               th:text="${event.menu.description}"></p>
+
+                            <div th:with="items=${menuItemsByMenuId[event.menu.id]}">
+                                <div th:if="${items == null or #lists.isEmpty(items)}">
+                                    <p class="text-muted small fst-italic mb-0">No menu items available.</p>
+                                </div>
+                                <ul class="list-unstyled mb-0"
+                                    th:unless="${items == null or #lists.isEmpty(items)}">
+                                    <li th:each="item : ${items}"
+                                        class="d-flex justify-content-between border-bottom py-1 small">
+                                        <span th:text="${item.name}"></span>
+                                        <span class="text-muted" th:text="${item.description}"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Seatings -->
+                <div class="mt-4">
+                    <h6 class="fw-bold small text-muted text-uppercase mb-2">Available Seatings</h6>
+
+                    <div th:if="${eventSeatings == null or #lists.isEmpty(eventSeatings)}">
+                        <p class="text-muted small fst-italic">No seatings available.</p>
+                    </div>
+
+                    <div class="table-responsive"
+                         th:unless="${eventSeatings == null or #lists.isEmpty(eventSeatings)}">
+                        <table class="table table-hover table-striped mb-0">
+                            <thead class="table-dark">
+                            <tr>
+                                <th class="fw-bold">Date &amp; Time</th>
+                                <th class="fw-bold">Duration</th>
+                                <th class="fw-bold">Capacity</th>
+                                <th class="fw-bold" style="width: 180px;"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="seating : ${eventSeatings}" class="align-middle">
+                                <td>
+                                    <span class="badge bg-light text-dark border"
+                                          th:text="${#temporals.format(seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
+                                </td>
+                                <td th:text="${seating.durationMinutes} + ' min'"></td>
+                                <td th:text="${seating.table != null ? seating.table.capacity : 'N/A'}"></td>
+                                <td>
+                                    <a th:href="@{/reservation/create/{id}(id=${seating.id})}"
+                                       class="btn btn-success btn-sm w-100">
+                                        🍽️ Request Reservation
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+</div>
+</body>
+</html>

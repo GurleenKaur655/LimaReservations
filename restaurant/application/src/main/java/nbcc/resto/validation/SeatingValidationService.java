@@ -29,6 +29,7 @@ public class SeatingValidationService {
         errors.addAll(annotationValidationService.validate(seating));
         errors.addAll(validateUniqueName(seating));
         errors.addAll(validateDuration(seating));
+        errors.addAll(validateStartDateWithinEvent(seating));
         errors.addAll(validateTableAvailability(seating));
         return errors;
     }
@@ -73,6 +74,31 @@ public class SeatingValidationService {
         return List.of();
     }
 
+    public Collection<ValidationError> validateStartDateWithinEvent(Seating seating) {
+        if (seating.getStartDateTime() == null || seating.getEvent() == null || seating.getEvent().getId() == null) {
+            return List.of();
+        }
+
+        var eventResult = eventService.get(seating.getEvent().getId());
+        if (eventResult.isError() || eventResult.getValue() == null) {
+            return List.of();
+        }
+
+        var event = eventResult.getValue();
+        if (event.getStartDate() == null || event.getEndDate() == null) {
+            return List.of();
+        }
+
+        var startDate = seating.getStartDateTime().toLocalDate();
+
+        if (startDate.isBefore(event.getStartDate()) || startDate.isAfter(event.getEndDate())) {
+            return List.of(new ValidationError("Start date must be between event start date "
+                    + event.getStartDate() + " and end date " + event.getEndDate()));
+        }
+
+        return List.of();
+    }
+
     public Collection<ValidationError> validateTableAvailability(Seating seating) {
 
         if (seating.getTable() == null ||
@@ -105,5 +131,6 @@ public class SeatingValidationService {
 
         return List.of();
     }
+
 
 }

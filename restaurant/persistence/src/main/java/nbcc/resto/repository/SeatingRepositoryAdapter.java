@@ -26,7 +26,7 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
 
     @Override
     public List<Seating> getAll() {
-        var entities = seatingJPARepository.findAll();
+        var entities = seatingJPARepository.findByArchivedFalse();
         return seatingMapper.toDTO(entities);
     }
 

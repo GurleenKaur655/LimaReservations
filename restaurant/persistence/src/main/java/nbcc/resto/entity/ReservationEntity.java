@@ -54,6 +54,9 @@ public class ReservationEntity {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
+    @Column(unique = true, nullable = false, updatable = false)
+    private UUID uuid;
+
 
     @ManyToOne
     @JoinColumn(name = "seating_id", foreignKey = @ForeignKey(name = "fk_reservation_seating"))
@@ -61,6 +64,17 @@ public class ReservationEntity {
 
     @Version
     private Long version;
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public ReservationEntity setUuid(UUID uuid) {
+        this.uuid = uuid;
+        return this;
+    }
+
+
 
     public ReservationEntity() {
 

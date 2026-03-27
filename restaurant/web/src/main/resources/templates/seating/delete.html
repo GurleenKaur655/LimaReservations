@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+    <meta charset="UTF-8">
+    <title>Delete Seating</title>
+</head>
+<body>
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
+<div class="container mt-4">
+    <main role="main" class="pb-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="mb-0" style="font-size: 1.8rem; font-weight: 700; color: #1a1a1a;">Delete Seating</h4>
+                    <a th:href="@{/seating}" class="btn btn-outline-secondary btn-sm">← Back</a>
+                </div>
+
+                <div class="alert alert-danger mb-4">
+                    ⚠️ Are you sure you want to delete this event? This action cannot be undone.
+                </div>
+
+                <div class="card shadow-sm mb-4" th:object="${seating}">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0" style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A;">Seating Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row mb-0">
+                            <dt class="col-sm-4 text-muted small">Name</dt>
+                            <dd class="col-sm-8 fw-bold" th:text="*{name}"></dd>
+
+                            <dt class="col-sm-4 text-muted small">Event</dt>
+                            <dd class="col-sm-8" th:text="*{event?.name}"></dd>
+
+                            <dt class="col-sm-4 text-muted small">Date &amp; Time</dt>
+                            <dd class="col-sm-8">
+                                <span class="badge bg-light text-dark border" th:text="*{startDateTime}"></span>
+                            </dd>
+
+                            <dt class="col-sm-4 text-muted small">Duration</dt>
+                            <dd class="col-sm-8" th:text="*{durationMinutes}"></dd>
+
+                            <dt class="col-sm-4 text-muted small">Table</dt>
+                            <dd class="col-sm-8" th:text="*{table?.name}"></dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <form th:action="@{/seating/delete/{id}(id=${seating.id})}" method="post">
+                    <input type="submit" value="Confirm Delete" class="btn btn-danger w-100"/>
+                </form>
+
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="~{partial :: bootstrap}"/>
+    <meta charset="UTF-8">
+    <title>Reservations</title>
+</head>
+<body>
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
+<div class="container mt-4">
+    <main role="main" class="pb-3">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0" style="font-size: 1.8rem; font-weight: 700; color: #1a1a1a;">Reservations</h4>
+            <a th:href="@{/event}" class="btn btn-outline-secondary btn-sm">← Back</a>
+        </div>
+
+        <!-- Filters -->
+        <form th:action="@{/reservation/manage}" method="get" class="card shadow-sm p-3 mb-4">
+            <div class="row g-2 align-items-end">
+                <div class="col-md-5">
+                    <label class="form-label fw-bold small text-muted">Event</label>
+                    <input class="form-control form-control-sm"
+                           list="eventList"
+                           name="eventName"
+                           placeholder="Search event..."
+                           th:value="${viewModel.selectedEventName}"/>
+                    <!--learnt to add this-->
+                    <datalist id="eventList">
+                        <option value="">All Events</option>
+                        <option th:each="event : ${viewModel.events}"
+                                th:value="${event.name}"
+                                th:text="${event.name}">
+                        </option>
+                    </datalist>
+                </div>
+                <div class="col-md-5">
+                    <label class="form-label fw-bold small text-muted">Status</label>
+                    <select name="status" class="form-select form-select-sm">
+                        <option value="">All Statuses</option>
+                        <option th:each="s : ${statuses}"
+                                th:value="${s}"
+                                th:text="${s}"
+                                th:selected="${s == viewModel.selectedStatus}">
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-dark btn-sm w-100">Filter</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Empty State -->
+        <div th:if="${viewModel.isEmpty()}">
+            <div class="card shadow-sm">
+                <div class="card-body text-center py-5">
+                    <div class="text-muted">
+                        <div class="display-1 mb-3">♪</div>
+                        <h5 style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 700;">No Reservations Found</h5>
+                        <p class="mb-0">Try adjusting your filters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div th:unless="${viewModel.isEmpty()}">
+            <div class="card shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped mb-0" style="table-layout: fixed; width: 100%;">
+                            <thead class="table-dark">
+                            <tr>
+                                <th class="fw-bold">Guest</th>
+                                <th class="fw-bold">Event</th>
+                                <th class="fw-bold">Seating Date &amp; Time</th>
+                                <th class="fw-bold">Group Size</th>
+                                <th class="fw-bold">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="reservation : ${viewModel.reservations}"
+                                class="align-middle"
+                                style="cursor: pointer;"
+                                th:onclick="|window.location='@{/reservation/manage/{id}(id=${reservation.id})}'|">
+                                <td th:text="${reservation.firstName + ' ' + reservation.lastName}"></td>
+                                <td th:text="${reservation.seating?.event?.name}"></td>
+                                <td>
+                                    <span class="badge bg-light text-dark border"
+                                          th:if="${reservation.seating != null}"
+                                          th:text="${#temporals.format(reservation.seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
+                                </td>
+                                <td th:text="${reservation.groupSize}"></td>
+                                <td>
+                                    <span class="badge bg-warning text-dark"
+                                          th:if="${reservation.status?.name() == 'PENDING'}"
+                                          th:text="${reservation.status}"></span>
+                                    <span class="badge bg-success"
+                                          th:if="${reservation.status?.name() == 'APPROVED'}"
+                                          th:text="${reservation.status}"></span>
+                                    <span class="badge bg-danger"
+                                          th:if="${reservation.status?.name() == 'DENIED'}"
+                                          th:text="${reservation.status}"></span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+</body>
+</html>

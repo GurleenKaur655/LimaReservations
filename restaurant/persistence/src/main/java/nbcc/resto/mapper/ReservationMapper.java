@@ -19,6 +19,7 @@ public class ReservationMapper implements EntityMapper<Reservation, ReservationE
 
         return new Reservation()
                 .setId(entity.getId())
+                .setUuid(entity.getUuid())
                 .setSeating(seatingMapper.toDTO(entity.getSeating()))
                 .setFirstName(entity.getFirstName())
                 .setLastName(entity.getLastName())
@@ -35,6 +36,7 @@ public class ReservationMapper implements EntityMapper<Reservation, ReservationE
 
         return new ReservationEntity()
                 .setId(dto.getId())
+                .setUuid(dto.getUuid())
                 .setSeating(seatingMapper.toEntity(dto.getSeating()))
                 .setFirstName(dto.getFirstName())
                 .setLastName(dto.getLastName())

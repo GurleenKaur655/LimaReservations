@@ -120,18 +120,18 @@ public class SeatingServiceImpl implements SeatingService {
         try {
             var result = seatingRepository.get(id);
             if (result.isPresent()) {
-                var seating = result.get();
-                if () {
+                var hasReservations = reservationService.existsBySeatingId(id);
+                if (hasReservations) {
                     seatingRepository.archive(id);
-                    logger.debug("Past event with id {} archived instead of deleted", id);
+                    logger.debug("Seating with id {} archived instead of deleted due to existing reservations", id);
                 } else {
                     seatingRepository.delete(id);
-                    logger.debug("Event with id {} deleted", id);
+                    logger.debug("Seating with id {} deleted", id);
                 }
             }
             return ValidationResults.success();
         } catch (Exception e) {
-            logger.error("Error deleting event with id: {}", id, e);
+            logger.error("Error deleting seating with id: {}", id, e);
             return ValidationResults.error(e);
         }
     }

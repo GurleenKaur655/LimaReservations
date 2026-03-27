@@ -3,11 +3,23 @@ package nbcc.resto.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.UUID;
+
 public class Reservation {
 
     private Long id;
 
     private Seating seating;
+    private UUID uuid;
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public Reservation setUuid(UUID uuid) {
+        this.uuid = uuid;
+        return this;
+    }
 
     @NotBlank(message = "First Name is required")
     private String firstName;

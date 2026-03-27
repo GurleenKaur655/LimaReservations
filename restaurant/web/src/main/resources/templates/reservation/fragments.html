@@ -1,13 +1,13 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Input</title>
+    <title>Reservation Fragments</title>
     <th:block th:replace="~{partial :: bootstrap}"/>
 </head>
 <body>
 
-<!--/*@thymesVar id="event" type="nbcc.resto.dto.Reservation"*/-->
+<!--/*@thymesVar id="reservation" type="nbcc.resto.dto.Reservation"*/-->
 
 <th:block th:fragment="input" th:object="${reservation}">
     <div class="card shadow-sm">
@@ -25,83 +25,60 @@
             <input type="hidden" th:field="*{version}"/>
 
             <div class="mb-3">
-                <label class="form-label fw-bold small text-muted">Event Name</label>
-                <input th:field="*{name}" class="form-control" placeholder="Enter event name"/>
-                <div class="text-danger small mt-1" th:errors="*{name}"></div>
+                <label class="form-label fw-bold small text-muted">First Name</label>
+                <input th:field="*{firstName}" class="form-control" placeholder="Enter first name"/>
+                <div class="text-danger small mt-1" th:errors="*{firstName}"></div>
             </div>
 
             <div class="mb-3">
-                <label class="form-label fw-bold small text-muted">Description</label>
-                <textarea th:field="*{description}" class="form-control" placeholder="Enter description" rows="3"></textarea>
-                <div class="text-danger small mt-1" th:errors="*{description}"></div>
+                <label class="form-label fw-bold small text-muted">Last Name</label>
+                <input th:field="*{lastName}" class="form-control" placeholder="Enter last name"/>
+                <div class="text-danger small mt-1" th:errors="*{lastName}"></div>
             </div>
 
-            <div class="row g-2 mb-3">
-                <div class="col-md-6">
-                    <label class="form-label fw-bold small text-muted">Start Date</label>
-                    <input type="date" th:field="*{startDate}" class="form-control"/>
-                    <div class="text-danger small mt-1" th:errors="*{startDate}"></div>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label fw-bold small text-muted">End Date</label>
-                    <input type="date" th:field="*{endDate}" class="form-control"/>
-                    <div class="text-danger small mt-1" th:errors="*{endDate}"></div>
-                </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold small text-muted">Email Address</label>
+                <input type="email" th:field="*{email}" class="form-control" placeholder="Enter email address"/>
+                <div class="text-danger small mt-1" th:errors="*{email}"></div>
             </div>
 
-            <div class="row g-2 mb-3">
-                <div class="col-md-6">
-                    <label class="form-label fw-bold small text-muted">Duration (minutes)</label>
-                    <input type="number" th:field="*{durationMinutes}" class="form-control"/>
-                    <div class="text-danger small mt-1" th:errors="*{durationMinutes}"></div>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label fw-bold small text-muted">Price</label>
-                    <input type="number" step="0.01" th:field="*{price}" class="form-control"/>
-                    <div class="text-danger small mt-1" th:errors="*{price}"></div>
-                </div>
-            </div>
-
-            <div class="mb-3 form-check">
-                <input type="checkbox" th:field="*{active}" class="form-check-input"/>
-                <label class="form-check-label fw-bold small text-muted">Active</label>
+            <div class="mb-3">
+                <label class="form-label fw-bold small text-muted">Group Size</label>
+                <input type="number" min="1" th:field="*{groupSize}" class="form-control" placeholder="Enter group size"/>
+                <div class="text-danger small mt-1" th:errors="*{groupSize}"></div>
             </div>
 
         </div>
     </div>
 </th:block>
 
-<th:block th:fragment="details" th:object="${event}">
+<!--/*@thymesVar id="reservation" type="nbcc.resto.dto.Reservation"*/-->
+
+<th:block th:fragment="details" th:object="${reservation}">
     <div class="card shadow-sm">
         <div class="card-header bg-light">
-            <h5 class="mb-0" style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A; letter-spacing: 0.5px;">Event Details</h5>
+            <h5 class="mb-0" style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A; letter-spacing: 0.5px;">Reservation Details</h5>
         </div>
         <div class="card-body">
             <dl class="row">
-                <dt class="col-sm-4 text-muted small">Name</dt>
-                <dd class="col-sm-8 fw-bold" th:text="*{name}"></dd>
+                <dt class="col-sm-4 text-muted small">First Name</dt>
+                <dd class="col-sm-8 fw-bold" th:text="*{firstName}"></dd>
 
-                <dt class="col-sm-4 text-muted small">Description</dt>
-                <dd class="col-sm-8" th:text="*{description}"></dd>
+                <dt class="col-sm-4 text-muted small">Last Name</dt>
+                <dd class="col-sm-8 fw-bold" th:text="*{lastName}"></dd>
 
-                <dt class="col-sm-4 text-muted small">Start Date</dt>
+                <dt class="col-sm-4 text-muted small">Email</dt>
+                <dd class="col-sm-8" th:text="*{email}"></dd>
+
+                <dt class="col-sm-4 text-muted small">Group Size</dt>
+                <dd class="col-sm-8" th:text="*{groupSize}"></dd>
+
+                <dt class="col-sm-4 text-muted small">Status</dt>
                 <dd class="col-sm-8">
-                    <span class="badge bg-light text-dark border" th:text="*{startDate}"></span>
+                    <span class="badge bg-warning text-dark" th:if="*{status?.name() == 'PENDING'}" th:text="*{status}"></span>
+                    <span class="badge bg-success" th:if="*{status?.name() == 'APPROVED'}" th:text="*{status}"></span>
+                    <span class="badge bg-danger" th:if="*{status?.name() == 'DENIED'}" th:text="*{status}"></span>
                 </dd>
-
-                <dt class="col-sm-4 text-muted small">End Date</dt>
-                <dd class="col-sm-8">
-                    <span class="badge bg-light text-dark border" th:text="*{endDate}"></span>
-                </dd>
-
-                <dt class="col-sm-4 text-muted small">Price</dt>
-                <dd class="col-sm-8 fw-semibold" th:text="'$' + *{price}"></dd>
-
-                <dt class="col-sm-4 text-muted small">Created Date</dt>
-                <dd class="col-sm-8" th:text="*{createdDate}"></dd>
-
-                <dt class="col-sm-4 text-muted small">Last Updated</dt>
-                <dd class="col-sm-8" th:text="*{lastUpdatedDate}"></dd>
             </dl>
         </div>
     </div>

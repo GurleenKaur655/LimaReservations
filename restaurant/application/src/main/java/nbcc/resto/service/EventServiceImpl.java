@@ -24,11 +24,13 @@ public class EventServiceImpl implements EventService {
     private final EventRepository eventRepository;
     private final EventValidationService validationService;
     private final MenuService menuService;
+    private final ReservationService reservationService;
 
-    public EventServiceImpl(EventRepository eventRepository, EventValidationService validationService, MenuService menuService) {
+    public EventServiceImpl(EventRepository eventRepository, EventValidationService validationService, MenuService menuService, ReservationService reservationService) {
         this.eventRepository = eventRepository;
         this.validationService = validationService;
         this.menuService = menuService;
+        this.reservationService = reservationService;
     }
 
     @Override
@@ -130,9 +132,12 @@ public class EventServiceImpl implements EventService {
             var result = eventRepository.get(id);
             if (result.isPresent()) {
                 var event = result.get();
-                if (event.getEndDate() != null && event.getEndDate().isBefore(LocalDate.now())) {
+                boolean isPastEvent = event.getEndDate() != null && event.getEndDate().isBefore(LocalDate.now());
+                boolean hasReservations = reservationService.existsBySeatingEventId(id);
+
+                if (isPastEvent || hasReservations) {
                     eventRepository.archive(id);
-                    logger.debug("Past event with id {} archived instead of deleted", id);
+                    logger.debug("Event with id {} archived instead of deleted", id);
                 } else {
                     eventRepository.delete(id);
                     logger.debug("Event with id {} deleted", id);
