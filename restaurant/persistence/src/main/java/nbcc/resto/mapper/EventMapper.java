@@ -7,8 +7,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class EventMapper implements EntityMapper<Event, EventEntity> {
 
-    public EventMapper() {
+    private final MenuMapper menuMapper;
+
+    public EventMapper(MenuMapper menuMapper) {
+        this.menuMapper = menuMapper;
     }
+
 
     public Event toDTO(EventEntity entity){
 
@@ -26,6 +30,7 @@ public class EventMapper implements EntityMapper<Event, EventEntity> {
                 .setDurationMinutes(entity.getDurationMinutes())
                 .setActive(entity.getActive())
                 .setArchived(entity.getArchived())
+                .setMenu(menuMapper.toDTO(entity.getMenu()))
                 .setVersion(entity.getVersion())
                 .setCreatedDate(entity.getCreatedAt())
                 .setLastUpdatedDate(entity.getUpdatedAt());
@@ -49,6 +54,7 @@ public class EventMapper implements EntityMapper<Event, EventEntity> {
                 .setDurationMinutes(dto.getDurationMinutes())
                 .setActive(dto.getActive())
                 .setArchived(dto.getArchived())
+                .setMenu(menuMapper.toEntity(dto.getMenu()))
                 .setVersion(dto.getVersion())
                 .setCreatedAt(dto.getCreatedDate())
                 .setUpdatedAt(dto.getLastUpdatedDate());

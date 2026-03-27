@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import nbcc.auth.service.LoginService;
 import nbcc.resto.dto.Event;
 import nbcc.resto.service.EventService;
+import nbcc.resto.service.MenuService;
 import nbcc.resto.service.SeatingService;
 import nbcc.resto.viewmodel.EventListViewModel;
 import org.slf4j.Logger;
@@ -24,17 +25,17 @@ import static nbcc.common.validation.ModelErrorConverter.addErrorsToBindingResul
 @RequestMapping({"/event"})
 public class EventController {
     private final LoginService loginService;
-
     private final EventService eventService;
-
     private final SeatingService seatingService;
+    private final MenuService menuService;
 
     private final Logger logger = LoggerFactory.getLogger(EventController.class);
 
-    public EventController(LoginService loginService, EventService eventService, SeatingService seatingService) {
+    public EventController(LoginService loginService, EventService eventService, SeatingService seatingService, MenuService menuService) {
         this.loginService = loginService;
         this.eventService = eventService;
         this.seatingService = seatingService;
+        this.menuService = menuService;
     }
 
 
@@ -75,13 +76,14 @@ public class EventController {
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("event", new Event());
+        model.addAttribute("menus", menuService.getAll().getValue());
         return "event/create";
     }
 
     @PostMapping("/create")
-    public String create(@ModelAttribute("event") Event album, BindingResult br) {
+    public String create(@ModelAttribute("event") Event event, BindingResult br, Model model) {
 
-        var result = eventService.create(album);
+        var result = eventService.create(event);
 
         if (result.isError()) {
             return "error/errorPage";
@@ -89,6 +91,7 @@ public class EventController {
 
         if (result.isInvalid()) {
             addErrorsToBindingResults(br, result);
+            model.addAttribute("menus", menuService.getAll().getValue());
             return "event/create";
         }
 
@@ -109,6 +112,7 @@ public class EventController {
         }
 
         model.addAttribute("event", result.getValue());
+        model.addAttribute("menus", menuService.getAll().getValue());
         return "event/edit";
     }
 
@@ -124,6 +128,7 @@ public class EventController {
         if (result.isInvalid()) {
             addErrorsToBindingResults(br, result);
             model.addAttribute("event", result.getValue());
+            model.addAttribute("menus", menuService.getAll().getValue());
             return "event/edit";
         }
 

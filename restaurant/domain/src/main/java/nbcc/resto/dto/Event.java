@@ -34,10 +34,50 @@ public class Event {
 
     private Boolean active;
 
+    private Menu menu;
 
     private Boolean archived = false;
 
     private Long version;
+
+    private LocalDateTime createdDate;
+
+    private LocalDateTime lastUpdatedDate;
+
+    public Event() {
+
+    }
+
+    public Event(Menu menu) {
+        this.menu = menu;
+    }
+
+    public Event(Event event) {
+        this(event.getId(), event.getName(), event.getDescription(), event.getStartDate(), event.getEndDate(),
+                event.getDurationMinutes(), event.getPrice(), event.getActive(), event.getArchived(),
+                event.getMenu(),event.getVersion(), event.getCreatedDate(), event.getLastUpdatedDate());
+    } //this calls another constructor in this same class with these exact parameters
+
+    public Event(Long id, String name, String description,
+                 LocalDate startDate, LocalDate endDate,
+                 Integer durationMinutes, BigDecimal price,
+                 Boolean active, Boolean archived, Menu menu,
+                 Long version, LocalDateTime createdDate, LocalDateTime lastUpdatedDate) {
+
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.durationMinutes = durationMinutes;
+        this.price = price;
+        this.active = active;
+        this.archived = archived;
+        this.menu = menu;
+        this.version = version;
+        this.createdDate = createdDate;
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
 
     public LocalDateTime getCreatedDate() {
         return createdDate;
@@ -57,39 +97,7 @@ public class Event {
         return this;
     }
 
-    private LocalDateTime createdDate;
 
-    private LocalDateTime lastUpdatedDate;
-
-    public Event() {
-
-    }
-
-    public Event(Event event) {
-        this(event.getId(), event.getName(), event.getDescription(), event.getStartDate(), event.getEndDate(),
-                event.getDurationMinutes(), event.getPrice(), event.getActive(), event.getArchived(),
-                event.getVersion(), event.getCreatedDate(), event.getLastUpdatedDate());
-    } //this calls another constructor in this same class with these exact parameters
-
-    public Event(Long id, String name, String description,
-                 LocalDate startDate, LocalDate endDate,
-                 Integer durationMinutes, BigDecimal price,
-                 Boolean active, Boolean archived,
-                 Long version, LocalDateTime createdDate, LocalDateTime lastUpdatedDate) {
-
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.durationMinutes = durationMinutes;
-        this.price = price;
-        this.active = active;
-        this.archived = archived;
-        this.version = version;
-        this.createdDate = createdDate;
-        this.lastUpdatedDate = lastUpdatedDate;
-    }
 
     public Long getId() {
         return id;
@@ -179,6 +187,15 @@ public class Event {
 
     public Event setVersion(Long version) {
         this.version = version;
+        return this;
+    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public Event setMenu(Menu menu) {
+        this.menu = menu;
         return this;
     }
 

@@ -15,6 +15,7 @@ public interface EventService {
     ValidatedResult<Event> update(Event event);
     ValidatedResult<Void> delete(Long id);
     ValidatedResult<Void> archive(Long id);
+
     ValidatedResult<Collection<Event>> search(String name, LocalDate startDate, LocalDate endDate);
 
 }

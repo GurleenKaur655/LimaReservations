@@ -26,9 +26,18 @@ public class EventValidationService {
         errors.addAll(annotationValidationService.validate(event));
         errors.addAll(validateDates(event));
         errors.addAll(validateUniqueName(event));
+        errors.addAll(validateMenuAndActive(event));
         return errors;
     }
 
+    public Collection<ValidationError> validateMenuAndActive(Event event) {
+        if (Boolean.TRUE.equals(event.getActive()) &&
+                (event.getMenu() == null || event.getMenu().getId() == null)) {
+
+            return List.of(new ValidationError("Event must have a menu to be marked as active"));
+        }
+        return List.of();
+    }
 
     public Collection<ValidationError> validateDates(Event event) {
         if (event.getName() == null || event.getName().isBlank()) {
