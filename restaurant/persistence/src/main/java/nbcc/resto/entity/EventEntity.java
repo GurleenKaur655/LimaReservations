@@ -1,6 +1,8 @@
 package nbcc.resto.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -41,6 +43,12 @@ public class EventEntity {
     private Boolean active;
 
     private Boolean archived = false;
+
+
+    @ManyToOne
+    @JoinColumn(name = "menu_id", foreignKey = @ForeignKey(name = "fk_event_menu"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private MenuEntity menu;
 
     @CreatedDate
     @Column(updatable = false, nullable = false)
@@ -161,6 +169,16 @@ public class EventEntity {
 
     public EventEntity setVersion(Long version) {
         this.version = version;
+        return this;
+    }
+
+
+    public MenuEntity getMenu() {
+        return menu;
+    }
+
+    public EventEntity setMenu(MenuEntity menu) {
+        this.menu = menu;
         return this;
     }
 }

@@ -34,6 +34,7 @@ public class Event {
 
     private Boolean active;
 
+    private Menu menu;
 
     private Boolean archived = false;
 
@@ -47,16 +48,20 @@ public class Event {
 
     }
 
+    public Event(Menu menu) {
+        this.menu = menu;
+    }
+
     public Event(Event event) {
         this(event.getId(), event.getName(), event.getDescription(), event.getStartDate(), event.getEndDate(),
                 event.getDurationMinutes(), event.getPrice(), event.getActive(), event.getArchived(),
-                event.getVersion(), event.getCreatedDate(), event.getLastUpdatedDate());
+                event.getMenu(),event.getVersion(), event.getCreatedDate(), event.getLastUpdatedDate());
     } //this calls another constructor in this same class with these exact parameters
 
     public Event(Long id, String name, String description,
                  LocalDate startDate, LocalDate endDate,
                  Integer durationMinutes, BigDecimal price,
-                 Boolean active, Boolean archived,
+                 Boolean active, Boolean archived, Menu menu,
                  Long version, LocalDateTime createdDate, LocalDateTime lastUpdatedDate) {
 
         this.id = id;
@@ -68,6 +73,7 @@ public class Event {
         this.price = price;
         this.active = active;
         this.archived = archived;
+        this.menu = menu;
         this.version = version;
         this.createdDate = createdDate;
         this.lastUpdatedDate = lastUpdatedDate;
@@ -181,6 +187,15 @@ public class Event {
 
     public Event setVersion(Long version) {
         this.version = version;
+        return this;
+    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public Event setMenu(Menu menu) {
+        this.menu = menu;
         return this;
     }
 

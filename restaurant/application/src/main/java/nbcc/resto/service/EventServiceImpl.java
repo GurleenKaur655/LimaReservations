@@ -23,10 +23,12 @@ public class EventServiceImpl implements EventService {
 
     private final EventRepository eventRepository;
     private final EventValidationService validationService;
+    private final MenuService menuService;
 
-    public EventServiceImpl(EventRepository eventRepository, EventValidationService validationService) {
+    public EventServiceImpl(EventRepository eventRepository, EventValidationService validationService, MenuService menuService) {
         this.eventRepository = eventRepository;
         this.validationService = validationService;
+        this.menuService = menuService;
     }
 
     @Override
@@ -53,9 +55,25 @@ public class EventServiceImpl implements EventService {
     @Override
     public ValidatedResult<Event> create(Event event) {
         try {
+
+            if (event.getMenu() != null && event.getMenu().getId() == null) {
+                event.setMenu(null);
+            }
+
+            if (event.getMenu() != null && event.getMenu().getId() != null) {
+                var menuResult = menuService.get(event.getMenu().getId());
+                var menu = menuResult.getValue();
+                event.setMenu(menu);
+            }
+
             var errors = validationService.validate(event);
 
             if (errors.isEmpty()) {
+                if (event.getActive() == true &&
+                        (event.getMenu() == null || event.getMenu().getId() == null) ) {
+                    event.setActive(false);
+                }
+
                 return ValidationResults.success(eventRepository.create(event));
             } else {
                 // don't call the create method if there are validation errors
@@ -71,10 +89,26 @@ public class EventServiceImpl implements EventService {
     @Override
     public ValidatedResult<Event> update(Event event) {
         try {
+
+            if (event.getMenu() != null && event.getMenu().getId() == null) {
+                event.setMenu(null);
+            }
+
+            if (event.getMenu() != null && event.getMenu().getId() != null) {
+                var menuResult = menuService.get(event.getMenu().getId());
+                var menu = menuResult.getValue();
+                event.setMenu(menu);
+            }
+
             var errors = validationService.validate(event);
 
             if (errors.isEmpty()) {
                 try {
+                    if (event.getActive() == true &&
+                            (event.getMenu() == null || event.getMenu().getId() == null) ) {
+                        event.setActive(false);
+                    }
+
                     return ValidationResults.success(eventRepository.update(event));
                 } catch (ConcurrencyException e) {
                     errors.add(new ValidationError("Event was modified since it was displayed, please refresh and try again"));
