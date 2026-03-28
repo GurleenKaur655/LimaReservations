@@ -124,6 +124,7 @@
                         <table class="table table-hover table-striped mb-0">
                             <thead class="table-dark">
                             <tr>
+                                <th class="fw-bold">Seating</th>
                                 <th class="fw-bold">Date &amp; Time</th>
                                 <th class="fw-bold">Duration</th>
                                 <th class="fw-bold">Capacity</th>
@@ -133,8 +134,11 @@
                             <tbody>
                             <tr th:each="seating : ${eventSeatings}" class="align-middle">
                                 <td>
-                                    <span class="badge bg-light text-dark border"
-                                          th:text="${#temporals.format(seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
+                                    <span class="fw-semibold" th:text="${seating.name}"></span>
+                                </td>
+                                <td>
+        <span class="badge bg-light text-dark border"
+              th:text="${#temporals.format(seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
                                 </td>
                                 <td th:text="${seating.durationMinutes} + ' min'"></td>
                                 <td th:text="${seating.table != null ? seating.table.capacity : 'N/A'}"></td>

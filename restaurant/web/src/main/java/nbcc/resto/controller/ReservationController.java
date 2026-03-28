@@ -53,9 +53,11 @@ public class ReservationController {
         var menuItemsByMenuId = events == null ? Collections.emptyMap()
                 : events.stream()
                 .filter(e -> e.getMenu() != null && e.getMenu().getId() != null)
+                .map(e -> e.getMenu().getId())
+                .distinct()
                 .collect(Collectors.toMap(
-                        e -> e.getMenu().getId(),
-                        e -> menuItemService.getAll(e.getMenu().getId()).getValue()
+                        menuId -> menuId,
+                        menuId -> menuItemService.getAll(menuId).getValue()
                 ));
 
         model.addAttribute("events", events);
