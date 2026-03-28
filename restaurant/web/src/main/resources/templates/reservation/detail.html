@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <th:block th:replace="~{partial :: bootstrap}"/>
     <meta charset="UTF-8">
@@ -19,8 +20,11 @@
                     <a th:href="@{/reservation/manage}" class="btn btn-outline-secondary btn-sm">← Back</a>
                 </div>
 
+                <div class="alert alert-danger" th:if="${actionError != null}" th:text="${actionError}"></div>
+
+
                 <!-- Event Details -->
-                <div class="mb-3">
+                <div class="mb-3" th:object="${event}">
                     <th:block th:replace="~{event/fragments :: details}"/>
                 </div>
 
@@ -38,6 +42,10 @@
                             </dd>
                             <dt class="col-sm-4 text-muted small">Duration</dt>
                             <dd class="col-sm-8" th:text="${reservation.seating.durationMinutes} + ' min'"></dd>
+                            <dt class="col-sm-4 text-muted small">Table</dt>
+                            <dd class="col-sm-8" th:text="${reservation.seating.table != null ? reservation.seating.table.name : 'N/A'}"></dd>
+                            <dt class="col-sm-4 text-muted small">Capacity</dt>
+                            <dd class="col-sm-8" th:text="${reservation.seating.table != null ? reservation.seating.table.capacity : 'N/A'}"></dd>
                         </dl>
                     </div>
                 </div>
@@ -47,6 +55,35 @@
                     <th:block th:replace="~{reservation/fragments :: details}"/>
                 </div>
 
+                <div class="card shadow-sm mt-3">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0" style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A;">
+                            Manage Reservation
+                        </h5>
+                    </div>
+                    <div class="card-body">
+
+                        <div th:if="${reservation.status?.name() == 'APPROVED'}">
+                            <p class="text-muted small fst-italic mb-0">
+                                This reservation is approved and cannot be modified.
+                            </p>
+                        </div>
+
+                        <div th:unless="${reservation.status?.name() == 'APPROVED'}" class="d-flex gap-2">
+
+                            <form th:action="@{/reservation/manage/{id}/approve(id=${reservation.id})}"
+                                  method="post" class="flex-grow-1">
+                                <button type="submit" class="btn btn-success btn-sm w-100">Approve</button>
+                            </form>
+
+                            <form th:action="@{/reservation/manage/{id}/deny(id=${reservation.id})}"
+                                  method="post" class="flex-grow-1">
+                                <button type="submit" class="btn btn-danger btn-sm w-100">Deny</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

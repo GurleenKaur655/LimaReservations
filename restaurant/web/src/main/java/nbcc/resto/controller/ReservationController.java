@@ -1,6 +1,5 @@
 package nbcc.resto.controller;
 
-import nbcc.resto.dto.Event;
 import nbcc.resto.dto.Reservation;
 import nbcc.resto.dto.ReservationStatus;
 import nbcc.resto.service.EventService;
@@ -148,14 +147,60 @@ public class ReservationController {
     @PreAuthorize("isAuthenticated()")
     public String details(@PathVariable Long id, Model model) {
         var result = reservationService.get(id);
-        if (result.isError()) {
-            return "error/errorPage";
-        }
+        if (result.isError()) return "error/errorPage";
         var reservation = result.getValue();
         model.addAttribute("reservation", reservation);
         model.addAttribute("event", reservation.getSeating().getEvent());
         return "reservation/detail";
     }
 
+    @PostMapping("/manage/{id}/approve")
+    @PreAuthorize("isAuthenticated()")
+    public String approve(@PathVariable Long id,
+                          @ModelAttribute("reservation") Reservation reservation,
+                          BindingResult br,
+                          Model model) {
 
+        var result = reservationService.approve(id);
+
+        if (result.isInvalid()) {
+            addErrorsToBindingResults(br, result, "reservation");
+
+            var reservationResult = result.getValue();
+            model.addAttribute("reservation", reservationResult);
+            model.addAttribute("event", reservationResult.getSeating().getEvent());
+            model.addAttribute("actionError", result.getValidationErrors().iterator().next().getMessage());
+
+            return "reservation/detail";
+        }
+
+        if (result.isError()) return "error/errorPage";
+
+        return "redirect:/reservation/manage/" + id;
+    }
+
+    @PostMapping("/manage/{id}/deny")
+    @PreAuthorize("isAuthenticated()")
+    public String deny(@PathVariable Long id,
+                       @ModelAttribute("reservation") Reservation reservation,
+                       BindingResult br,
+                       Model model) {
+
+        var result = reservationService.deny(id);
+
+        if (result.isInvalid()) {
+            addErrorsToBindingResults(br, result, "reservation");
+
+            var reservationResult = result.getValue();
+            model.addAttribute("reservation", reservationResult);
+            model.addAttribute("event", reservationResult.getSeating().getEvent());
+            model.addAttribute("actionError", result.getValidationErrors().iterator().next().getMessage());
+
+            return "reservation/detail";
+        }
+
+        if (result.isError()) return "error/errorPage";
+
+        return "redirect:/reservation/manage/" + id;
+    }
 }

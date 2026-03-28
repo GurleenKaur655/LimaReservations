@@ -3,6 +3,7 @@ package nbcc.resto.service;
 import nbcc.common.result.Result;
 import nbcc.common.result.ValidatedResult;
 import nbcc.common.result.ValidationResults;
+import nbcc.common.validation.ValidationError;
 import nbcc.resto.dto.Reservation;
 import nbcc.resto.dto.ReservationStatus;
 import nbcc.resto.repository.ReservationRepository;
@@ -14,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -93,6 +95,45 @@ public class ReservationServiceImpl implements ReservationService {
         } catch (Exception e) {
             logger.error("Error retrieving reservations", e);
             return ValidationResults.error(e);
+        }
+    }
+    @Override
+    public ValidatedResult<Reservation> approve(Long id) {
+        try {
+            var result = reservationRepository.get(id);
+            if (result.isEmpty()) return ValidationResults.error();
+            var reservation = result.get();
+
+            var errors = reservationValidationService.validateApprove(reservation);
+            if (!errors.isEmpty()) {
+                return ValidationResults.invalid(reservation, errors);
+            }
+
+            reservation.setStatus(ReservationStatus.APPROVED);
+            return ValidationResults.success(reservationRepository.update(reservation));
+        } catch (Exception e) {
+            logger.error("Error approving reservation {}", id, e);
+            return ValidationResults.error();
+        }
+    }
+
+    @Override
+    public ValidatedResult<Reservation> deny(Long id) {
+        try {
+            var result = reservationRepository.get(id);
+            if (result.isEmpty()) return ValidationResults.error();
+            var reservation = result.get();
+
+            var errors = reservationValidationService.validateDeny(reservation);
+            if (!errors.isEmpty()) {
+                return ValidationResults.invalid(reservation, errors);
+            }
+
+            reservation.setStatus(ReservationStatus.DENIED);
+            return ValidationResults.success(reservationRepository.update(reservation));
+        } catch (Exception e) {
+            logger.error("Error denying reservation {}", id, e);
+            return ValidationResults.error();
         }
     }
 }

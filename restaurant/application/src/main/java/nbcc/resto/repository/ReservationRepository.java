@@ -17,4 +17,6 @@ public interface ReservationRepository {
     Optional<Reservation> getByUuid(UUID uuid);
     Boolean existsBySeatingId(Long seatingId);
     Boolean existsBySeatingEventId(Long eventId);
+    Reservation update(Reservation reservation);
+    Boolean isSeatingAlreadyApproved(Long seatingId, Long excludeReservationId);
 }

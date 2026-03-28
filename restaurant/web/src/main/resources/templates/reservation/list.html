@@ -76,6 +76,7 @@
                             <tr>
                                 <th class="fw-bold">Guest</th>
                                 <th class="fw-bold">Event</th>
+                                <th class="fw-bold">Table</th>
                                 <th class="fw-bold">Seating Date &amp; Time</th>
                                 <th class="fw-bold">Group Size</th>
                                 <th class="fw-bold">Status</th>
@@ -88,6 +89,7 @@
                                 th:onclick="|window.location='@{/reservation/manage/{id}(id=${reservation.id})}'|">
                                 <td th:text="${reservation.firstName + ' ' + reservation.lastName}"></td>
                                 <td th:text="${reservation.seating?.event?.name}"></td>
+                                <td th:text="${reservation.seating?.table?.name}"></td>
                                 <td>
                                     <span class="badge bg-light text-dark border"
                                           th:if="${reservation.seating != null}"

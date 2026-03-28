@@ -15,7 +15,7 @@ public class ReservationRepositoryAdapter implements ReservationRepository {
     private final ReservationMapper reservationMapper;
     private final ReservationJPARepository reservationJPARepository;
 
-    public ReservationRepositoryAdapter(ReservationMapper reservationMapper, SeatingJPARepository seatingJPARepository, EventJPARepository eventJPARepository, ReservationJPARepository reservationJPARepository) {
+    public ReservationRepositoryAdapter(ReservationMapper reservationMapper,ReservationJPARepository reservationJPARepository) {
         this.reservationMapper = reservationMapper;
         this.reservationJPARepository = reservationJPARepository;
     }
@@ -59,5 +59,16 @@ public class ReservationRepositoryAdapter implements ReservationRepository {
             return Optional.empty();
         }
         return Optional.of(reservationMapper.toDTO(entity.get()));
+    }
+    @Override
+    public Reservation update(Reservation reservation) {
+        var entity = reservationMapper.toEntity(reservation);
+        entity = reservationJPARepository.save(entity);
+        return reservationMapper.toDTO(entity);
+    }
+
+    @Override
+    public Boolean isSeatingAlreadyApproved(Long seatingId, Long excludeReservationId) {
+        return reservationJPARepository.existsApprovedForSeating(seatingId, excludeReservationId);
     }
 }

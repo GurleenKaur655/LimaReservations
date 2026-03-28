@@ -21,4 +21,8 @@ public interface ReservationJPARepository extends JpaRepository<ReservationEntit
             "ORDER BY r.seating.startDateTime ASC")
     List<ReservationEntity> findAllFiltered(@Param("eventName") String eventName,
                                             @Param("status") ReservationStatus status);
+
+    @Query("SELECT COUNT(r) > 0 FROM ReservationEntity r WHERE " +
+            "r.seating.id = :seatingId AND r.status = 'APPROVED' AND r.id != :id")
+    boolean existsApprovedForSeating(@Param("seatingId") Long seatingId, @Param("id") Long id);
 }

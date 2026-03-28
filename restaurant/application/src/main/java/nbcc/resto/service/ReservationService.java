@@ -10,11 +10,6 @@ import java.util.Collection;
 import java.util.UUID;
 
 public interface ReservationService {
-
-//            +approve(UUID uuid, Long diningTableId) Result~Reservation~
-//            +update(Reservation reservation) Result~Reservation~
-//            +deny(UUID uuid) Result~Reservation~
-
     Result<Collection<Reservation>> getAll();
     ValidatedResult<Reservation> get(Long id);
     ValidatedResult<Reservation> create(Reservation reservation);
@@ -22,4 +17,6 @@ public interface ReservationService {
     Boolean existsBySeatingEventId(Long eventId);
     ValidatedResult<Reservation> getByUuid(UUID uuid);
     Result<Collection<Reservation>> getAll(String eventName, ReservationStatus status);
+    ValidatedResult<Reservation> approve(Long id);
+    ValidatedResult<Reservation> deny(Long id);
 }
