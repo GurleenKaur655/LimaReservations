@@ -15,8 +15,8 @@ public class PublicKeyConfig {
 
     @Bean
     public RSAPublicKey rsaPublicKey(
-            @Value("${jwt.public-key-location}") Resource resource) throws Exception {
-        String pem = new String(resource.getInputStream().readAllBytes())
+            @Value("${jwt.public-key}")  String publicKey) throws Exception {
+        String pem = publicKey
                 .replace("-----BEGIN PUBLIC KEY-----", "")
                 .replace("-----END PUBLIC KEY-----","")
                 .replace("\\n", "\n")  // Convert literal \n to actual newlines

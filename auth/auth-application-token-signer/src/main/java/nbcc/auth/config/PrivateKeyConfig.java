@@ -15,8 +15,8 @@ public class PrivateKeyConfig {
 
     @Bean
     public RSAPrivateKey rsaPrivateKey(
-            @Value("${jwt.private-key-location}") Resource resource) throws Exception {
-        String pem = new String(resource.getInputStream().readAllBytes())
+            @Value("${jwt.private-key}") String privateKey) throws Exception {
+        String pem = privateKey
                 .replace("-----BEGIN PRIVATE KEY-----", "")
                 .replace("-----END PRIVATE KEY-----", "")
                 .replace("\\n", "\n")  // Convert literal \n to actual newlines
