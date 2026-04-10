@@ -3,19 +3,17 @@ package nbcc.resto.service;
 import nbcc.common.result.Result;
 import nbcc.common.result.ValidatedResult;
 import nbcc.common.result.ValidationResults;
-import nbcc.common.validation.ValidationError;
+import nbcc.email.domain.EmailRequest;
+import nbcc.email.service.EmailService;
 import nbcc.resto.dto.Reservation;
 import nbcc.resto.dto.ReservationStatus;
 import nbcc.resto.repository.ReservationRepository;
-import nbcc.resto.repository.SeatingRepository;
 import nbcc.resto.validation.ReservationValidationService;
-import nbcc.resto.validation.SeatingValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -24,11 +22,14 @@ public class ReservationServiceImpl implements ReservationService {
 
     private final ReservationRepository reservationRepository;
     private final ReservationValidationService reservationValidationService;
+    private final EmailService emailService;
 
-
-    public ReservationServiceImpl(ReservationRepository reservationRepository, ReservationValidationService reservationValidationService) {
+    public ReservationServiceImpl(ReservationRepository reservationRepository,
+                                  ReservationValidationService reservationValidationService,
+                                  EmailService emailService) {
         this.reservationRepository = reservationRepository;
         this.reservationValidationService = reservationValidationService;
+        this.emailService = emailService;
     }
 
     @Override
@@ -60,7 +61,9 @@ public class ReservationServiceImpl implements ReservationService {
             var errors = reservationValidationService.validate(reservation);
 
             if (errors.isEmpty()) {
-                return ValidationResults.success(reservationRepository.create(reservation));
+                var created = reservationRepository.create(reservation);
+                sendReservationReceivedEmail(created);
+                return ValidationResults.success(created);
             } else {
                 logger.debug("Validation errors for reservation create {}: {}", reservation, errors);
                 return ValidationResults.invalid(reservation, errors);
@@ -70,10 +73,12 @@ public class ReservationServiceImpl implements ReservationService {
             return ValidationResults.error();
         }
     }
+
     @Override
     public Boolean existsBySeatingId(Long seatingId) {
         return reservationRepository.existsBySeatingId(seatingId);
     }
+
     @Override
     public Boolean existsBySeatingEventId(Long eventId) {
         return reservationRepository.existsBySeatingEventId(eventId);
@@ -88,6 +93,7 @@ public class ReservationServiceImpl implements ReservationService {
             return ValidationResults.error(e);
         }
     }
+
     @Override
     public Result<Collection<Reservation>> getAll(String eventName, ReservationStatus status) {
         try {
@@ -97,6 +103,7 @@ public class ReservationServiceImpl implements ReservationService {
             return ValidationResults.error(e);
         }
     }
+
     @Override
     public ValidatedResult<Reservation> approve(Long id) {
         try {
@@ -110,7 +117,9 @@ public class ReservationServiceImpl implements ReservationService {
             }
 
             reservation.setStatus(ReservationStatus.APPROVED);
-            return ValidationResults.success(reservationRepository.update(reservation));
+            var updated = reservationRepository.update(reservation);
+            sendReservationStatusEmail(updated);
+            return ValidationResults.success(updated);
         } catch (Exception e) {
             logger.error("Error approving reservation {}", id, e);
             return ValidationResults.error();
@@ -130,7 +139,9 @@ public class ReservationServiceImpl implements ReservationService {
             }
 
             reservation.setStatus(ReservationStatus.DENIED);
-            return ValidationResults.success(reservationRepository.update(reservation));
+            var updated = reservationRepository.update(reservation);
+            sendReservationStatusEmail(updated);
+            return ValidationResults.success(updated);
         } catch (Exception e) {
             logger.error("Error denying reservation {}", id, e);
             return ValidationResults.error();
@@ -140,11 +151,82 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public Result<Collection<Reservation>> getApprovedByEventId(Long eventId) {
         try {
-            var reservations = reservationRepository.getApprovedByEventId(eventId);
-            return ValidationResults.success(reservations);
+            return ValidationResults.success(reservationRepository.getApprovedByEventId(eventId));
         } catch (Exception e) {
             logger.error("Error retrieving approved reservations for eventId: {}", eventId, e);
             return ValidationResults.error();
+        }
+    }
+
+    private void sendReservationReceivedEmail(Reservation reservation) {
+        if (reservation.getEmail() == null || reservation.getEmail().isBlank()) {
+            logger.info("Skipping received email — no email on reservation.");
+            return;
+        }
+        try {
+            String eventName = reservation.getSeating() != null && reservation.getSeating().getEvent() != null
+                    ? reservation.getSeating().getEvent().getName() : "N/A";
+            String seatingDateTime = reservation.getSeating() != null && reservation.getSeating().getStartDateTime() != null
+                    ? reservation.getSeating().getStartDateTime().toString() : "N/A";
+
+            String body = "Dear " + reservation.getFirstName() + " " + reservation.getLastName() + ",\n\n"
+                    + "We have received your reservation request. Here are the details:\n\n"
+                    + "Event Name: " + eventName + "\n"
+                    + "Seating Date & Time: " + seatingDateTime + "\n"
+                    + "Guest Name: " + reservation.getFirstName() + " " + reservation.getLastName() + "\n"
+                    + "Group Size: " + reservation.getGroupSize() + "\n"
+                    + "Status: PENDING\n\n"
+                    + "We will notify you once your request has been reviewed.\n\n"
+                    + "Thank you,\nThe Lima Lounge";
+
+            var emailRequest = new EmailRequest()
+                    .setTo(reservation.getEmail())
+                    .setSubject("Reservation Request Received - Lima Lounge")
+                    .setBody(body);
+
+            if (emailService.sendEmail(emailRequest)) {
+                logger.info("Reservation received email sent to: {}", reservation.getEmail());
+            } else {
+                logger.warn("Failed to send reservation received email to: {}", reservation.getEmail());
+            }
+        } catch (Exception e) {
+            logger.error("Error sending reservation received email", e);
+        }
+    }
+
+    private void sendReservationStatusEmail(Reservation reservation) {
+        if (reservation.getEmail() == null || reservation.getEmail().isBlank()) {
+            logger.info("Skipping status email — no email on reservation.");
+            return;
+        }
+        try {
+            String eventName = reservation.getSeating() != null && reservation.getSeating().getEvent() != null
+                    ? reservation.getSeating().getEvent().getName() : "N/A";
+            String seatingDateTime = reservation.getSeating() != null && reservation.getSeating().getStartDateTime() != null
+                    ? reservation.getSeating().getStartDateTime().toString() : "N/A";
+            String status = reservation.getStatus().toString();
+
+            String body = "Dear " + reservation.getFirstName() + " " + reservation.getLastName() + ",\n\n"
+                    + "Your reservation request has been " + status + ".\n\n"
+                    + "Event Name: " + eventName + "\n"
+                    + "Seating Date & Time: " + seatingDateTime + "\n"
+                    + "Guest Name: " + reservation.getFirstName() + " " + reservation.getLastName() + "\n"
+                    + "Group Size: " + reservation.getGroupSize() + "\n"
+                    + "Status: " + status + "\n\n"
+                    + "Thank you,\nThe Lima Lounge";
+
+            var emailRequest = new EmailRequest()
+                    .setTo(reservation.getEmail())
+                    .setSubject("Reservation " + status + " - Lima Lounge")
+                    .setBody(body);
+
+            if (emailService.sendEmail(emailRequest)) {
+                logger.info("Reservation status email sent to: {}", reservation.getEmail());
+            } else {
+                logger.warn("Failed to send reservation status email to: {}", reservation.getEmail());
+            }
+        } catch (Exception e) {
+            logger.error("Error sending reservation status email", e);
         }
     }
 }

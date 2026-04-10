@@ -1,5 +1,7 @@
 package nbcc.resto.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -29,10 +31,23 @@ public class Reservation {
 
     private ReservationStatus status = ReservationStatus.PENDING;
 
+    @JsonIgnore
     private Long version;
+
+    @JsonIgnore
+    private Long eventId;
 
     public Long getId() {
         return id;
+    }
+
+    public Long getEventId() {
+        return eventId;
+    }
+
+    public Reservation setEventId(Long eventId) {
+        this.eventId = eventId;
+        return this;
     }
 
     public Reservation setId(Long id) {

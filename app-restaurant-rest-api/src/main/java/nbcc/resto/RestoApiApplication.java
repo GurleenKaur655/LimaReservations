@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"nbcc.resto", "nbcc.common", "nbcc.auth"})
+@ComponentScan({"nbcc.resto", "nbcc.common", "nbcc.auth", "nbcc.email"})
 public class RestoApiApplication {
 
     public static void main(String[] args) {

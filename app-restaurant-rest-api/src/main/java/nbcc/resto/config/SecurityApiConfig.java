@@ -25,6 +25,7 @@ public class SecurityApiConfig {
 //                        .requestMatchers("/api/event", "/api/event/{id}").permitAll()
 //                        .requestMatchers("/api/album", "/api/album/{id}").permitAll()
                         .requestMatchers("/api/reservations/event/**").authenticated()
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/reservations").permitAll()
                         .anyRequest().permitAll())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> {}))
                 .build();
