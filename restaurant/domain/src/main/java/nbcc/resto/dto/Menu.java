@@ -1,8 +1,11 @@
 package nbcc.resto.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 public class Menu {
 
@@ -14,6 +17,10 @@ public class Menu {
     private String description;
 
     private Long version;
+
+    @JsonIgnoreProperties({"description", "version", "menu", "menuId"})
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Collection<MenuItem> menuItems;
 
     public Menu() {
     }
@@ -63,6 +70,15 @@ public class Menu {
 
     public Menu setVersion(Long version) {
         this.version = version;
+        return this;
+    }
+
+    public Collection<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+    public Menu setMenuItems(Collection<MenuItem> menuItems) {
+        this.menuItems = menuItems;
         return this;
     }
 }
