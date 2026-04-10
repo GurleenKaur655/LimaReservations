@@ -9,9 +9,8 @@ import java.util.UUID;
 
 public interface ReservationRepository {
     List<Reservation> getAll();
-
     List<Reservation> getAll(String eventName, ReservationStatus status);
-
+    List<Reservation> getApprovedByEventId(Long eventId);
     Optional<Reservation> get(Long id);
     Reservation create(Reservation reservation);
     Optional<Reservation> getByUuid(UUID uuid);

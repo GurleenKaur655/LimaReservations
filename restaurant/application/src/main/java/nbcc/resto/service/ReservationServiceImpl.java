@@ -136,4 +136,15 @@ public class ReservationServiceImpl implements ReservationService {
             return ValidationResults.error();
         }
     }
+
+    @Override
+    public Result<Collection<Reservation>> getApprovedByEventId(Long eventId) {
+        try {
+            var reservations = reservationRepository.getApprovedByEventId(eventId);
+            return ValidationResults.success(reservations);
+        } catch (Exception e) {
+            logger.error("Error retrieving approved reservations for eventId: {}", eventId, e);
+            return ValidationResults.error();
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package nbcc.resto.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -9,17 +10,10 @@ public class Reservation {
 
     private Long id;
 
+    @JsonIgnoreProperties({"event", "table", "version", "createdDate",
+            "archived", "durationMinutes", "startDateTime"})
     private Seating seating;
     private UUID uuid;
-
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    public Reservation setUuid(UUID uuid) {
-        this.uuid = uuid;
-        return this;
-    }
 
     @NotBlank(message = "First Name is required")
     private String firstName;
@@ -43,6 +37,15 @@ public class Reservation {
 
     public Reservation setId(Long id) {
         this.id = id;
+        return this;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public Reservation setUuid(UUID uuid) {
+        this.uuid = uuid;
         return this;
     }
 

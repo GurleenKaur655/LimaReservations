@@ -19,4 +19,5 @@ public interface ReservationService {
     Result<Collection<Reservation>> getAll(String eventName, ReservationStatus status);
     ValidatedResult<Reservation> approve(Long id);
     ValidatedResult<Reservation> deny(Long id);
+    Result<Collection<Reservation>> getApprovedByEventId(Long eventId);
 }
