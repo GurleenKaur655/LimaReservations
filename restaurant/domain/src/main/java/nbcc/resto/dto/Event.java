@@ -1,11 +1,13 @@
 package nbcc.resto.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 public class Event {
 
@@ -34,7 +36,12 @@ public class Event {
 
     private Boolean active;
 
+    @JsonIgnoreProperties({"description", "version"})
     private Menu menu;
+
+    @JsonIgnoreProperties({"event", "table", "version", "createdDate",
+            "archived", "durationMinutes", "startDateTime"})
+    private Collection<Seating> seatings;
 
     private Boolean archived = false;
 
@@ -196,6 +203,15 @@ public class Event {
 
     public Event setMenu(Menu menu) {
         this.menu = menu;
+        return this;
+    }
+
+    public Collection<Seating> getSeatings() {
+        return seatings;
+    }
+
+    public Event setSeatings(Collection<Seating> seatings) {
+        this.seatings = seatings;
         return this;
     }
 

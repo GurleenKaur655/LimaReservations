@@ -1,7 +1,6 @@
 package nbcc.resto.service;
 
-import jakarta.validation.Valid;
-import jakarta.validation.Validation;
+
 import nbcc.common.exception.ConcurrencyException;
 import nbcc.common.result.Result;
 import nbcc.common.result.ValidatedResult;
@@ -9,9 +8,12 @@ import nbcc.common.result.ValidationResults;
 import nbcc.common.validation.ValidationError;
 import nbcc.resto.dto.Event;
 import nbcc.resto.repository.EventRepository;
+import nbcc.resto.repository.SeatingRepository;
 import nbcc.resto.validation.EventValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -25,12 +27,14 @@ public class EventServiceImpl implements EventService {
     private final EventValidationService validationService;
     private final MenuService menuService;
     private final ReservationService reservationService;
+    private final SeatingRepository seatingRepository;
 
-    public EventServiceImpl(EventRepository eventRepository, EventValidationService validationService, MenuService menuService, ReservationService reservationService) {
+    public EventServiceImpl(EventRepository eventRepository, EventValidationService validationService, MenuService menuService, ReservationService reservationService, SeatingRepository seatingRepository) {
         this.eventRepository = eventRepository;
         this.validationService = validationService;
         this.menuService = menuService;
         this.reservationService = reservationService;
+        this.seatingRepository = seatingRepository;
     }
 
     @Override
@@ -45,9 +49,52 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
+    public Result<Collection<Event>> getAllWithSeating() {
+        try {
+            var events = eventRepository.getAll();
+
+            for (Event event : events) {
+                var seatings = seatingRepository.getAll(event.getId());
+                if (!seatings.isEmpty()) {
+                    event.setSeatings(seatings);
+                }
+            }
+
+            return ValidationResults.success(events);
+        } catch (Exception e) {
+            logger.error("Error retrieving all event with seating", e);
+            return ValidationResults.error(e);
+        }
+    }
+
+    @Override
     public ValidatedResult<Event> get(Long id) {
         try {
             return ValidationResults.success(eventRepository.get(id));
+        } catch (Exception e) {
+            logger.error("Error retrieving event with id: {}", id, e);
+            return ValidationResults.error(e);
+        }
+    }
+
+    @Override
+    public ValidatedResult<Event> getWithSeating(Long id) {
+        try {
+            var result = eventRepository.get(id);
+
+            if (result.isPresent()) {
+                Event event = result.get();
+
+                var seatings = seatingRepository.getAll(id);
+                if (!seatings.isEmpty()) {
+                    event.setSeatings(seatings);
+                }
+
+                return ValidationResults.success(event);
+            }
+
+            return ValidationResults.success(result);
+
         } catch (Exception e) {
             logger.error("Error retrieving event with id: {}", id, e);
             return ValidationResults.error(e);
@@ -152,34 +199,34 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public ValidatedResult<Void> archive(Long id) {
-       try{
-           var result = eventRepository.get(id);
-           if (result.isEmpty()) {
-               return ValidationResults.invalid(null, "Event not found");
-           }
-           var event = result.get();
-           if (event.getEndDate() == null || !event.getEndDate().isBefore(LocalDate.now())) {
-               return ValidationResults.invalid(null, "Only past events can be archived");
-           }
+        try{
+            var result = eventRepository.get(id);
+            if (result.isEmpty()) {
+                return ValidationResults.invalid(null, "Event not found");
+            }
+            var event = result.get();
+            if (event.getEndDate() == null || !event.getEndDate().isBefore(LocalDate.now())) {
+                return ValidationResults.invalid(null, "Only past events can be archived");
+            }
 
-           eventRepository.archive(id);
-           logger.debug("Event with id {} archived", id);
-           return ValidationResults.success();
-       }catch (Exception e) {
-           logger.error("Error archiving event with id: {}", id, e);
-           return ValidationResults.error(e);
-       }
+            eventRepository.archive(id);
+            logger.debug("Event with id {} archived", id);
+            return ValidationResults.success();
+        }catch (Exception e) {
+            logger.error("Error archiving event with id: {}", id, e);
+            return ValidationResults.error(e);
+        }
     }
 
     @Override
     public ValidatedResult<Collection<Event>> search(String name, LocalDate startDate, LocalDate endDate) {
-       try {
+        try {
 
-           return ValidationResults.success(eventRepository.search(name, startDate, endDate));
-       } catch (Exception e) {
-           logger.error("Error searching for events", e);
-           return ValidationResults.error(e);
-       }
+            return ValidationResults.success(eventRepository.search(name, startDate, endDate));
+        } catch (Exception e) {
+            logger.error("Error searching for events", e);
+            return ValidationResults.error(e);
+        }
     }
 
 }

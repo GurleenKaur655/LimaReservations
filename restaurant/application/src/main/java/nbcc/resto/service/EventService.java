@@ -10,7 +10,9 @@ import java.util.Collection;
 
 public interface EventService {
     Result<Collection<Event>> getAll();
+    Result<Collection<Event>> getAllWithSeating();
     ValidatedResult<Event> get(Long id);
+    ValidatedResult<Event> getWithSeating(Long id);
     ValidatedResult<Event> create(Event event);
     ValidatedResult<Event> update(Event event);
     ValidatedResult<Void> delete(Long id);

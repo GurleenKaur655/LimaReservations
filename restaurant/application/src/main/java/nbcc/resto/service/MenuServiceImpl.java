@@ -5,6 +5,7 @@ import nbcc.common.result.Result;
 import nbcc.common.result.ValidatedResult;
 import nbcc.common.result.ValidationResults;
 import nbcc.common.validation.ValidationError;
+import nbcc.resto.dto.Event;
 import nbcc.resto.dto.Menu;
 import nbcc.resto.repository.DiningTableRepository;
 import nbcc.resto.repository.MenuRepository;
@@ -23,10 +24,12 @@ public class MenuServiceImpl implements MenuService {
 
     private final MenuRepository menuRepository;
     private final MenuValidationService validationService;
+    private final MenuItemService menuItemService;
 
-    public MenuServiceImpl(MenuRepository menuRepository, MenuValidationService validationService) {
+    public MenuServiceImpl(MenuRepository menuRepository, MenuValidationService validationService, MenuItemService menuItemService) {
         this.menuRepository = menuRepository;
         this.validationService = validationService;
+        this.menuItemService = menuItemService;
     }
 
     @Override
@@ -43,6 +46,30 @@ public class MenuServiceImpl implements MenuService {
     public ValidatedResult<Menu> get(Long id) {
         try {
             return ValidationResults.success(menuRepository.get(id));
+        } catch (Exception e) {
+            logger.error("Error retrieving menu with id: {}", id, e);
+            return ValidationResults.error(e);
+        }
+    }
+
+    @Override
+    public ValidatedResult<Menu> getWithMenuItems(Long id) {
+        try {
+            var result = menuRepository.get(id);
+
+            if (result.isPresent()) {
+
+                var menu = result.get();
+                var menuItemsResult = menuItemService.getAll(id);
+
+                if (menuItemsResult.isSuccessful() && menuItemsResult.getValue() != null) {
+                    menu.setMenuItems(menuItemsResult.getValue());
+                }
+
+                return ValidationResults.success(menu);
+            }
+
+            return ValidationResults.success(result);
         } catch (Exception e) {
             logger.error("Error retrieving menu with id: {}", id, e);
             return ValidationResults.error(e);

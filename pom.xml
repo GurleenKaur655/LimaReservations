@@ -15,6 +15,7 @@
         <module>app-web</module>
         <module>auth</module>
         <module>app-auth-rest-api</module>
+        <module>app-restaurant-rest-api</module>
     </modules>
 
     <properties>

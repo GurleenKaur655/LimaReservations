@@ -33,6 +33,12 @@ public class ReservationRepositoryAdapter implements ReservationRepository {
     }
 
     @Override
+    public List<Reservation> getApprovedByEventId(Long eventId) {
+        var entities = reservationJPARepository.getApprovedByEventId(eventId);
+        return reservationMapper.toDTO(entities);
+    }
+
+    @Override
     public Optional<Reservation> get(Long id) {
         var entity = reservationJPARepository.findById(id);
         return reservationMapper.toDTO(entity);
