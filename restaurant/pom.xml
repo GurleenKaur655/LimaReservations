@@ -16,6 +16,7 @@
         <module>domain</module>
         <module>web</module>
         <module>persistence</module>
+        <module>rest-api</module>
     </modules>
 
 
