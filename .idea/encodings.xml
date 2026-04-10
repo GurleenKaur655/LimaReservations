@@ -41,6 +41,14 @@
     <file url="file://$PROJECT_DIR$/common/common-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/email-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/email-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/email-service-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/email-service-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/email-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/email-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/email/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurant/application/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurant/application/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurant/domain/src/main/java" charset="UTF-8" />

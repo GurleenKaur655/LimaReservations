@@ -50,14 +50,14 @@
             <div class="card shadow-sm">
                 <div class="card-body p-0">
                     <div class="table-responsive">
-                        <table class="table table-hover table-striped mb-0" style="table-layout: fixed; width: 100%;">
+                        <table class="table table-hover table-striped mb-0">
                             <thead class="table-dark">
                             <tr>
                                 <th class="fw-bold">Name</th>
                                 <th class="fw-bold">Start Date</th>
                                 <th class="fw-bold">End Date</th>
                                 <th class="fw-bold">Price</th>
-                                <th class="fw-bold" style="width: 140px;">Actions</th>
+                                <th class="fw-bold" style="white-space: nowrap;">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -77,11 +77,16 @@
                                     <span class="badge bg-light text-dark border" th:text="${event.price}"></span>
                                 </td>
                                 <td>
-                                    <div class="btn-group btn-group-sm" role="group">
+                                    <div class="btn-group btn-group-sm" role="group" style="white-space: nowrap;">
                                         <a th:if="${viewModel.canEdit}" th:href="@{/event/edit/{id}(id=${event.id})}"
                                            class="btn btn-outline-warning" title="Edit Event">✏️ Edit</a>
+
                                         <a th:if="${viewModel.canDelete}" th:href="@{/event/delete/{id}(id=${event.id})}"
                                            class="btn btn-outline-danger" title="Delete Event">🗑️ Delete</a>
+
+                                        <a th:if="${viewModel.canEdit}"
+                                           th:href="@{/reservation/approved/{id}(id=${event.id})}"
+                                           class="btn btn-outline-success" title="View Approved Reservations">✅ Reservations</a>
                                     </div>
                                 </td>
                             </tr>

@@ -205,4 +205,17 @@ public class ReservationController {
 
         return "redirect:/reservation/manage/" + id;
     }
+    @GetMapping("/approved/{eventId}")
+    @PreAuthorize("isAuthenticated()")
+    public String approvedByEvent(@PathVariable Long eventId, Model model) {
+        var eventResult = eventService.get(eventId);
+        if (eventResult.isError() || eventResult.isEmpty()) return "error/errorPage";
+
+        var event = eventResult.getValue();
+        var reservations = reservationService.getAll(event.getName(), ReservationStatus.APPROVED).getValue();
+
+        model.addAttribute("event", event);
+        model.addAttribute("reservations", reservations);
+        return "reservation/approved";
+    }
 }

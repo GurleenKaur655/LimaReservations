@@ -8,6 +8,8 @@ import nbcc.auth.result.AuthResult;
 import nbcc.auth.validation.UserValidator;
 import nbcc.auth.validation.LoginRequestValidator;
 import nbcc.common.validation.ValidationError;
+import nbcc.email.domain.EmailRequest;
+import nbcc.email.service.EmailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,9 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final UserValidator userValidationService;
 
-    public UserServiceImpl(LoginRequestValidator loginRequestValidationService, UserRepository userRepository, UserValidator userValidationService) {
+    public UserServiceImpl(LoginRequestValidator loginRequestValidationService,
+                           UserRepository userRepository,
+                           UserValidator userValidationService) {
         this.loginRequestValidationService = loginRequestValidationService;
         this.userRepository = userRepository;
         this.userValidationService = userValidationService;
@@ -33,7 +37,8 @@ public class UserServiceImpl implements UserService {
             var validationErrors = userValidationService.validate(userRegistration);
 
             if(validationErrors.isEmpty()){
-                return AuthResult.success(userRepository.create(userRegistration));
+                var createdUser = userRepository.create(userRegistration);
+                return AuthResult.success(createdUser);
             }
 
             // don't call the create method if there are validation validationErrors
