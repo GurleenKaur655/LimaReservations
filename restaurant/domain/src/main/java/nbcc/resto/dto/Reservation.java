@@ -37,6 +37,12 @@ public class Reservation {
     @JsonIgnore
     private Long eventId;
 
+    private Long tableId;
+
+    public Long getTableId() { return tableId; }
+    public Reservation setTableId(Long tableId) { this.tableId = tableId; return this; }
+
+
     public Long getId() {
         return id;
     }

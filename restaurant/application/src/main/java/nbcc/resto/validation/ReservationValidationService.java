@@ -49,10 +49,16 @@ public class ReservationValidationService {
             return List.of(new ValidationError("An approved reservation cannot be changed."));
         }
 
-        if (reservationRepository.isSeatingAlreadyApproved(
-                reservation.getSeating().getId(), reservation.getId())) {
+        if (reservation.getTableId() == null) {
+            return List.of(new ValidationError("You must assign a table before approving."));
+        }
+
+        if (reservationRepository.isTableAlreadyApprovedForSeating(
+                reservation.getSeating().getId(),
+                reservation.getTableId(),
+                reservation.getId())) {
             return List.of(new ValidationError(
-                    "This seating is already assigned to another approved reservation."));
+                    "This table is already assigned to another approved reservation for this seating."));
         }
 
         return List.of();

@@ -80,7 +80,7 @@ public class ReservationRepositoryAdapter implements ReservationRepository {
 
 
     @Override
-    public Boolean isSeatingAlreadyApproved(Long seatingId, Long excludeReservationId) {
-        return reservationJPARepository.existsApprovedForSeating(seatingId, excludeReservationId);
+    public Boolean isTableAlreadyApprovedForSeating(Long seatingId, Long tableId, Long excludeReservationId) {
+        return reservationJPARepository.isTableAlreadyApprovedForSeating(seatingId, tableId, excludeReservationId);
     }
 }

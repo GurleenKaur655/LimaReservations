@@ -105,16 +105,18 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public ValidatedResult<Reservation> approve(Long id) {
+    public ValidatedResult<Reservation> approve(Long id, Long tableId) {
         try {
             var result = reservationRepository.get(id);
             if (result.isEmpty()) return ValidationResults.error();
             var reservation = result.get();
 
-//            var errors = reservationValidationService.validateApprove(reservation);
-//            if (!errors.isEmpty()) {
-//                return ValidationResults.invalid(reservation, errors);
-//            }
+            reservation.setTableId(tableId);
+
+            var errors = reservationValidationService.validateApprove(reservation);
+            if (!errors.isEmpty()) {
+                return ValidationResults.invalid(reservation, errors);
+            }
 
             reservation.setStatus(ReservationStatus.APPROVED);
             var updated = reservationRepository.update(reservation);

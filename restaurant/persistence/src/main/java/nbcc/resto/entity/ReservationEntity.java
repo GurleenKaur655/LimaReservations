@@ -66,6 +66,12 @@ public class ReservationEntity {
     @Version
     private Long version;
 
+    @Column(nullable = true)
+    private Long tableId;
+
+    public Long getTableId() { return tableId; }
+    public ReservationEntity setTableId(Long tableId) { this.tableId = tableId; return this; }
+
     public UUID getUuid() {
         return uuid;
     }

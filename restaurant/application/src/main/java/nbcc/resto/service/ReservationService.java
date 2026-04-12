@@ -17,7 +17,7 @@ public interface ReservationService {
     Boolean existsBySeatingEventId(Long eventId);
     ValidatedResult<Reservation> getByUuid(UUID uuid);
     Result<Collection<Reservation>> getAll(String eventName, ReservationStatus status);
-    ValidatedResult<Reservation> approve(Long id);
+    ValidatedResult<Reservation> approve(Long id, Long tableId);
     ValidatedResult<Reservation> deny(Long id);
     Result<Collection<Reservation>> getApprovedByEventId(Long eventId);
 }

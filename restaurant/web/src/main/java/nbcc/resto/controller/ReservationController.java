@@ -159,20 +159,22 @@ public class ReservationController {
     @PostMapping("/manage/{id}/approve")
     @PreAuthorize("isAuthenticated()")
     public String approve(@PathVariable Long id,
-                          @ModelAttribute("reservation") Reservation reservation,
-                          BindingResult br,
+                          @RequestParam(required = false) Long tableId,
                           Model model) {
 
-        var result = reservationService.approve(id);
+        var result = reservationService.approve(id, tableId);
 
         if (result.isInvalid()) {
-            addErrorsToBindingResults(br, result, "reservation");
+            var reservationResult = reservationService.get(id);
+            if (reservationResult.isEmpty()) return "error/errorPage";
 
-            var reservationResult = result.getValue();
-            model.addAttribute("reservation", reservationResult);
-            model.addAttribute("event", reservationResult.getSeating().getEvent());
-            model.addAttribute("actionError", result.getValidationErrors().iterator().next().getMessage());
+            var reservation = reservationResult.getValue();
+            var event = reservation.getSeating() != null ? reservation.getSeating().getEvent() : null;
 
+            model.addAttribute("reservation", reservation);
+            model.addAttribute("event", event);
+            model.addAttribute("actionError",
+                    result.getValidationErrors().iterator().next().getMessage());
             return "reservation/detail";
         }
 

@@ -26,7 +26,8 @@ public class ReservationMapper implements EntityMapper<Reservation, ReservationE
                 .setEmail(entity.getEmail())
                 .setGroupSize(entity.getGroupSize())
                 .setStatus(entity.getStatus())
-                .setVersion(entity.getVersion());
+                .setVersion(entity.getVersion())
+                .setTableId(entity.getTableId());
 
     }
 
@@ -43,6 +44,7 @@ public class ReservationMapper implements EntityMapper<Reservation, ReservationE
                 .setEmail(dto.getEmail())
                 .setGroupSize(dto.getGroupSize())
                 .setStatus(dto.getStatus())
-                .setVersion(dto.getVersion());
+                .setVersion(dto.getVersion())
+                .setTableId(dto.getTableId());
     }
 }

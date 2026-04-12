@@ -52,13 +52,23 @@
 
                             <div class="mb-3">
                                 <label class="form-label fw-bold small text-muted">Dining Tables</label>
-                                <select class="form-select" multiple th:field="*{tableIds}">
-                                    <option th:each="table : ${tables}"
-                                            th:value="${table.id}"
-                                            th:text="${table.name}">
-                                    </option>
-                                </select>
-                                <small class="text-muted">Hold Ctrl (Windows) or Cmd (Mac) to select multiple tables</small>
+
+                                <input type="text" id="tableSearch" class="form-control mb-2" placeholder="Search tables..." onkeyup="filterTables()">
+
+                                <div id="tableCheckboxContainer" class="border p-2 rounded" style="max-height: 200px; overflow-y: auto;">
+                                    <div th:each="table : ${tables}" class="form-check table-item">
+                                        <input class="form-check-input"
+                                               type="checkbox"
+                                               th:field="*{tableIds}"
+                                               th:value="${table.id}"
+                                               th:id="'table_' + ${table.id}">
+                                        <label class="form-check-label" th:for="'table_' + ${table.id}" th:text="${table.name}">
+                                            Table Name
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="text-danger small mt-1" th:errors="*{tableIds}"></div>
                             </div>
 
                             <div class="row g-2 mb-3">
@@ -88,3 +98,26 @@
 </div>
 </body>
 </html>
+<script>
+    function filterTables() {
+        // Get search value
+        let input = document.getElementById('tableSearch');
+        let filter = input.value.toLowerCase();
+
+        // Get all table items
+        let container = document.getElementById('tableCheckboxContainer');
+        let items = container.getElementsByClassName('table-item');
+
+        // Loop through items and toggle visibility
+        for (let i = 0; i < items.length; i++) {
+            let label = items[i].getElementsByTagName('label')[0];
+            let text = label.textContent || label.innerText;
+
+            if (text.toLowerCase().indexOf(filter) > -1) {
+                items[i].style.display = "";
+            } else {
+                items[i].style.display = "none";
+            }
+        }
+    }
+</script>

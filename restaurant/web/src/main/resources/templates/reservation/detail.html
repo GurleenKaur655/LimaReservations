@@ -22,7 +22,6 @@
 
                 <div class="alert alert-danger" th:if="${actionError != null}" th:text="${actionError}"></div>
 
-
                 <!-- Event Details -->
                 <div class="mb-3" th:object="${event}">
                     <th:block th:replace="~{event/fragments :: details}"/>
@@ -51,6 +50,7 @@
                     <th:block th:replace="~{reservation/fragments :: details}"/>
                 </div>
 
+                <!-- Manage Card -->
                 <div class="card shadow-sm mt-3">
                     <div class="card-header bg-light">
                         <h5 class="mb-0" style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 800; color: #6B7C3A;">
@@ -59,30 +59,108 @@
                     </div>
                     <div class="card-body">
 
+                        <!-- Already approved -->
                         <div th:if="${reservation.status?.name() == 'APPROVED'}">
-                            <p class="text-muted small fst-italic mb-0">
-                                This reservation is approved and cannot be modified.
+                            <p class="text-success fw-bold mb-1">✅ This reservation is approved and cannot be modified.</p>
+                            <p class="text-muted small mb-0" th:if="${reservation.tableId != null}">
+                                Assigned Table ID: <strong th:text="${reservation.tableId}"></strong>
                             </p>
                         </div>
 
-                        <div th:unless="${reservation.status?.name() == 'APPROVED'}" class="d-flex gap-2">
+                        <div th:unless="${reservation.status?.name() == 'APPROVED'}">
 
                             <form th:action="@{/reservation/manage/{id}/approve(id=${reservation.id})}"
-                                  method="post" class="flex-grow-1">
-                                <button type="submit" class="btn btn-success btn-sm w-100">Approve</button>
+                                  method="post" id="approveForm">
+
+                                <label class="form-label fw-bold small text-muted">Assign Table</label>
+
+                                <!-- Search box -->
+                                <input type="text"
+                                       id="tableSearch"
+                                       class="form-control form-control-sm mb-2"
+                                       placeholder="Search tables..."
+                                       autocomplete="off"
+                                       oninput="filterTables(this.value)"/>
+
+                                <!-- Radio card list -->
+                                <div id="tableList"
+                                     style="max-height: 240px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 8px; padding: 6px;">
+
+                                    <div th:each="t : ${reservation.seating.tables}"
+                                         class="table-option"
+                                         th:attr="data-name=${t.name}">
+                                        <label style="display: flex; align-items: center; gap: 10px;
+                                                       padding: 10px 12px; border-radius: 6px; cursor: pointer;
+                                                       border: 1px solid transparent; transition: background 0.15s;"
+                                               class="table-label w-100 mb-1"
+                                               onmouseover="this.style.background='#f8f9fa'"
+                                               onmouseout="if(!this.querySelector('input').checked) this.style.background=''">
+                                            <input type="radio"
+                                                   name="tableId"
+                                                   th:value="${t.id}"
+                                                   required
+                                                   onchange="highlightSelected(this)"/>
+                                            <span>
+                                                <span class="fw-semibold" th:text="${t.name}"></span>
+                                                <span class="text-muted small ms-2"
+                                                      th:text="'Capacity: ' + ${t.capacity}"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+
+
+                                    <div id="noResults"
+                                         style="display:none; padding: 12px; text-align:center; color:#6c757d; font-size:13px;">
+                                        No tables match your search.
+                                    </div>
+                                </div>
+
+                                <small class="text-muted d-block mt-1 mb-3">Select the table to assign to this reservation</small>
+
+                                <button type="submit" class="btn btn-success btn-sm w-100">✅ Approve</button>
                             </form>
 
+                            <!-- Deny form -->
                             <form th:action="@{/reservation/manage/{id}/deny(id=${reservation.id})}"
-                                  method="post" class="flex-grow-1">
-                                <button type="submit" class="btn btn-danger btn-sm w-100">Deny</button>
+                                  method="post" class="mt-2">
+                                <button type="submit" class="btn btn-danger btn-sm w-100">❌ Deny</button>
                             </form>
 
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
 </div>
+
+<script>
+    function filterTables(query) {
+        var options = document.querySelectorAll('.table-option');
+        var q = query.toLowerCase().trim();
+        var visible = 0;
+        options.forEach(function(opt) {
+            var name = opt.getAttribute('data-name').toLowerCase();
+            if (name.includes(q)) {
+                opt.style.display = '';
+                visible++;
+            } else {
+                opt.style.display = 'none';
+            }
+        });
+        document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    function highlightSelected(radio) {
+        document.querySelectorAll('.table-label').forEach(function(lbl) {
+            lbl.style.background = '';
+            lbl.style.border = '1px solid transparent';
+        });
+        var selectedLabel = radio.closest('label');
+        selectedLabel.style.background = '#d1e7dd';
+        selectedLabel.style.border = '1px solid #a3cfbb';
+    }
+</script>
 </body>
 </html>
