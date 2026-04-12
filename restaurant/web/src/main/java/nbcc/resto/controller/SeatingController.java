@@ -53,7 +53,7 @@ public class SeatingController {
     public String create(Model model) {
         model.addAttribute("seating", new Seating());
         model.addAttribute("events", eventService.getAll().getValue());
-        model.addAttribute("tables", diningTableService.getAll().getValue());
+        model.addAttribute("tables", diningTableService.getAllActive().getValue());
         return "seating/create";
     }
 
@@ -67,7 +67,7 @@ public class SeatingController {
         if (result.isInvalid()) {
             addErrorsToBindingResults(br, result);
             model.addAttribute("events", eventService.getAll().getValue());
-            model.addAttribute("tables", diningTableService.getAll().getValue());
+            model.addAttribute("tables", diningTableService.getAllActive().getValue());
             return "seating/create";
         }
 
@@ -95,7 +95,7 @@ public class SeatingController {
 
         model.addAttribute("seating", seating);
         model.addAttribute("events", eventService.getAll().getValue());
-        model.addAttribute("tables", diningTableService.getAll().getValue());
+        model.addAttribute("tables", diningTableService.getAllActive().getValue());
         return "seating/edit";
     }
 
@@ -112,7 +112,7 @@ public class SeatingController {
             addErrorsToBindingResults(br, result);
             model.addAttribute("seating", result.getValue());
             model.addAttribute("events", eventService.getAll().getValue());
-            model.addAttribute("tables", diningTableService.getAll().getValue());
+            model.addAttribute("tables", diningTableService.getAllActive().getValue());
             return "seating/edit";
         }
 

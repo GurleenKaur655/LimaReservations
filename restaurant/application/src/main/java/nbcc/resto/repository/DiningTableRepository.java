@@ -18,4 +18,5 @@ public interface DiningTableRepository {
     void delete(Long id);
 
     Boolean exists(String name);
+    List<DiningTable> getAllActive();
 }

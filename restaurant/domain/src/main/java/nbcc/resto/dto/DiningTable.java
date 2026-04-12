@@ -14,6 +14,8 @@ public class DiningTable {
     @NotNull(message = "Capacity cannot be blank")
     private Integer capacity;
 
+    private Boolean archived = false;
+
     private Long version;
 
     public Long getId() {
@@ -49,6 +51,15 @@ public class DiningTable {
 
     public DiningTable setVersion(Long version) {
         this.version = version;
+        return this;
+    }
+
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public DiningTable setArchived(Boolean archived) {
+        this.archived = archived;
         return this;
     }
 }

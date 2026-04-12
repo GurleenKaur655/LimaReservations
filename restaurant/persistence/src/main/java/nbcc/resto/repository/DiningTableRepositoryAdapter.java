@@ -57,6 +57,12 @@ public class DiningTableRepositoryAdapter implements DiningTableRepository{
     }
 
     @Override
+    public List<DiningTable> getAllActive() {
+        var entities = diningTableJPARepository.findByArchivedFalse();
+        return diningTableMapper.toDTO(entities);
+    }
+
+    @Override
     public Boolean exists(String name) {
         return diningTableJPARepository.existsByNameIgnoreCase(name);
     }

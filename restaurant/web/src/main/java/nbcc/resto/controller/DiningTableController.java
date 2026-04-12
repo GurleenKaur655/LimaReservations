@@ -33,7 +33,7 @@ public class DiningTableController {
     @GetMapping
     public String getAll(Model model) {
 
-        var result = diningTableService.getAll();
+        var result = diningTableService.getAllActive();
 
         DiningTableListViewModel viewModel =
                 new DiningTableListViewModel(result.getValue(), loginService.isLoggedIn());

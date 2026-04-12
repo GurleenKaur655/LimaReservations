@@ -13,7 +13,7 @@ public class Reservation {
     private Long id;
 
     @JsonIgnoreProperties({"event", "table", "version", "createdDate",
-            "archived", "durationMinutes", "startDateTime"})
+            "archived", "durationMinutes", "startDateTime", "tableIds", "tables", "totalCapacity", "tableNamesDisplay"})
     private Seating seating;
     private UUID uuid;
 
