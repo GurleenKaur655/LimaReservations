@@ -14,6 +14,7 @@ public interface ReservationJPARepository extends JpaRepository<ReservationEntit
     boolean existsBySeatingId(Long seatingId);
     boolean existsBySeatingEventId(Long eventId);
     Optional<ReservationEntity> findByUuid(UUID uuid);
+    void deleteBySeatingId(Long seatingId);
 
     @Query("SELECT r FROM ReservationEntity r WHERE " +
             "(:eventName IS NULL OR r.seating.event.name = :eventName) AND " +

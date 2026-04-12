@@ -74,6 +74,12 @@ public class ReservationRepositoryAdapter implements ReservationRepository {
     }
 
     @Override
+    public void deleteBySeatingId(Long seatingId) {
+        reservationJPARepository.deleteBySeatingId(seatingId);
+    }
+
+
+    @Override
     public Boolean isSeatingAlreadyApproved(Long seatingId, Long excludeReservationId) {
         return reservationJPARepository.existsApprovedForSeating(seatingId, excludeReservationId);
     }

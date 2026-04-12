@@ -1,6 +1,7 @@
 package nbcc.resto.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import nbcc.auth.service.LoginService;
 import nbcc.resto.dto.DiningTable;
 import nbcc.resto.dto.Seating;

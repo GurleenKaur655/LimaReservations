@@ -60,6 +60,7 @@ public class ReservationEntity {
 
     @ManyToOne
     @JoinColumn(name = "seating_id", foreignKey = @ForeignKey(name = "fk_reservation_seating"))
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private SeatingEntity seating;
 
     @Version

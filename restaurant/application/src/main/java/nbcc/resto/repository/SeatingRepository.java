@@ -15,6 +15,7 @@ public interface SeatingRepository {
     List<Seating> getByTableId(Long tableId);
     Seating update(Seating seating) throws ConcurrencyException;
     void delete(Long id);
+    void deleteByTableId(Long tableId);
     void archive(Long id);
     Seating create(Seating seating);
     Boolean exists(String name);
