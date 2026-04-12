@@ -12,4 +12,6 @@ public interface SeatingJPARepository extends JpaRepository<SeatingEntity, Long>
     List<SeatingEntity> findByArchivedFalse();
 
     Collection<SeatingEntity> findByTablesId(Long tableId);
+
+    void deleteByTablesId(Long tableId);
 }

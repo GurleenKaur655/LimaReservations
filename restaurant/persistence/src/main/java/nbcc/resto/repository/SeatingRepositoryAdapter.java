@@ -93,7 +93,7 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
 
     @Override
     public void deleteByTableId(Long tableId) {
-        seatingJPARepository.deleteByTableId(tableId);
+        seatingJPARepository.deleteByTablesId(tableId);
     }
 
     @Override
