@@ -40,13 +40,31 @@
 
                             <div class="mb-3">
                                 <label class="form-label fw-bold small text-muted">Event</label>
-                                <select class="form-select" th:field="*{event.id}">
-                                    <option value="" disabled selected>Select Event</option>
-                                    <option th:each="event : ${events}"
-                                            th:value="${event.id}"
-                                            th:text="${event.name}">
-                                    </option>
-                                </select>
+
+
+                                <input type="text" id="eventSearch" class="form-control mb-2"
+                                       placeholder="Search events..." onkeyup="filterEvents()">
+
+
+                                <div id="eventContainer" class="border p-2 rounded"
+                                     style="max-height: 200px; overflow-y: auto;">
+
+                                    <div th:each="event : ${events}" class="form-check event-item">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               th:field="*{event.id}"
+                                               th:value="${event.id}"
+                                               th:id="'event_' + ${event.id}">
+
+                                        <label class="form-check-label"
+                                               th:for="'event_' + ${event.id}"
+                                               th:text="${event.name}">
+                                            Event Name
+                                        </label>
+                                    </div>
+
+                                </div>
+
                                 <div class="text-danger small mt-1" th:errors="*{event.id}"></div>
                             </div>
 
