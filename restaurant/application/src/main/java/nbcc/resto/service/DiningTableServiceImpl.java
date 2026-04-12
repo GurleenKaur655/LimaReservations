@@ -1,5 +1,6 @@
 package nbcc.resto.service;
 
+import jakarta.transaction.Transactional;
 import nbcc.common.exception.ConcurrencyException;
 import nbcc.common.result.Result;
 import nbcc.common.result.ValidatedResult;
@@ -7,6 +8,8 @@ import nbcc.common.result.ValidationResults;
 import nbcc.common.validation.ValidationError;
 import nbcc.resto.dto.DiningTable;
 import nbcc.resto.repository.DiningTableRepository;
+import nbcc.resto.repository.ReservationRepository;
+import nbcc.resto.repository.SeatingRepository;
 import nbcc.resto.validation.DiningTableValidationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,16 +18,21 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 
 @Service
+@Transactional
 public class DiningTableServiceImpl implements  DiningTableService {
 
     private final Logger logger = LoggerFactory.getLogger(DiningTableServiceImpl.class);
 
     private final DiningTableRepository diningTableRepository;
     private final DiningTableValidationService validationService;
+    private final SeatingRepository seatingRepository;
+    private final ReservationRepository reservationRepository;
 
-    public DiningTableServiceImpl(DiningTableRepository diningTableRepository, DiningTableValidationService validationService) {
+    public DiningTableServiceImpl(DiningTableRepository diningTableRepository, DiningTableValidationService validationService, SeatingRepository seatingRepository, ReservationRepository reservationRepository) {
         this.diningTableRepository = diningTableRepository;
         this.validationService = validationService;
+        this.seatingRepository = seatingRepository;
+        this.reservationRepository = reservationRepository;
     }
 
     @Override
@@ -107,6 +115,11 @@ public class DiningTableServiceImpl implements  DiningTableService {
     @Override
     public ValidatedResult<Void> delete(Long id) {
         try {
+            var seatings = seatingRepository.getByTableId(id);
+            for (var seating : seatings) {
+                reservationRepository.deleteBySeatingId(seating.getId());
+            }
+            seatingRepository.deleteByTableId(id);
             diningTableRepository.delete(id);
             logger.debug("Dining table with id {} deleted", id);
             return ValidationResults.success();

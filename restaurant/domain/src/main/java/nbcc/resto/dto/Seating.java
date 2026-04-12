@@ -32,8 +32,10 @@ public class Seating {
         return this;
     }
 
+    @NotNull(message = "Event is required")
     private Event event;
 
+    @NotNull(message = "Dining table is required")
     private DiningTable table;
 
     private Long version;

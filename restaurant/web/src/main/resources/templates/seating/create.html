@@ -38,26 +38,44 @@
 
                             <div class="mb-3">
                                 <label class="form-label fw-bold small text-muted">Event</label>
-                                <select class="form-select" th:field="*{event.id}">
-                                    <option value="" disabled selected>Select Event</option>
-                                    <option th:each="event : ${events}"
-                                            th:value="${event.id}"
-                                            th:text="${event.name}">
-                                    </option>
-                                </select>
-                                <div class="text-danger small mt-1" th:errors="*{event.id}"></div>
+
+                                <div>
+                                    <div th:each="event : ${events}" class="form-check">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               th:field="*{event.id}"
+                                               th:value="${event.id}"
+                                               th:id="'event_' + ${event.id}"/>
+
+                                        <label class="form-check-label"
+                                               th:for="'event_' + ${event.id}"
+                                               th:text="${event.name}">
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="text-danger small mt-1" th:errors="*{event}"></div>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label fw-bold small text-muted">Dining Table</label>
-                                <select class="form-select" th:field="*{table.id}">
-                                    <option value="" disabled selected>Select Dining Table</option>
-                                    <option th:each="table : ${tables}"
-                                            th:value="${table.id}"
-                                            th:text="${table.name}">
-                                    </option>
-                                </select>
-                                <div class="text-danger small mt-1" th:errors="*{table.id}"></div>
+
+                                <div>
+                                    <div th:each="table : ${tables}" class="form-check">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               th:field="*{table.id}"
+                                               th:value="${table.id}"
+                                               th:id="'table_' + ${table.id}"/>
+
+                                        <label class="form-check-label"
+                                               th:for="'table_' + ${table.id}"
+                                               th:text="${table.name}">
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="text-danger small mt-1" th:errors="*{table}"></div>
                             </div>
 
                             <div class="row g-2 mb-3">

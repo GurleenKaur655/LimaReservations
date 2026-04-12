@@ -1,6 +1,7 @@
 package nbcc.resto.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import nbcc.auth.service.LoginService;
 import nbcc.resto.dto.Event;
 import nbcc.resto.dto.Seating;
@@ -62,7 +63,7 @@ public class SeatingController {
         }
 
         @PostMapping("/create")
-        public String create(@ModelAttribute("seating") Seating seating, BindingResult br, Model model) {
+        public String create( @ModelAttribute("seating") Seating seating, BindingResult br, Model model) {
 
             var result = seatingService.create(seating);
 

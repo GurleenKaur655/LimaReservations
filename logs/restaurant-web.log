@@ -1,25 +1,32 @@
-2026-04-10T19:26:21.151-03:00  INFO 33378 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 33378 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T19:26:21.156-03:00 DEBUG 33378 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T19:26:21.157-03:00  INFO 33378 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T19:26:21.619-03:00  INFO 33378 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T19:26:21.647-03:00  INFO 33378 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 6 JPA repository interfaces.
-2026-04-10T19:26:22.237-03:00  INFO 33378 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T19:26:22.245-03:00  INFO 33378 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T19:26:22.246-03:00  INFO 33378 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T19:26:22.263-03:00  INFO 33378 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1032 ms
-2026-04-10T19:26:22.307-03:00  WARN 33378 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C98B476EAE849545B2E3874DBD4E5E81]
-2026-04-10T19:26:22.431-03:00  INFO 33378 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T19:26:22.454-03:00  INFO 33378 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T19:26:22.625-03:00  INFO 33378 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T19:26:22.641-03:00  INFO 33378 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T19:26:22.783-03:00  INFO 33378 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d4600fb
-2026-04-10T19:26:22.784-03:00  INFO 33378 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T19:26:22.805-03:00  WARN 33378 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T19:26:22.819-03:00  INFO 33378 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-04-12T01:45:58.753-03:00  WARN 17256 --- [Restaurant-Project] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h30s360ms221µs700ns).
+2026-04-12T03:18:52.009-03:00  WARN 17256 --- [Restaurant-Project] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m6s507ms803µs600ns).
+2026-04-12T03:35:17.573-03:00  WARN 17256 --- [Restaurant-Project] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m55s348ms33µs400ns).
+2026-04-12T03:38:07.944-03:00  INFO 17256 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-12T03:38:08.131-03:00  INFO 17256 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-12T03:38:08.193-03:00  INFO 17256 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-12T03:38:08.208-03:00  INFO 17256 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-12T03:38:08.248-03:00  INFO 17256 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-12T03:40:11.747-03:00  INFO 25756 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 25756 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-04-12T03:40:11.758-03:00 DEBUG 25756 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-04-12T03:40:11.760-03:00  INFO 25756 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-04-12T03:40:14.542-03:00  INFO 25756 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-12T03:40:14.766-03:00  INFO 25756 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 197 ms. Found 6 JPA repository interfaces.
+2026-04-12T03:40:18.036-03:00  INFO 25756 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-12T03:40:18.073-03:00  INFO 25756 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-12T03:40:18.074-03:00  INFO 25756 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-04-12T03:40:18.199-03:00  INFO 25756 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6166 ms
+2026-04-12T03:40:18.794-03:00  INFO 25756 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-12T03:40:19.039-03:00  INFO 25756 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-04-12T03:40:20.822-03:00  INFO 25756 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-12T03:40:20.952-03:00  INFO 25756 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-12T03:40:22.041-03:00  INFO 25756 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@230d013b
+2026-04-12T03:40:22.048-03:00  INFO 25756 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-12T03:40:22.582-03:00  WARN 25756 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-12T03:40:22.660-03:00  INFO 25756 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
-	Database version: 8.0.44
+	Database version: 8.0.43
 	Default catalog/schema: restaurant/undefined
 	Autocommit mode: undefined/unknown
 	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
@@ -27,17 +34,17 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-04-10T19:26:23.353-03:00  INFO 33378 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T19:26:23.395-03:00  INFO 33378 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T19:26:23.497-03:00  INFO 33378 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T19:26:24.171-03:00  WARN 33378 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T19:26:24.211-03:00  INFO 33378 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T19:26:24.480-03:00  INFO 33378 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T19:26:24.483-03:00  INFO 33378 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 3.617 seconds (process running for 4.11)
-2026-04-10T19:26:33.569-03:00  INFO 33378 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-10T19:26:33.569-03:00  INFO 33378 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-10T19:26:33.571-03:00  INFO 33378 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-04-10T19:26:33.609-03:00  WARN 33378 --- [Restaurant-Project] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler nbcc.resto.controller.EventController#exceptionHandler(Model, Exception, HttpServletRequest)
+2026-04-12T03:40:26.211-03:00  INFO 25756 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-12T03:40:26.449-03:00  INFO 25756 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-12T03:40:27.366-03:00  INFO 25756 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-12T03:40:34.309-03:00  WARN 25756 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-12T03:40:34.745-03:00  INFO 25756 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-04-12T03:40:37.608-03:00  INFO 25756 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-12T03:40:37.625-03:00  INFO 25756 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 28.054 seconds (process running for 30.879)
+2026-04-12T03:41:18.869-03:00  INFO 25756 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-12T03:41:18.870-03:00  INFO 25756 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-12T03:41:18.873-03:00  INFO 25756 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-04-12T03:41:32.919-03:00  WARN 25756 --- [Restaurant-Project] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler nbcc.resto.controller.SeatingController#exceptionHandler(Model, Exception, HttpServletRequest)
 
 org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
 	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38) ~[spring-security-core-7.0.2.jar:7.0.2]
@@ -48,7 +55,7 @@ org.springframework.security.authorization.AuthorizationDeniedException: Access 
 	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-7.0.2.jar:7.0.2]
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.3.jar:7.0.3]
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.3.jar:7.0.3]
-	at nbcc.resto.controller.EventController$$SpringCGLIB$$0.exceptionHandler(<generated>) ~[classes/:na]
+	at nbcc.resto.controller.SeatingController$$SpringCGLIB$$0.exceptionHandler(<generated>) ~[classes/:na]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-7.0.3.jar:7.0.3]
@@ -142,34 +149,35 @@ org.springframework.security.authorization.AuthorizationDeniedException: Access 
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2026-04-10T19:29:38.862-03:00 DEBUG 33378 --- [Restaurant-Project] [http-nio-8080-exec-1] nbcc.auth.client.AuthClientImpl          : Creating token for user kamal with URI http://localhost:8082/api/auth/token
-2026-04-10T19:31:40.590-03:00  INFO 33378 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T19:31:40.594-03:00  INFO 33378 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T19:31:40.601-03:00  INFO 33378 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T19:31:40.605-03:00  INFO 33378 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T19:31:40.613-03:00  INFO 33378 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T19:31:54.532-03:00  INFO 33587 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 33587 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T19:31:54.534-03:00 DEBUG 33587 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T19:31:54.534-03:00  INFO 33587 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T19:31:54.884-03:00  INFO 33587 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T19:31:54.916-03:00  INFO 33587 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 6 JPA repository interfaces.
-2026-04-10T19:31:55.508-03:00  INFO 33587 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T19:31:55.518-03:00  INFO 33587 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T19:31:55.518-03:00  INFO 33587 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T19:31:55.539-03:00  INFO 33587 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 978 ms
-2026-04-10T19:31:55.579-03:00  WARN 33587 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [027CE239EFF61964F3DD124FC815ED9E]
-2026-04-10T19:31:55.659-03:00  INFO 33587 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T19:31:55.681-03:00  INFO 33587 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T19:31:55.890-03:00  INFO 33587 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T19:31:55.905-03:00  INFO 33587 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T19:31:56.065-03:00  INFO 33587 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3713bedc
-2026-04-10T19:31:56.066-03:00  INFO 33587 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T19:31:56.088-03:00  WARN 33587 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T19:31:56.102-03:00  INFO 33587 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-04-12T03:41:38.398-03:00 DEBUG 25756 --- [Restaurant-Project] [http-nio-8080-exec-6] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-04-12T03:41:47.633-03:00 DEBUG 25756 --- [Restaurant-Project] [http-nio-8080-exec-6] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@5309e4a0: [ValidationError{field='name', message='Name cannot be blank', value=}, ValidationError{field='table', message='Dining table is required', value=null}, ValidationError{field='event', message='Event is required', value=null}, ValidationError{field='startDateTime', message='Start Date and Time cannot be blank', value=null}]
+2026-04-12T03:42:24.228-03:00  INFO 25756 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-12T03:42:24.253-03:00  INFO 25756 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-12T03:42:24.265-03:00  INFO 25756 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-12T03:42:24.271-03:00  INFO 25756 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-12T03:42:24.305-03:00  INFO 25756 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-12T03:43:32.253-03:00  INFO 7008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.8 with PID 7008 (C:\src\projectlima\restaurant-term-project-team_12_lima\app-web\target\classes started by USER in C:\src\projectlima\restaurant-term-project-team_12_lima)
+2026-04-12T03:43:32.265-03:00 DEBUG 7008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-04-12T03:43:32.266-03:00  INFO 7008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-04-12T03:43:34.768-03:00  INFO 7008 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-12T03:43:34.961-03:00  INFO 7008 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 169 ms. Found 6 JPA repository interfaces.
+2026-04-12T03:43:37.814-03:00  INFO 7008 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-12T03:43:37.846-03:00  INFO 7008 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-12T03:43:37.847-03:00  INFO 7008 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-04-12T03:43:37.955-03:00  INFO 7008 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5419 ms
+2026-04-12T03:43:38.156-03:00  WARN 7008 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [F73211AEFD0DA34C4C94BD0532F3C1E5]
+2026-04-12T03:43:38.500-03:00  INFO 7008 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-12T03:43:38.793-03:00  INFO 7008 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-04-12T03:43:40.395-03:00  INFO 7008 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-12T03:43:40.527-03:00  INFO 7008 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-12T03:43:41.350-03:00  INFO 7008 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b04a6a4
+2026-04-12T03:43:41.355-03:00  INFO 7008 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-12T03:43:41.498-03:00  WARN 7008 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-12T03:43:41.583-03:00  INFO 7008 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
 	Database driver: MySQL Connector/J
 	Database dialect: MySQLDialect
-	Database version: 8.0.44
+	Database version: 8.0.43
 	Default catalog/schema: restaurant/undefined
 	Autocommit mode: undefined/unknown
 	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
@@ -177,69 +185,19 @@ org.springframework.security.authorization.AuthorizationDeniedException: Access 
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-04-10T19:31:56.594-03:00  INFO 33587 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T19:31:56.629-03:00  INFO 33587 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T19:31:56.720-03:00  INFO 33587 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T19:31:57.454-03:00  WARN 33587 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T19:31:57.492-03:00  INFO 33587 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T19:31:57.775-03:00  INFO 33587 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T19:31:57.777-03:00  INFO 33587 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 3.59 seconds (process running for 4.086)
-2026-04-10T19:32:05.957-03:00  INFO 33587 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-10T19:32:05.958-03:00  INFO 33587 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-10T19:32:05.960-03:00  INFO 33587 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-04-10T19:36:14.357-03:00  INFO 33587 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T19:36:14.359-03:00  INFO 33587 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T19:36:14.363-03:00  INFO 33587 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T19:36:14.365-03:00  INFO 33587 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T19:36:14.368-03:00  INFO 33587 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T19:36:17.227-03:00  INFO 33646 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 33646 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T19:36:17.228-03:00 DEBUG 33646 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T19:36:17.229-03:00  INFO 33646 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T19:36:17.598-03:00  INFO 33646 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T19:36:17.638-03:00  INFO 33646 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 6 JPA repository interfaces.
-2026-04-10T19:36:18.056-03:00  INFO 33646 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T19:36:18.062-03:00  INFO 33646 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T19:36:18.062-03:00  INFO 33646 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T19:36:18.083-03:00  INFO 33646 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 793 ms
-2026-04-10T19:36:18.172-03:00  INFO 33646 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T19:36:18.195-03:00  INFO 33646 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T19:36:18.390-03:00  INFO 33646 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T19:36:18.404-03:00  INFO 33646 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T19:36:18.568-03:00  INFO 33646 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66d69cd2
-2026-04-10T19:36:18.569-03:00  INFO 33646 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T19:36:18.592-03:00  WARN 33646 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T19:36:18.603-03:00  INFO 33646 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: restaurant/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-10T19:36:19.081-03:00  INFO 33646 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T19:36:19.114-03:00  INFO 33646 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T19:36:19.193-03:00  INFO 33646 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T19:36:19.846-03:00  WARN 33646 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T19:36:19.894-03:00  INFO 33646 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T19:36:20.154-03:00  INFO 33646 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T19:36:20.157-03:00  INFO 33646 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 3.156 seconds (process running for 3.746)
-2026-04-10T19:36:23.959-03:00  INFO 33646 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-10T19:36:23.959-03:00  INFO 33646 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-10T19:36:23.961-03:00  INFO 33646 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2026-04-10T19:36:47.328-03:00 DEBUG 33646 --- [Restaurant-Project] [http-nio-8080-exec-10] nbcc.email.service.EmailServiceImpl      : Attempting to send email to recipients: [3@gmail.com]
-2026-04-10T19:36:47.392-03:00 DEBUG 33646 --- [Restaurant-Project] [http-nio-8080-exec-10] nbcc.email.service.EmailServiceImpl      : Email sent successfully to recipients: [3@gmail.com]
-2026-04-10T19:36:47.392-03:00  INFO 33646 --- [Restaurant-Project] [http-nio-8080-exec-10] n.resto.service.ReservationServiceImpl   : Reservation received email sent to: 3@gmail.com
-2026-04-10T19:37:11.368-03:00 DEBUG 33646 --- [Restaurant-Project] [http-nio-8080-exec-3] nbcc.auth.client.AuthClientImpl          : Creating token for user kamal with URI http://localhost:8082/api/auth/token
-2026-04-10T19:37:34.756-03:00 DEBUG 33646 --- [Restaurant-Project] [http-nio-8080-exec-7] nbcc.email.service.EmailServiceImpl      : Attempting to send email to recipients: [vf@gmail.com]
-2026-04-10T19:37:34.784-03:00 DEBUG 33646 --- [Restaurant-Project] [http-nio-8080-exec-7] nbcc.email.service.EmailServiceImpl      : Email sent successfully to recipients: [vf@gmail.com]
-2026-04-10T19:37:34.785-03:00  INFO 33646 --- [Restaurant-Project] [http-nio-8080-exec-7] n.resto.service.ReservationServiceImpl   : Reservation status email sent to: vf@gmail.com
-2026-04-10T19:39:00.265-03:00 ERROR 33646 --- [Restaurant-Project] [http-nio-8080-exec-1] n.c.c.advice.ErrorControllerAdvice       : Unexpected Exception on uri /swagger-ui.html: on method GET 
+2026-04-12T03:43:44.725-03:00  INFO 7008 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-12T03:43:44.917-03:00  INFO 7008 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-12T03:43:45.498-03:00  INFO 7008 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-12T03:43:49.532-03:00  WARN 7008 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-12T03:43:49.771-03:00  INFO 7008 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
+2026-04-12T03:43:51.697-03:00  INFO 7008 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-12T03:43:51.710-03:00  INFO 7008 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 21.432 seconds (process running for 24.873)
+2026-04-12T03:43:52.965-03:00  INFO 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-12T03:43:52.966-03:00  INFO 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-12T03:43:52.968-03:00  INFO 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-12T03:43:53.144-03:00 ERROR 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] n.c.c.advice.ErrorControllerAdvice       : Unexpected Exception on uri /seating/: on method GET 
 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource swagger-ui.html for request '/swagger-ui.html'.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource seating for request '/seating/'.
 	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.3.jar:7.0.3]
@@ -324,12 +282,30 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2026-04-10T19:39:05.104-03:00 ERROR 33646 --- [Restaurant-Project] [http-nio-8080-exec-6] n.c.c.advice.ErrorControllerAdvice       : Unexpected Exception on uri /apple-touch-icon-precomposed.png: on method GET 
+2026-04-12T03:44:04.407-03:00  WARN 7008 --- [Restaurant-Project] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler nbcc.resto.controller.SeatingController#exceptionHandler(Model, Exception, HttpServletRequest)
 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource apple-touch-icon-precomposed.png for request '/apple-touch-icon-precomposed.png'.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527) ~[spring-webmvc-7.0.3.jar:7.0.3]
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50) ~[spring-webmvc-7.0.3.jar:7.0.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.3.jar:7.0.3]
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.handleDeniedInvocation(PreAuthorizeAuthorizationManager.java:96) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.handle(AuthorizationManagerBeforeMethodInterceptor.java:290) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.3.jar:7.0.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.3.jar:7.0.3]
+	at nbcc.resto.controller.SeatingController$$SpringCGLIB$$0.exceptionHandler(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:460) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:72) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:176) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:78) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1227) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1035) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.3.jar:7.0.3]
@@ -411,12 +387,64 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2026-04-10T19:39:05.106-03:00 ERROR 33646 --- [Restaurant-Project] [http-nio-8080-exec-4] n.c.c.advice.ErrorControllerAdvice       : Unexpected Exception on uri /apple-touch-icon.png: on method GET 
+2026-04-12T03:44:11.720-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-6] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-04-12T03:44:24.666-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-7] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@2946aacf: [ValidationError{field='name', message='Name cannot be blank', value=}, ValidationError{field='event', message='Event is required', value=null}, ValidationError{field='startDateTime', message='Start Date and Time cannot be blank', value=null}, ValidationError{field='table', message='Dining table is required', value=null}]
+2026-04-12T03:44:24.666-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-8] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@2eaea861: [ValidationError{field='event', message='Event is required', value=null}, ValidationError{field='startDateTime', message='Start Date and Time cannot be blank', value=null}, ValidationError{field='table', message='Dining table is required', value=null}, ValidationError{field='name', message='Name cannot be blank', value=}]
+2026-04-12T03:44:37.746-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@4411d64c: [ValidationError{field='table', message='Dining table is required', value=null}, ValidationError{field='event', message='Event is required', value=null}]
+2026-04-12T03:44:45.719-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-5] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@3fbf9e2: [ValidationError{field='table', message='Dining table is required', value=null}, ValidationError{field='null', message='Start date must be between event start date 2026-03-14 and end date 2026-03-15', value=null}]
+2026-04-12T03:46:08.750-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-3] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@298b2104: [ValidationError{field='table', message='Dining table is required', value=null}, ValidationError{field='startDateTime', message='Start Date and Time cannot be blank', value=null}, ValidationError{field='event', message='Event is required', value=null}, ValidationError{field='null', message='Name must be unique', value=null}]
+2026-04-12T03:46:23.106-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-6] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@10f9dec8: [ValidationError{field='null', message='Table is already used during this time', value=null}]
+2026-04-12T03:46:23.139-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-7] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@1b14cb4: [ValidationError{field='null', message='Table is already used during this time', value=null}]
+2026-04-12T03:46:31.448-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@28964ec5: [ValidationError{field='null', message='Table is already used during this time', value=null}]
+2026-04-12T03:46:36.708-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-3] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@2db8ce14: [ValidationError{field='null', message='Table is already used during this time', value=null}]
+2026-04-12T03:46:36.751-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-5] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@68234a4d: [ValidationError{field='null', message='Table is already used during this time', value=null}]
+2026-04-12T03:46:42.296-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-7] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@33223779: [ValidationError{field='null', message='Table is already used during this time', value=null}]
+2026-04-12T03:46:48.365-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] nbcc.resto.service.SeatingServiceImpl    : Validation errors for seating create nbcc.resto.dto.Seating@ff0cad4: [ValidationError{field='null', message='Table is already used during this time', value=null}]
+2026-04-12T03:47:17.747-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] n.resto.service.DiningTableServiceImpl   : Dining table with id 17 deleted
+2026-04-12T03:48:16.314-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-10] nbcc.resto.service.MenuServiceImpl       : Validation errors for menu create nbcc.resto.dto.Menu@42928134: [ValidationError{field='name', message='Name is required', value=}]
+2026-04-12T03:48:43.223-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to load new menu item for creation with menuId: 10
+2026-04-12T03:48:53.447-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-6] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 10
+2026-04-12T03:48:53.447-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-6] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item create nbcc.resto.dto.MenuItem@5fb33fc6: [ValidationError{field='name', message='Name is required', value=}, ValidationError{field='description', message='Description is required', value=}]
+2026-04-12T03:49:08.132-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-7] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 10
+2026-04-12T03:49:13.031-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 10
+2026-04-12T03:49:13.045-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item create nbcc.resto.dto.MenuItem@20179b54: [ValidationError{field='description', message='Description is required', value=}, ValidationError{field='name', message='Name is required', value=}]
+2026-04-12T03:49:25.980-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-6] n.resto.controller.MenuItemController    : attempting to create new menu item on menu with menuId: 10
+2026-04-12T03:49:28.846-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-10] n.resto.controller.MenuItemController    : loading menu item for edit with menuItemId: 13, and menuId: 10
+2026-04-12T03:49:32.395-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to edit menu item: 13, which belongs to menuId: 10
+2026-04-12T03:49:32.399-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item update nbcc.resto.dto.MenuItem@2c6dcc00: [ValidationError{field='name', message='Name is required', value=}]
+2026-04-12T03:49:40.632-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-6] n.resto.controller.MenuItemController    : attempting to edit menu item: 13, which belongs to menuId: 10
+2026-04-12T03:49:44.424-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-10] n.resto.controller.MenuItemController    : loading menu item for edit with menuItemId: 14, and menuId: 10
+2026-04-12T03:49:59.713-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to edit menu item: 14, which belongs to menuId: 10
+2026-04-12T03:49:59.726-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuItemServiceImpl   : Validation errors for menu item update nbcc.resto.dto.MenuItem@34ac526b: [ValidationError{field='description', message='Description is required', value=}]
+2026-04-12T03:50:06.759-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-6] n.resto.controller.MenuItemController    : attempting to edit menu item: 14, which belongs to menuId: 10
+2026-04-12T03:50:08.934-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-10] n.resto.controller.MenuItemController    : loading menu item for delete with menuItemId: 14, and menuId: 10
+2026-04-12T03:50:14.542-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] n.resto.controller.MenuItemController    : attempting to delete menu item: 14, which belongs to menuId: 10
+2026-04-12T03:50:14.562-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuItemServiceImpl   : Menu item with id 14 deleted
+2026-04-12T03:50:27.297-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-9] nbcc.resto.service.MenuServiceImpl       : Menu with id 10 deleted
+2026-04-12T03:52:29.260-03:00  WARN 7008 --- [Restaurant-Project] [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler nbcc.resto.controller.MenuController#exceptionHandler(Model, Exception, HttpServletRequest)
 
-org.springframework.web.servlet.resource.NoResourceFoundException: No static resource apple-touch-icon.png for request '/apple-touch-icon.png'.
-	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527) ~[spring-webmvc-7.0.3.jar:7.0.3]
-	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50) ~[spring-webmvc-7.0.3.jar:7.0.3]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.3.jar:7.0.3]
+org.springframework.security.authorization.AuthorizationDeniedException: Access Denied
+	at org.springframework.security.authorization.method.ThrowingMethodAuthorizationDeniedHandler.handleDeniedInvocation(ThrowingMethodAuthorizationDeniedHandler.java:38) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.PreAuthorizeAuthorizationManager.handleDeniedInvocation(PreAuthorizeAuthorizationManager.java:96) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.handle(AuthorizationManagerBeforeMethodInterceptor.java:290) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.attemptAuthorization(AuthorizationManagerBeforeMethodInterceptor.java:263) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.authorization.method.AuthorizationManagerBeforeMethodInterceptor.invoke(AuthorizationManagerBeforeMethodInterceptor.java:197) ~[spring-security-core-7.0.2.jar:7.0.2]
+	at org.springframework.security.config.annotation.method.configuration.DeferringMethodInterceptor.invoke(DeferringMethodInterceptor.java:44) ~[spring-security-config-7.0.2.jar:7.0.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.3.jar:7.0.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.3.jar:7.0.3]
+	at nbcc.resto.controller.MenuController$$SpringCGLIB$$0.exceptionHandler(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:460) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:72) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:176) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:78) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1227) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1035) ~[spring-webmvc-7.0.3.jar:7.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003) ~[spring-webmvc-7.0.3.jar:7.0.3]
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:892) ~[spring-webmvc-7.0.3.jar:7.0.3]
@@ -498,256 +526,10 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.15.jar:11.0.15]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2026-04-10T20:14:23.100-03:00  INFO 33646 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T20:14:23.104-03:00  INFO 33646 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T20:14:23.113-03:00  INFO 33646 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:14:23.118-03:00  INFO 33646 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T20:14:23.127-03:00  INFO 33646 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T20:14:46.042-03:00  INFO 34124 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 34124 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T20:14:46.044-03:00 DEBUG 34124 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T20:14:46.044-03:00  INFO 34124 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T20:14:46.402-03:00  INFO 34124 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T20:14:46.424-03:00  INFO 34124 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 6 JPA repository interfaces.
-2026-04-10T20:14:46.955-03:00  INFO 34124 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T20:14:46.962-03:00  INFO 34124 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T20:14:46.962-03:00  INFO 34124 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T20:14:46.981-03:00  INFO 34124 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 899 ms
-2026-04-10T20:14:47.085-03:00  INFO 34124 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T20:14:47.119-03:00  INFO 34124 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T20:14:47.352-03:00  INFO 34124 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T20:14:47.371-03:00  INFO 34124 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T20:14:47.576-03:00  INFO 34124 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@682fe17b
-2026-04-10T20:14:47.577-03:00  INFO 34124 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T20:14:47.614-03:00  WARN 34124 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T20:14:47.627-03:00  INFO 34124 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: restaurant/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-10T20:14:48.186-03:00  INFO 34124 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T20:14:48.232-03:00  INFO 34124 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:14:48.363-03:00  INFO 34124 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T20:14:49.204-03:00  WARN 34124 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T20:14:49.252-03:00  INFO 34124 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T20:14:49.595-03:00  INFO 34124 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T20:14:49.598-03:00  INFO 34124 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 3.827 seconds (process running for 4.451)
-2026-04-10T20:19:03.653-03:00  INFO 34124 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T20:19:03.658-03:00  INFO 34124 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T20:19:03.665-03:00  INFO 34124 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:19:03.667-03:00  INFO 34124 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T20:19:03.672-03:00  INFO 34124 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T20:19:05.864-03:00  INFO 34253 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 34253 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T20:19:05.865-03:00 DEBUG 34253 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T20:19:05.866-03:00  INFO 34253 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T20:19:06.138-03:00  INFO 34253 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T20:19:06.157-03:00  INFO 34253 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 6 JPA repository interfaces.
-2026-04-10T20:19:06.523-03:00  INFO 34253 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T20:19:06.527-03:00  INFO 34253 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T20:19:06.528-03:00  INFO 34253 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T20:19:06.540-03:00  INFO 34253 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 648 ms
-2026-04-10T20:19:06.613-03:00  INFO 34253 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T20:19:06.632-03:00  INFO 34253 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T20:19:06.790-03:00  INFO 34253 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T20:19:06.803-03:00  INFO 34253 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T20:19:06.947-03:00  INFO 34253 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24563809
-2026-04-10T20:19:06.949-03:00  INFO 34253 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T20:19:06.970-03:00  WARN 34253 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T20:19:06.977-03:00  INFO 34253 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: restaurant/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-10T20:19:07.381-03:00  INFO 34253 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T20:19:07.420-03:00  INFO 34253 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:19:07.503-03:00  INFO 34253 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T20:19:08.144-03:00  WARN 34253 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T20:19:08.181-03:00  INFO 34253 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T20:19:08.445-03:00  INFO 34253 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T20:19:08.449-03:00  INFO 34253 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 2.794 seconds (process running for 3.347)
-2026-04-10T20:24:18.109-03:00  INFO 34253 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T20:24:18.113-03:00  INFO 34253 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T20:24:18.119-03:00  INFO 34253 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:24:18.122-03:00  INFO 34253 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T20:24:18.127-03:00  INFO 34253 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T20:24:20.829-03:00  INFO 34432 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 34432 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T20:24:20.830-03:00 DEBUG 34432 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T20:24:20.830-03:00  INFO 34432 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T20:24:21.150-03:00  INFO 34432 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T20:24:21.179-03:00  INFO 34432 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 6 JPA repository interfaces.
-2026-04-10T20:24:21.668-03:00  INFO 34432 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T20:24:21.674-03:00  INFO 34432 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T20:24:21.674-03:00  INFO 34432 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T20:24:21.692-03:00  INFO 34432 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 838 ms
-2026-04-10T20:24:21.772-03:00  INFO 34432 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T20:24:21.792-03:00  INFO 34432 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T20:24:21.954-03:00  INFO 34432 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T20:24:21.969-03:00  INFO 34432 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T20:24:22.108-03:00  INFO 34432 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c23e369
-2026-04-10T20:24:22.109-03:00  INFO 34432 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T20:24:22.137-03:00  WARN 34432 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T20:24:22.152-03:00  INFO 34432 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: restaurant/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-10T20:24:22.628-03:00  INFO 34432 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T20:24:22.683-03:00  INFO 34432 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:24:22.790-03:00  INFO 34432 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T20:24:23.464-03:00  WARN 34432 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T20:24:23.503-03:00  INFO 34432 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T20:24:23.774-03:00  INFO 34432 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T20:24:23.777-03:00  INFO 34432 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 3.114 seconds (process running for 3.384)
-2026-04-10T20:30:42.864-03:00  INFO 34432 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T20:30:42.870-03:00  INFO 34432 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T20:30:42.879-03:00  INFO 34432 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:30:42.883-03:00  INFO 34432 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T20:30:42.900-03:00  INFO 34432 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T20:31:10.118-03:00  INFO 34655 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 34655 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T20:31:10.120-03:00 DEBUG 34655 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T20:31:10.120-03:00  INFO 34655 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T20:31:10.386-03:00  INFO 34655 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T20:31:10.403-03:00  INFO 34655 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 6 JPA repository interfaces.
-2026-04-10T20:31:10.735-03:00  INFO 34655 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T20:31:10.743-03:00  INFO 34655 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T20:31:10.743-03:00  INFO 34655 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T20:31:10.756-03:00  INFO 34655 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 599 ms
-2026-04-10T20:31:10.824-03:00  INFO 34655 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T20:31:10.843-03:00  INFO 34655 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T20:31:10.981-03:00  INFO 34655 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T20:31:10.995-03:00  INFO 34655 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T20:31:11.108-03:00  INFO 34655 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e933cf1
-2026-04-10T20:31:11.108-03:00  INFO 34655 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T20:31:11.126-03:00  WARN 34655 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T20:31:11.132-03:00  INFO 34655 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: restaurant/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-10T20:31:11.516-03:00  INFO 34655 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T20:31:11.549-03:00  INFO 34655 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:31:11.625-03:00  INFO 34655 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T20:31:12.242-03:00  WARN 34655 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T20:31:12.277-03:00  INFO 34655 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T20:31:12.520-03:00  INFO 34655 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T20:31:12.522-03:00  INFO 34655 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 2.692 seconds (process running for 2.978)
-2026-04-10T20:35:43.346-03:00  INFO 34655 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T20:35:43.350-03:00  INFO 34655 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T20:35:43.357-03:00  INFO 34655 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:35:43.360-03:00  INFO 34655 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T20:35:43.364-03:00  INFO 34655 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T20:35:46.043-03:00  INFO 34990 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 34990 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T20:35:46.045-03:00 DEBUG 34990 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T20:35:46.046-03:00  INFO 34990 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T20:35:46.283-03:00  INFO 34990 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T20:35:46.300-03:00  INFO 34990 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 6 JPA repository interfaces.
-2026-04-10T20:35:46.615-03:00  INFO 34990 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T20:35:46.619-03:00  INFO 34990 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T20:35:46.619-03:00  INFO 34990 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T20:35:46.633-03:00  INFO 34990 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 561 ms
-2026-04-10T20:35:46.703-03:00  INFO 34990 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T20:35:46.719-03:00  INFO 34990 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T20:35:46.853-03:00  INFO 34990 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T20:35:46.868-03:00  INFO 34990 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T20:35:46.975-03:00  INFO 34990 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d67348a
-2026-04-10T20:35:46.975-03:00  INFO 34990 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T20:35:46.992-03:00  WARN 34990 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T20:35:46.998-03:00  INFO 34990 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: restaurant/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-10T20:35:47.355-03:00  INFO 34990 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T20:35:47.392-03:00  INFO 34990 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:35:47.466-03:00  INFO 34990 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T20:35:48.151-03:00  WARN 34990 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T20:35:48.188-03:00  INFO 34990 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T20:35:48.435-03:00  INFO 34990 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T20:35:48.437-03:00  INFO 34990 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 2.607 seconds (process running for 2.903)
-2026-04-10T20:46:14.197-03:00  INFO 34990 --- [Restaurant-Project] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-10T20:46:14.197-03:00  INFO 34990 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-04-10T20:46:14.201-03:00  INFO 34990 --- [Restaurant-Project] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-04-10T20:46:38.867-03:00 DEBUG 34990 --- [Restaurant-Project] [http-nio-8080-exec-3] nbcc.email.service.EmailServiceImpl      : Attempting to send email to recipients: [fs@gmail.com]
-2026-04-10T20:46:38.937-03:00 DEBUG 34990 --- [Restaurant-Project] [http-nio-8080-exec-3] nbcc.email.service.EmailServiceImpl      : Email sent successfully to recipients: [fs@gmail.com]
-2026-04-10T20:46:38.937-03:00  INFO 34990 --- [Restaurant-Project] [http-nio-8080-exec-3] n.resto.service.ReservationServiceImpl   : Reservation received email sent to: fs@gmail.com
-2026-04-10T20:46:54.706-03:00 DEBUG 34990 --- [Restaurant-Project] [http-nio-8080-exec-3] nbcc.auth.client.AuthClientImpl          : Creating token for user kamal with URI http://localhost:8082/api/auth/token
-2026-04-10T20:58:09.858-03:00  INFO 34990 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T20:58:09.861-03:00  INFO 34990 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T20:58:09.867-03:00  INFO 34990 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:58:09.870-03:00  INFO 34990 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T20:58:09.873-03:00  INFO 34990 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-04-10T20:58:12.941-03:00  INFO 35293 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Starting RestoWebApplication using Java 21.0.9 with PID 35293 (/Users/gurleenkaur/restaurant-term-project-team_12_lima/app-web/target/classes started by gurleenkaur in /Users/gurleenkaur/restaurant-term-project-team_12_lima)
-2026-04-10T20:58:12.944-03:00 DEBUG 35293 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Running with Spring Boot v4.0.2, Spring v7.0.3
-2026-04-10T20:58:12.944-03:00  INFO 35293 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-04-10T20:58:13.170-03:00  INFO 35293 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-10T20:58:13.191-03:00  INFO 35293 --- [Restaurant-Project] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 6 JPA repository interfaces.
-2026-04-10T20:58:13.519-03:00  INFO 35293 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-04-10T20:58:13.526-03:00  INFO 35293 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-04-10T20:58:13.526-03:00  INFO 35293 --- [Restaurant-Project] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-04-10T20:58:13.548-03:00  INFO 35293 --- [Restaurant-Project] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 576 ms
-2026-04-10T20:58:13.589-03:00  WARN 35293 --- [Restaurant-Project] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [15E4002A0C23904FE4FFB4C7AC314367]
-2026-04-10T20:58:13.685-03:00  INFO 35293 --- [Restaurant-Project] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-10T20:58:13.724-03:00  INFO 35293 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
-2026-04-10T20:58:13.897-03:00  INFO 35293 --- [Restaurant-Project] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-10T20:58:13.909-03:00  INFO 35293 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-04-10T20:58:14.028-03:00  INFO 35293 --- [Restaurant-Project] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7857cb1d
-2026-04-10T20:58:14.029-03:00  INFO 35293 --- [Restaurant-Project] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-04-10T20:58:14.046-03:00  WARN 35293 --- [Restaurant-Project] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-10T20:58:14.052-03:00  INFO 35293 --- [Restaurant-Project] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/restaurant]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.44
-	Default catalog/schema: restaurant/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-10T20:58:14.414-03:00  INFO 35293 --- [Restaurant-Project] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-10T20:58:14.447-03:00  INFO 35293 --- [Restaurant-Project] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:58:14.521-03:00  INFO 35293 --- [Restaurant-Project] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-10T20:58:15.117-03:00  WARN 35293 --- [Restaurant-Project] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-10T20:58:15.152-03:00  INFO 35293 --- [Restaurant-Project] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name userServiceAuthenticationProvider
-2026-04-10T20:58:15.410-03:00  INFO 35293 --- [Restaurant-Project] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-04-10T20:58:15.412-03:00  INFO 35293 --- [Restaurant-Project] [main] nbcc.resto.RestoWebApplication           : Started RestoWebApplication in 2.688 seconds (process running for 3.052)
-2026-04-10T20:58:58.005-03:00  INFO 35293 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-10T20:58:58.014-03:00  INFO 35293 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-04-10T20:58:58.021-03:00  INFO 35293 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-10T20:58:58.025-03:00  INFO 35293 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-04-10T20:58:58.030-03:00  INFO 35293 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-12T03:52:34.340-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-1] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-04-12T03:52:40.272-03:00 DEBUG 7008 --- [Restaurant-Project] [http-nio-8080-exec-2] nbcc.auth.client.AuthClientImpl          : Creating token for user sanad with URI http://localhost:8082/api/auth/token
+2026-04-12T03:52:52.514-03:00  INFO 7008 --- [Restaurant-Project] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-12T03:52:52.536-03:00  INFO 7008 --- [Restaurant-Project] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-12T03:52:52.553-03:00  INFO 7008 --- [Restaurant-Project] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-12T03:52:52.561-03:00  INFO 7008 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-12T03:52:52.593-03:00  INFO 7008 --- [Restaurant-Project] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

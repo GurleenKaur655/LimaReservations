@@ -60,6 +60,12 @@
                                        class="btn btn-outline-warning" title="Edit Seating">✏️ Edit</a>
                                     <a th:if="${viewModel.canDelete}" th:href="@{/seating/delete/{id}(id=${seating.id})}"
                                        class="btn btn-outline-danger" title="Delete Seating">🗑️ Delete</a>
+                                    <a th:if="${viewModel.canDelete}"
+                                       th:href="@{/diningTable/delete/{id}(id=${seating.table.id})}"
+                                       class="btn btn-outline-danger"
+                                       title="Delete Dining Table">
+                                        🗑️ Delete Table
+                                    </a>
                                 </td>
                             </tr>
                             </tbody>
