@@ -22,7 +22,8 @@ public class DiningTableMapper implements EntityMapper<DiningTable, DiningTableE
                 .setId(entity.getId())
                 .setName(entity.getName())
                 .setCapacity(entity.getCapacity())
-                .setVersion(entity.getVersion());
+                .setVersion(entity.getVersion())
+                .setArchived(entity.getArchived());
     }
 
 
@@ -37,6 +38,7 @@ public class DiningTableMapper implements EntityMapper<DiningTable, DiningTableE
                 .setId(dto.getId())
                 .setName(dto.getName())
                 .setCapacity(dto.getCapacity())
-                .setVersion(dto.getVersion());
+                .setVersion(dto.getVersion())
+                .setArchived(dto.getArchived());
     }
 }

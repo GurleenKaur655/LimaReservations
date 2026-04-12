@@ -28,6 +28,9 @@ public class DiningTableEntity {
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
+    @Column(nullable = false)
+    private Boolean archived = false;
+
     @Version
     private Long version;
 
@@ -67,6 +70,15 @@ public class DiningTableEntity {
 
     public DiningTableEntity setCapacity(Integer capacity) {
         this.capacity = capacity;
+        return this;
+    }
+
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public DiningTableEntity setArchived(Boolean archived) {
+        this.archived = archived;
         return this;
     }
 

@@ -16,4 +16,6 @@ public interface DiningTableService {
     ValidatedResult<DiningTable> update(DiningTable table);
 
     ValidatedResult<Void> delete(Long id);
+
+    Result<Collection<DiningTable>> getAllActive();
 }

@@ -113,13 +113,35 @@ public class DiningTableServiceImpl implements  DiningTableService {
     }
 
     @Override
+    public Result<Collection<DiningTable>> getAllActive() {
+        try {
+            return ValidationResults.success(diningTableRepository.getAllActive());
+        } catch (Exception e) {
+            logger.error("Error retrieving active dining tables", e);
+            return ValidationResults.error(e);
+        }
+    }
+
+    @Override
     public ValidatedResult<Void> delete(Long id) {
         try {
             var seatings = seatingRepository.getByTableId(id);
-            for (var seating : seatings) {
-                reservationRepository.deleteBySeatingId(seating.getId());
+            if (!seatings.isEmpty()) {
+
+                var tableOpt = diningTableRepository.get(id);
+
+                if (tableOpt.isEmpty()) {
+                    return ValidationResults.error();
+                }
+
+                var table = tableOpt.get();
+                table.setArchived(true);
+
+                diningTableRepository.update(table);
+
+                logger.debug("Table {} archived because it is in use", id);
+                return ValidationResults.success();
             }
-            seatingRepository.deleteByTableId(id);
             diningTableRepository.delete(id);
             logger.debug("Dining table with id {} deleted", id);
             return ValidationResults.success();

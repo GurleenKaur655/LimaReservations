@@ -40,7 +40,8 @@ public class Event {
     private Menu menu;
 
     @JsonIgnoreProperties({"event", "table", "version", "createdDate",
-            "archived", "durationMinutes", "startDateTime"})
+            "archived", "durationMinutes", "startDateTime", "tableIds", "tableNamesDisplay",
+    "tables", "totalCapacity"})
     private Collection<Seating> seatings;
 
     private Boolean archived = false;
