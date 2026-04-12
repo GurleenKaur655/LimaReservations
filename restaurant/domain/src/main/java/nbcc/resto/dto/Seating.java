@@ -26,6 +26,7 @@ public class Seating {
 
     private Event event;
 
+
     private List<DiningTable> tables = new ArrayList<>();
 
     private Long version;
