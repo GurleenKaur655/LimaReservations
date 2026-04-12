@@ -42,7 +42,11 @@
                                 <tbody>
                                 <tr th:each="seating : ${eventSeating}" class="align-middle">
                                     <td th:text="${seating.name}"></td>
-                                    <td th:text="${seating.table.name}"></td>
+                                    <td>
+                                        <span th:each="table : ${seating.tables}"
+                                            class="badge bg-info me-1"
+                                            th:text="${table.name}"></span>
+                                    </td>
                                     <td>
                                         <span class="badge bg-light text-dark border"
                                               th:text="${#temporals.format(seating.startDateTime, 'yyyy-MM-dd HH:mm')}"></span>
