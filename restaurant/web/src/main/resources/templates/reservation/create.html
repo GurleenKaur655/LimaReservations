@@ -33,15 +33,12 @@
                         <dl class="row mb-0">
                             <dt class="col-sm-4 text-muted small">Date &amp; Time</dt>
                             <dd class="col-sm-8">
-                               <span class="badge bg-light text-dark border"
-                                     th:text="*{#temporals.format(startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
+               <span class="badge bg-light text-dark border"
+                     th:text="*{#temporals.format(startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
                             </dd>
 
                             <dt class="col-sm-4 text-muted small">Duration</dt>
                             <dd class="col-sm-8" th:text="*{durationMinutes} + ' min'"></dd>
-
-                            <dt class="col-sm-4 text-muted small">Capacity</dt>
-                            <dd class="col-sm-8" th:text="*{table != null ? table.capacity : 'N/A'}"></dd>
                         </dl>
                     </div>
                 </div>

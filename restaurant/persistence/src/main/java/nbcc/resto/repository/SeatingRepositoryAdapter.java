@@ -38,8 +38,7 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
 
     @Override
     public List<Seating> getByTableId(Long tableId) {
-        var entities = seatingJPARepository.findByTableId(tableId);
-        return seatingMapper.toDTO(entities);
+        return seatingMapper.toDTO(seatingJPARepository.findByTablesId(tableId));
     }
     @Override
     public List<Seating> getAll(Long eventId) {
@@ -50,17 +49,15 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
     @Override
     public Seating create(Seating seating) {
         var entity = seatingMapper.toEntity(seating);
-        var event = eventJPARepository.findById(seating.getEvent().getId())
-                .orElseThrow();
-
-        var table = diningTableJPARepository.findById(seating.getTable().getId())
-                .orElseThrow();
-
+        var event = eventJPARepository.findById(seating.getEvent().getId()).orElseThrow();
         entity.setEvent(event);
-        entity.setTable(table);
 
-        entity = seatingJPARepository.save(entity);
-        return seatingMapper.toDTO(entity);
+        var tables = seating.getTables().stream()
+                .map(t -> diningTableJPARepository.findById(t.getId()).orElseThrow())
+                .toList();
+        entity.setTables(tables);
+
+        return seatingMapper.toDTO(seatingJPARepository.save(entity));
     }
 
     @Override
@@ -68,11 +65,14 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
         try {
             var entity = seatingMapper.toEntity(seating);
             var event = eventJPARepository.findById(seating.getEvent().getId()).orElseThrow();
-            var table = diningTableJPARepository.findById(seating.getTable().getId()).orElseThrow();
             entity.setEvent(event);
-            entity.setTable(table);
-            entity = seatingJPARepository.save(entity);
-            return seatingMapper.toDTO(entity);
+
+            var tables = seating.getTables().stream()
+                    .map(t -> diningTableJPARepository.findById(t.getId()).orElseThrow())
+                    .toList();
+            entity.setTables(tables);
+
+            return seatingMapper.toDTO(seatingJPARepository.save(entity));
         } catch (ConcurrencyFailureException e) {
             throw new ConcurrencyException(e);
         }

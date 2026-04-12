@@ -49,15 +49,15 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-muted">Dining Table</label>
-                                <select class="form-select" th:field="*{table.id}">
-                                    <option value="" disabled selected>Select Dining Table</option>
+                                <label class="form-label fw-bold small text-muted">Dining Tables</label>
+                                <select class="form-select" multiple th:field="*{tableIds}">
                                     <option th:each="table : ${tables}"
                                             th:value="${table.id}"
-                                            th:text="${table.name}">
+                                            th:text="${table.name} + ' (Capacity: ' + ${table.capacity} + ')'">
                                     </option>
                                 </select>
-                                <div class="text-danger small mt-1" th:errors="*{table.id}"></div>
+                                <div class="text-danger small mt-1" th:errors="*{tableIds}"></div>
+                                <small class="text-muted">Hold Ctrl (Windows) or Cmd (Mac) to select multiple tables</small>
                             </div>
 
                             <div class="row g-2 mb-3">

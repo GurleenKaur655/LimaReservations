@@ -4,6 +4,8 @@ import nbcc.resto.dto.Seating;
 import nbcc.resto.entity.SeatingEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 @Component
 public class SeatingMapper implements EntityMapper<Seating, SeatingEntity>{
 
@@ -28,7 +30,10 @@ public class SeatingMapper implements EntityMapper<Seating, SeatingEntity>{
                 .setStartDateTime(entity.getStartDateTime())
                 .setDurationMinutes(entity.getDurationMinutes())
                 .setEvent(eventMapper.toDTO(entity.getEvent()))
-                .setTable(diningTableMapper.toDTO(entity.getTable()))
+                .setTables(entity.getTables() == null ? new ArrayList<>() :
+                        entity.getTables().stream()
+                                .map(diningTableMapper::toDTO)
+                                .toList())
                 .setCreatedDate(entity.getCreatedAt())
                 .setVersion(entity.getVersion())
                 .setArchived(entity.getArchived());
@@ -46,8 +51,10 @@ public class SeatingMapper implements EntityMapper<Seating, SeatingEntity>{
                 .setStartDateTime(dto.getStartDateTime())
                 .setDurationMinutes(dto.getDurationMinutes())
                 .setEvent(eventMapper.toEntity(dto.getEvent()))
-                .setTable(diningTableMapper.toEntity(dto.getTable()))
-                .setCreatedAt(dto.getCreatedDate())
+                .setTables(dto.getTables() == null ? new ArrayList<>() :
+                        dto.getTables().stream()
+                                .map(diningTableMapper::toEntity)
+                                .toList())
                 .setVersion(dto.getVersion())
                 .setArchived(dto.getArchived());
     }

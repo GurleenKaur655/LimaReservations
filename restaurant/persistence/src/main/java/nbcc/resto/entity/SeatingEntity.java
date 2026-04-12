@@ -10,6 +10,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "seating")
@@ -40,10 +42,9 @@ public class SeatingEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private EventEntity event;
 
-    @ManyToOne
-    @JoinColumn(name = "table_id", foreignKey = @ForeignKey(name = "fk_seating_table"))
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private DiningTableEntity table;
+    @ManyToMany
+    @JoinTable(name = "seating_table", joinColumns = @JoinColumn(name = "seating_id"), inverseJoinColumns = @JoinColumn(name = "table_id"))
+    private List<DiningTableEntity> tables = new ArrayList<>();
 
 
     @CreatedDate
@@ -109,14 +110,8 @@ public class SeatingEntity {
         return this;
     }
 
-    public DiningTableEntity getTable() {
-        return table;
-    }
-
-    public SeatingEntity setTable(DiningTableEntity table) {
-        this.table = table;
-        return this;
-    }
+    public List<DiningTableEntity> getTables() { return tables; }
+    public SeatingEntity setTables(List<DiningTableEntity> tables) { this.tables = tables; return this; }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;

@@ -31,14 +31,14 @@ public class ReservationValidationService {
     }
 
     public Collection<ValidationError> validateGroupSize(Reservation reservation) {
-        if (reservation.getGroupSize() == null) {
-            return List.of();
+        if (reservation.getGroupSize() == null) return List.of();
+
+        if (reservation.getGroupSize() < 1) {
+            return List.of(new ValidationError("Group size must be at least 1."));
         }
         var seating = reservation.getSeating();
-        if (seating == null || seating.getTable() == null || seating.getTable().getCapacity() == null) {
-            return List.of();
-        }
-        if (reservation.getGroupSize() > seating.getTable().getCapacity()) {
+        var capacity = seating.getTotalCapacity();
+        if (reservation.getGroupSize() > capacity) {
             return List.of(new ValidationError("Group size cannot exceed table capacity."));
         }
         return List.of();
@@ -49,12 +49,10 @@ public class ReservationValidationService {
             return List.of(new ValidationError("An approved reservation cannot be changed."));
         }
 
-        if (reservation.getSeating() == null || reservation.getSeating().getTable() == null) {
-            return List.of(new ValidationError("This seating has no table assigned and cannot be approved."));
-        }
-
-        if (reservationRepository.isSeatingAlreadyApproved(reservation.getSeating().getId(), reservation.getId())) {
-            return List.of(new ValidationError("This seating's table is already assigned to another approved reservation."));
+        if (reservationRepository.isSeatingAlreadyApproved(
+                reservation.getSeating().getId(), reservation.getId())) {
+            return List.of(new ValidationError(
+                    "This seating is already assigned to another approved reservation."));
         }
 
         return List.of();

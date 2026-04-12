@@ -23,7 +23,8 @@
         <div th:unless="${viewModel.isEmpty()}">
             <div th:each="entry : ${viewModel.seatingsByEventName}" class="card shadow-sm mb-4">
                 <div class="card-header bg-light">
-                    <h5 class="mb-0" style="font-size: 1.3rem; font-weight: 800; color: #6B7C3A; letter-spacing: 0.5px;" th:text="${entry.key}">Event Name</h5>
+                    <h5 class="mb-0" style="font-size: 1.3rem; font-weight: 800; color: #6B7C3A; letter-spacing: 0.5px;"
+                        th:text="${entry.key}">Event Name</h5>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -31,7 +32,7 @@
                             <thead class="table-dark">
                             <tr>
                                 <th class="fw-bold">Seating Name</th>
-                                <th class="fw-bold">Dining Table</th>
+                                <th class="fw-bold">Dining Tables</th> <!-- ✅ Updated header -->
                                 <th class="fw-bold">Start Time</th>
                                 <th class="fw-bold">Duration</th>
                                 <th class="fw-bold" style="width: 140px;">Actions</th>
@@ -40,7 +41,16 @@
                             <tbody>
                             <tr th:each="seating : ${entry.value}" class="align-middle">
                                 <td th:text="${seating.name}">Seating Name</td>
-                                <td th:text="${seating.table.name}">Table Name</td>
+
+                                <td>
+                                    <span th:if="${seating.tables == null or seating.tables.isEmpty()}"
+                                          class="text-muted fst-italic">No tables assigned</span>
+                                    <span th:each="t, i : ${seating.tables}">
+                                        <span class="badge bg-secondary"
+                                              th:text="${t.name}">Table Name</span>
+                                    </span>
+                                </td>
+
                                 <td>
                                     <span class="badge bg-light text-dark border"
                                           th:text="${#temporals.format(seating.startDateTime, 'yyyy-MM-dd HH:mm')}">
@@ -54,12 +64,12 @@
                                     </span>
                                 </td>
                                 <td>
-<!--                                    <a th:href="@{/diningTable/delete/{id}(id=${seating.table.id})}"-->
-<!--                                       class="btn btn-outline-danger" title="Delete Table">🗑️ Delete Table</a>-->
-                                    <a th:if="${viewModel.canEdit}" th:href="@{/seating/edit/{id}(id=${seating.id})}"
-                                       class="btn btn-outline-warning" title="Edit Seating">✏️ Edit</a>
-                                    <a th:if="${viewModel.canDelete}" th:href="@{/seating/delete/{id}(id=${seating.id})}"
-                                       class="btn btn-outline-danger" title="Delete Seating">🗑️ Delete</a>
+                                    <a th:if="${viewModel.canEdit}"
+                                       th:href="@{/seating/edit/{id}(id=${seating.id})}"
+                                       class="btn btn-outline-warning btn-sm" title="Edit Seating">✏️ Edit</a>
+                                    <a th:if="${viewModel.canDelete}"
+                                       th:href="@{/seating/delete/{id}(id=${seating.id})}"
+                                       class="btn btn-outline-danger btn-sm" title="Delete Seating">🗑️ Delete</a>
                                 </td>
                             </tr>
                             </tbody>

@@ -127,7 +127,6 @@
                                 <th class="fw-bold">Seating</th>
                                 <th class="fw-bold">Date &amp; Time</th>
                                 <th class="fw-bold">Duration</th>
-                                <th class="fw-bold">Capacity</th>
                                 <th class="fw-bold" style="width: 180px;"></th>
                             </tr>
                             </thead>
@@ -141,7 +140,6 @@
               th:text="${#temporals.format(seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
                                 </td>
                                 <td th:text="${seating.durationMinutes} + ' min'"></td>
-                                <td th:text="${seating.table != null ? seating.table.capacity : 'N/A'}"></td>
                                 <td>
                                     <a th:href="@{/reservation/create/{id}(id=${seating.id})}"
                                        class="btn btn-success btn-sm w-100">

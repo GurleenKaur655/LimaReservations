@@ -42,10 +42,6 @@
                             </dd>
                             <dt class="col-sm-4 text-muted small">Duration</dt>
                             <dd class="col-sm-8" th:text="${reservation.seating.durationMinutes} + ' min'"></dd>
-                            <dt class="col-sm-4 text-muted small">Table</dt>
-                            <dd class="col-sm-8" th:text="${reservation.seating.table != null ? reservation.seating.table.name : 'N/A'}"></dd>
-                            <dt class="col-sm-4 text-muted small">Capacity</dt>
-                            <dd class="col-sm-8" th:text="${reservation.seating.table != null ? reservation.seating.table.capacity : 'N/A'}"></dd>
                         </dl>
                     </div>
                 </div>

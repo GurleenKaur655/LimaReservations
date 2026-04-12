@@ -111,10 +111,10 @@ public class ReservationServiceImpl implements ReservationService {
             if (result.isEmpty()) return ValidationResults.error();
             var reservation = result.get();
 
-            var errors = reservationValidationService.validateApprove(reservation);
-            if (!errors.isEmpty()) {
-                return ValidationResults.invalid(reservation, errors);
-            }
+//            var errors = reservationValidationService.validateApprove(reservation);
+//            if (!errors.isEmpty()) {
+//                return ValidationResults.invalid(reservation, errors);
+//            }
 
             reservation.setStatus(ReservationStatus.APPROVED);
             var updated = reservationRepository.update(reservation);

@@ -5,8 +5,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Seating {
 
@@ -19,127 +21,68 @@ public class Seating {
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime startDateTime;
 
-
     @Positive
     private Integer durationMinutes;
 
-    public Boolean getArchived() {
-        return archived;
-    }
-
-    public Seating setArchived(Boolean archived) {
-        this.archived = archived;
-        return this;
-    }
-
     private Event event;
 
-    private DiningTable table;
+    private List<DiningTable> tables = new ArrayList<>();
 
     private Long version;
-
     private LocalDateTime createdDate;
     private Boolean archived = false;
 
+    public Seating() {}
 
-
-    public Seating() {
+    public int getTotalCapacity() {
+        if (tables == null) return 0;
+        return tables.stream()
+                .mapToInt(t -> t.getCapacity() != null ? t.getCapacity() : 0)
+                .sum();
     }
 
-    public Seating(Seating seating) {
-        this(seating.getId(), seating.getName(), seating.getStartDateTime(),
-                seating.getDurationMinutes(), seating.getTable(), seating.getEvent(),
-                seating.getVersion());
+    public String getTableNamesDisplay() {
+        if (tables == null || tables.isEmpty()) {
+            return "N/A";
+        }
+
+        var tableNames = tables.stream()
+                .map(DiningTable::getName)
+                .filter(name -> name != null && !name.isBlank())
+                .collect(Collectors.joining(", "));
+
+        return tableNames.isBlank() ? "N/A" : tableNames;
     }
 
-    public Seating(Event event) {
-        this.event = event;
-    }
+    private List<Long> tableIds = new ArrayList<>();
 
-    public Seating(DiningTable table) {
-        this.table = table;
-    }
+    public List<Long> getTableIds() { return tableIds; }
+    public Seating setTableIds(List<Long> tableIds) { this.tableIds = tableIds; return this; }
 
+    public Long getId() { return id; }
+    public Seating setId(Long id) { this.id = id; return this; }
 
-    public Seating(Long id, String name, LocalDateTime startDateTime, Integer durationMinutes, DiningTable table, Event event, Long version) {
-        this.id = id;
-        this.name = name;
-        this.startDateTime = startDateTime;
-        this.durationMinutes = durationMinutes;
-        this.table = table;
-        this.event = event;
-        this.version = version;
-    }
+    public String getName() { return name; }
+    public Seating setName(String name) { this.name = name; return this; }
 
-    public Long getId() {
-        return id;
-    }
+    public LocalDateTime getStartDateTime() { return startDateTime; }
+    public Seating setStartDateTime(LocalDateTime startDateTime) { this.startDateTime = startDateTime; return this; }
 
-    public Seating setId(Long id) {
-        this.id = id;
-        return this;
-    }
+    public Integer getDurationMinutes() { return durationMinutes; }
+    public Seating setDurationMinutes(Integer durationMinutes) { this.durationMinutes = durationMinutes; return this; }
 
-    public String getName() {
-        return name;
-    }
+    public Event getEvent() { return event; }
+    public Seating setEvent(Event event) { this.event = event; return this; }
 
-    public Seating setName(String name) {
-        this.name = name;
-        return this;
-    }
+    public List<DiningTable> getTables() { return tables; }
+    public Seating setTables(List<DiningTable> tables) { this.tables = tables; return this; }
 
-    public LocalDateTime getStartDateTime() {
-        return startDateTime;
-    }
+    public Long getVersion() { return version; }
+    public Seating setVersion(Long version) { this.version = version; return this; }
 
-    public Seating setStartDateTime(LocalDateTime startDateTime) {
-        this.startDateTime = startDateTime;
-        return this;
-    }
+    public LocalDateTime getCreatedDate() { return createdDate; }
+    public Seating setCreatedDate(LocalDateTime createdDate) { this.createdDate = createdDate; return this; }
 
-    public Integer getDurationMinutes() {
-        return durationMinutes;
-    }
-
-    public Seating setDurationMinutes(Integer durationMinutes) {
-        this.durationMinutes = durationMinutes;
-        return this;
-    }
-
-    public Event getEvent() {
-        return event;
-    }
-
-    public Seating setEvent(Event event) {
-        this.event = event;
-        return this;
-    }
-
-    public DiningTable getTable() {
-        return table;
-    }
-
-    public Seating setTable(DiningTable table) {
-        this.table = table;
-        return this;
-    }
-
-    public Long getVersion() {
-        return version;
-    }
-
-    public Seating setVersion(Long version) {
-        this.version = version;
-        return this;
-    }
-
-    public LocalDateTime getCreatedDate() {
-        return createdDate;
-    }
-
-    public Seating setCreatedDate(LocalDateTime createdDate) {
-        this.createdDate = createdDate;
-        return this;
-    }
+    public Boolean getArchived() { return archived; }
+    public Seating setArchived(Boolean archived) { this.archived = archived; return this; }
 }

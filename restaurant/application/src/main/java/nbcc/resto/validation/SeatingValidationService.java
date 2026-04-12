@@ -100,37 +100,37 @@ public class SeatingValidationService {
     }
 
     public Collection<ValidationError> validateTableAvailability(Seating seating) {
-
-        if (seating.getTable() == null ||
-                seating.getStartDateTime() == null ||
-                seating.getDurationMinutes() == null) {
+        if (seating.getTables() == null || seating.getTables().isEmpty() ||
+                seating.getStartDateTime() == null || seating.getDurationMinutes() == null) {
             return List.of();
         }
 
         var start = seating.getStartDateTime();
         var end = start.plusMinutes(seating.getDurationMinutes());
+        var errors = new ArrayList<ValidationError>();
 
-        var existingSeatings = seatingRepository.getByTableId(seating.getTable().getId());
+        for (var table : seating.getTables()) {
+            var existingSeatings = seatingRepository.getByTableId(table.getId());
 
-        for (var existing : existingSeatings) {
+            for (var existing : existingSeatings) {
+                if (seating.getId() == null || !seating.getId().equals(existing.getId())) {
+                    var existingStart = existing.getStartDateTime();
+                    var existingEnd = existingStart.plusMinutes(existing.getDurationMinutes());
 
-            if (seating.getId() == null || !seating.getId().equals(existing.getId())) {
+                    boolean overlap = start.isBefore(existingEnd) && end.isAfter(existingStart);
 
-                var existingStart = existing.getStartDateTime();
-                var existingEnd = existingStart.plusMinutes(existing.getDurationMinutes());
-
-                boolean overlap =
-                        start.isBefore(existingEnd) &&
-                                end.isAfter(existingStart);
-
-                if (overlap) {
-                    return List.of(new ValidationError("Table is already used during this time"));
+                    if (overlap) {
+                        String eventName = existing.getEvent() != null
+                                ? existing.getEvent().getName() : "another event";
+                        errors.add(new ValidationError(
+                                "Table '" + table.getName() + "' is already used by event '"
+                                        + eventName + "' from "
+                                        + existingStart.toLocalTime() + " to " + existingEnd.toLocalTime()));
+                    }
                 }
             }
         }
-
-        return List.of();
+        return errors;
     }
-
 
 }
