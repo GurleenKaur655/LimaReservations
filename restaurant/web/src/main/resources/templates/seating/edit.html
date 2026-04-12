@@ -65,7 +65,7 @@
 
                                 </div>
 
-                                <div class="text-danger small mt-1" th:errors="*{event.id}"></div>
+                                <div class="text-danger small mt-1" th:errors="*{event}"></div>
                             </div>
 
                             <div class="mb-3">
@@ -136,6 +136,18 @@
             } else {
                 items[i].style.display = "none";
             }
+        }
+    }
+    function filterEvents() {
+        let input = document.getElementById('eventSearch');
+        let filter = input.value.toLowerCase();
+        let container = document.getElementById('eventContainer');
+        let items = container.getElementsByClassName('event-item');
+
+        for (let i = 0; i < items.length; i++) {
+            let label = items[i].getElementsByTagName('label')[0];
+            let text = label.textContent || label.innerText;
+            items[i].style.display = text.toLowerCase().indexOf(filter) > -1 ? "" : "none";
         }
     }
 </script>

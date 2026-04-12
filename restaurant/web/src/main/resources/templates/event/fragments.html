@@ -66,25 +66,36 @@
             <div class="mb-3">
                 <label class="form-label fw-bold small text-muted">Menu</label>
 
-                <!-- Search box -->
+                <!-- ✅ Search box -->
                 <input type="text" id="menuSearch" class="form-control mb-2"
                        placeholder="Search menus..." onkeyup="filterMenus()">
 
-                <!-- Scrollable list -->
                 <div id="menuContainer" class="border p-2 rounded"
                      style="max-height: 200px; overflow-y: auto;">
 
+                    <!-- ✅ No menu option -->
+                    <div class="form-check mb-1" style="border-bottom: 1px solid #dee2e6; padding-bottom: 6px;">
+                        <input class="form-check-input"
+                               type="radio"
+                               name="menu.id"
+                               id="menu_none"
+                               value=""
+                               th:checked="${event.menu == null or event.menu.id == null}"/>
+                        <label class="form-check-label text-muted fst-italic" for="menu_none">
+                            No menu assigned
+                        </label>
+                    </div>
+
+                    <!-- ✅ Menu options -->
                     <div th:each="menu : ${menus}" class="form-check menu-item">
                         <input class="form-check-input"
                                type="radio"
                                th:field="*{menu.id}"
                                th:value="${menu.id}"
                                th:id="'menu_' + ${menu.id}">
-
                         <label class="form-check-label"
                                th:for="'menu_' + ${menu.id}"
                                th:text="${menu.name}">
-                            Menu Name
                         </label>
                     </div>
 
@@ -100,6 +111,23 @@
 
         </div>
     </div>
+
+    <!-- ✅ Script INSIDE the input fragment — critical for it to be included -->
+    <script>
+        function filterMenus() {
+            let input = document.getElementById('menuSearch');
+            let filter = input.value.toLowerCase();
+            let container = document.getElementById('menuContainer');
+            let items = container.getElementsByClassName('menu-item');
+
+            for (let i = 0; i < items.length; i++) {
+                let label = items[i].getElementsByTagName('label')[0];
+                let text = label.textContent || label.innerText;
+                items[i].style.display = text.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+    </script>
+
 </th:block>
 
 <th:block th:fragment="details" th:object="${event}">
@@ -129,10 +157,10 @@
                 <dd class="col-sm-8 fw-semibold" th:text="'$' + *{price}"></dd>
 
                 <dt class="col-sm-4 text-muted small">Created Date</dt>
-                <dd class="col-sm-8" th:text="*{createdDate}"></dd>
+                <dd class="col-sm-8" th:text="${#temporals.format(event.createdDate, 'MMM dd, yyyy h:mm a')}"></dd>
 
                 <dt class="col-sm-4 text-muted small">Last Updated</dt>
-                <dd class="col-sm-8" th:text="*{lastUpdatedDate}"></dd>
+                <dd class="col-sm-8" th:text="${#temporals.format(event.lastUpdatedDate, 'MMM dd, yyyy h:mm a')}"></dd>
             </dl>
         </div>
     </div>
