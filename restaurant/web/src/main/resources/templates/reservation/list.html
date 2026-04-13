@@ -27,16 +27,14 @@
                            name="eventName"
                            placeholder="Search event..."
                            th:value="${viewModel.selectedEventName}"/>
-                    <!--learnt to add this-->
                     <datalist id="eventList">
-                        <option value="">All Events</option>
                         <option th:each="event : ${viewModel.events}"
                                 th:value="${event.name}"
                                 th:text="${event.name}">
                         </option>
                     </datalist>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <label class="form-label fw-bold small text-muted">Status</label>
                     <select name="status" class="form-select form-select-sm">
                         <option value="">All Statuses</option>
@@ -47,10 +45,24 @@
                         </option>
                     </select>
                 </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-dark btn-sm w-100">Filter</button>
+                <div class="col-md-3 d-flex gap-2">
+                    <button type="submit" class="btn btn-dark btn-sm flex-grow-1">Search</button>
+
+                    <a th:href="@{/reservation/manage}" class="btn btn-outline-secondary btn-sm flex-grow-1">Clear</a>
                 </div>
             </div>
+
+
+<!--            <div class="mt-2 d-flex gap-2 flex-wrap"-->
+<!--                 th:if="${viewModel.selectedEventName != null and !#strings.isEmpty(viewModel.selectedEventName)-->
+<!--                          or viewModel.selectedStatus != null}">-->
+<!--                <span class="badge bg-light text-dark border"-->
+<!--                      th:if="${viewModel.selectedEventName != null and !#strings.isEmpty(viewModel.selectedEventName)}"-->
+<!--                      th:text="'Event: ' + ${viewModel.selectedEventName}"></span>-->
+<!--                <span class="badge bg-light text-dark border"-->
+<!--                      th:if="${viewModel.selectedStatus != null}"-->
+<!--                      th:text="'Status: ' + ${viewModel.selectedStatus}"></span>-->
+<!--            </div>-->
         </form>
 
         <!-- Empty State -->
@@ -76,7 +88,6 @@
                             <tr>
                                 <th class="fw-bold">Guest</th>
                                 <th class="fw-bold">Event</th>
-                                <th class="fw-bold">Tables</th>
                                 <th class="fw-bold">Seating Date &amp; Time</th>
                                 <th class="fw-bold">Group Size</th>
                                 <th class="fw-bold">Status</th>
@@ -89,7 +100,6 @@
                                 th:onclick="|window.location='@{/reservation/manage/{id}(id=${reservation.id})}'|">
                                 <td th:text="${reservation.firstName + ' ' + reservation.lastName}"></td>
                                 <td th:text="${reservation.seating?.event?.name}"></td>
-                                <td th:text="${reservation.seating != null ? reservation.seating.tableNamesDisplay : 'N/A'}"></td>
                                 <td>
                                     <span class="badge bg-light text-dark border"
                                           th:if="${reservation.seating != null}"

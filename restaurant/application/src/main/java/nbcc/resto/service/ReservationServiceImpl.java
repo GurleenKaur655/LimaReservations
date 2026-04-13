@@ -160,6 +160,9 @@ public class ReservationServiceImpl implements ReservationService {
         }
     }
 
+    private static final java.time.format.DateTimeFormatter EMAIL_DATE_FORMAT =
+            java.time.format.DateTimeFormatter.ofPattern("MMM dd, yyyy h:mm a");
+
     private void sendReservationReceivedEmail(Reservation reservation) {
         if (reservation.getEmail() == null || reservation.getEmail().isBlank()) {
             logger.info("Skipping received email — no email on reservation.");
@@ -169,7 +172,7 @@ public class ReservationServiceImpl implements ReservationService {
             String eventName = reservation.getSeating() != null && reservation.getSeating().getEvent() != null
                     ? reservation.getSeating().getEvent().getName() : "N/A";
             String seatingDateTime = reservation.getSeating() != null && reservation.getSeating().getStartDateTime() != null
-                    ? reservation.getSeating().getStartDateTime().toString() : "N/A";
+                    ? reservation.getSeating().getStartDateTime().format(EMAIL_DATE_FORMAT) : "N/A";
 
             String body = "Dear " + reservation.getFirstName() + " " + reservation.getLastName() + ",\n\n"
                     + "We have received your reservation request. Here are the details:\n\n"
@@ -205,7 +208,7 @@ public class ReservationServiceImpl implements ReservationService {
             String eventName = reservation.getSeating() != null && reservation.getSeating().getEvent() != null
                     ? reservation.getSeating().getEvent().getName() : "N/A";
             String seatingDateTime = reservation.getSeating() != null && reservation.getSeating().getStartDateTime() != null
-                    ? reservation.getSeating().getStartDateTime().toString() : "N/A";
+                    ? reservation.getSeating().getStartDateTime().format(EMAIL_DATE_FORMAT) : "N/A";
             String status = reservation.getStatus().toString();
 
             String body = "Dear " + reservation.getFirstName() + " " + reservation.getLastName() + ",\n\n"

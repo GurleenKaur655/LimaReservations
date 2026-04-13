@@ -88,24 +88,49 @@
                         </div>
 
                         <div th:unless="${event.menu == null}">
-                            <p class="fw-semibold mb-1" th:text="${event.menu.name}"></p>
-                            <p class="text-muted small mb-1"
-                               th:if="${event.menu.description != null and !#strings.isEmpty(event.menu.description)}"
-                               th:text="${event.menu.description}"></p>
 
-                            <div th:with="items=${menuItemsByMenuId[event.menu.id]}">
-                                <div th:if="${items == null or #lists.isEmpty(items)}">
-                                    <p class="text-muted small fst-italic mb-0">No menu items available.</p>
+                            <!-- Menu Name + Description (Always Visible) -->
+                            <p class="fw-semibold mb-1" th:text="${event.menu.name}"></p>
+
+                            <p class="text-muted small mb-2"
+                               th:if="${event.menu.description != null and !#strings.isEmpty(event.menu.description)}"
+                               th:text="${event.menu.description}">
+                            </p>
+
+                            <!-- Toggle Button -->
+                            <button class="btn btn-outline-secondary btn-sm mb-2"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    th:attr="data-bs-target='#menuItems_' + ${event.id}"
+                                    onclick="toggleMenuText(this)">
+                                🍽️ View Culinary Selections
+                            </button>
+
+                            <!-- Collapsible Menu Items -->
+                            <div class="collapse" th:id="'menuItems_' + ${event.id}">
+                                <div class="border rounded p-2">
+
+                                    <div th:with="items=${menuItemsByMenuId[event.menu.id]}">
+
+                                        <div th:if="${items == null or #lists.isEmpty(items)}">
+                                            <p class="text-muted small fst-italic mb-0">No dishes available.</p>
+                                        </div>
+
+                                        <ul class="list-unstyled mb-0"
+                                            th:unless="${items == null or #lists.isEmpty(items)}">
+
+                                            <li th:each="item : ${items}"
+                                                class="d-flex justify-content-between border-bottom py-1 small">
+                                                <span th:text="${item.name}"></span>
+                                                <span class="text-muted" th:text="${item.description}"></span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
                                 </div>
-                                <ul class="list-unstyled mb-0"
-                                    th:unless="${items == null or #lists.isEmpty(items)}">
-                                    <li th:each="item : ${items}"
-                                        class="d-flex justify-content-between border-bottom py-1 small">
-                                        <span th:text="${item.name}"></span>
-                                        <span class="text-muted" th:text="${item.description}"></span>
-                                    </li>
-                                </ul>
                             </div>
+
                         </div>
                     </div>
 
@@ -119,36 +144,75 @@
                         <p class="text-muted small fst-italic">No seatings available.</p>
                     </div>
 
-                    <div class="table-responsive"
-                         th:unless="${eventSeatings == null or #lists.isEmpty(eventSeatings)}">
-                        <table class="table table-hover table-striped mb-0">
-                            <thead class="table-dark">
-                            <tr>
-                                <th class="fw-bold">Seating</th>
-                                <th class="fw-bold">Date &amp; Time</th>
-                                <th class="fw-bold">Duration</th>
-                                <th class="fw-bold" style="width: 180px;"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="seating : ${eventSeatings}" class="align-middle">
-                                <td>
-                                    <span class="fw-semibold" th:text="${seating.name}"></span>
-                                </td>
-                                <td>
-        <span class="badge bg-light text-dark border"
-              th:text="${#temporals.format(seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
-                                </td>
-                                <td th:text="${seating.durationMinutes} + ' min'"></td>
-                                <td>
-                                    <a th:href="@{/reservation/create/{id}(id=${seating.id})}"
-                                       class="btn btn-success btn-sm w-100">
-                                        🍽️ Request Reservation
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div th:unless="${eventSeatings == null or #lists.isEmpty(eventSeatings)}">
+
+                        <!-- TABLE -->
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped mb-0">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th>Seating</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Duration</th>
+                                    <th style="width: 180px;"></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <!-- FIRST 3 (always visible) -->
+                                <tr th:each="seating, iterStat : ${eventSeatings}"
+                                    th:if="${iterStat.index < 3}"
+                                    class="align-middle">
+                                    <td><span class="fw-semibold" th:text="${seating.name}"></span></td>
+                                    <td>
+                        <span class="badge bg-light text-dark border"
+                              th:text="${#temporals.format(seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
+                                    </td>
+                                    <td th:text="${seating.durationMinutes} + ' min'"></td>
+                                    <td>
+                                        <a th:href="@{/reservation/create/{id}(id=${seating.id})}"
+                                           class="btn btn-success btn-sm w-100">
+                                            🍽️ Request Reservation
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <!-- EXTRA SEATINGS (collapsible) -->
+                                <tr th:each="seating, iterStat : ${eventSeatings}"
+                                    th:if="${iterStat.index >= 3}"
+                                    th:class="'collapse extraSeating_' + ${event.id} + ' align-middle'">
+
+                                    <td><span class="fw-semibold" th:text="${seating.name}"></span></td>
+                                    <td>
+                        <span class="badge bg-light text-dark border"
+                              th:text="${#temporals.format(seating.startDateTime, 'MMM dd, yyyy h:mm a')}"></span>
+                                    </td>
+                                    <td th:text="${seating.durationMinutes} + ' min'"></td>
+                                    <td>
+                                        <a th:href="@{/reservation/create/{id}(id=${seating.id})}"
+                                           class="btn btn-success btn-sm w-100">
+                                            🍽️ Request Reservation
+                                        </a>
+                                    </td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- TOGGLE BUTTON -->
+                        <div th:if="${#lists.size(eventSeatings) > 3}" class="text-center mt-2">
+                            <button class="btn btn-outline-dark btn-sm"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    th:attr="data-bs-target='.extraSeating_' + ${event.id}"
+                                    onclick="toggleSeatingText(this)">
+                                ▼ Show More Seatings
+                            </button>
+                        </div>
+
                     </div>
                 </div>
 
@@ -159,3 +223,19 @@
 </div>
 </body>
 </html>
+<script>
+    function toggleMenuText(button) {
+        if (button.innerText.includes("View")) {
+            button.innerText = "▲ Hide Selections";
+        } else {
+            button.innerText = "🍽️ View Culinary Selections";
+        }
+    }
+    function toggleSeatingText(button) {
+        if (button.innerText.includes("Show More")) {
+            button.innerText = "▲ Show Less";
+        } else {
+            button.innerText = "▼ Show More Seatings";
+        }
+    }
+</script>

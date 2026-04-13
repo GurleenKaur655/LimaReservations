@@ -3,6 +3,7 @@ package nbcc.resto.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
@@ -24,6 +25,7 @@ public class Seating {
     @Positive
     private Integer durationMinutes;
 
+    @NotNull(message = "Choose an event please")
     private Event event;
 
 
@@ -55,6 +57,7 @@ public class Seating {
         return tableNames.isBlank() ? "N/A" : tableNames;
     }
 
+    @Size(min = 1, message = "Choose at least one table")
     private List<Long> tableIds = new ArrayList<>();
 
     public List<Long> getTableIds() { return tableIds; }

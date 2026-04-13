@@ -74,7 +74,7 @@
                                     <span class="badge bg-light text-dark border" th:text="${event.endDate}"></span>
                                 </td>
                                 <td>
-                                    <span class="badge bg-light text-dark border" th:text="${event.price}"></span>
+                                    <span class="badge bg-light text-dark border" th:text="'$' + ${event.price}"></span>
                                 </td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group" style="white-space: nowrap;">
@@ -104,7 +104,7 @@
                         <div class="display-1 mb-3">♪</div>
                         <h5 style="font-family: 'Iosevka Charon Mono', monospace; font-weight: 700;">No Events Found</h5>
                         <p class="mb-3">Have your own event to add?</p>
-                        <a th:if="${viewModel.canAdd}" th:href="@{/event/create}" class="btn btn-primary">
+                        <a th:if="${viewModel.canAdd}" th:href="@{/event/create}" class="btn btn-success">
                             <strong>+</strong> Add Your Event
                         </a>
                     </div>
