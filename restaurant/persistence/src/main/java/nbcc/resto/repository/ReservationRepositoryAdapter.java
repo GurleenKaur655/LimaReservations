@@ -73,10 +73,6 @@ public class ReservationRepositoryAdapter implements ReservationRepository {
         return reservationMapper.toDTO(entity);
     }
 
-    @Override
-    public void deleteBySeatingId(Long seatingId) {
-        reservationJPARepository.deleteBySeatingId(seatingId);
-    }
 
 
     @Override

@@ -91,10 +91,7 @@ public class SeatingRepositoryAdapter implements SeatingRepository {
         });
     }
 
-    @Override
-    public void deleteByTableId(Long tableId) {
-        seatingJPARepository.deleteByTablesId(tableId);
-    }
+
 
     @Override
     public Boolean exists(String name) {

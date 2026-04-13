@@ -13,5 +13,4 @@ public interface SeatingJPARepository extends JpaRepository<SeatingEntity, Long>
 
     Collection<SeatingEntity> findByTablesId(Long tableId);
 
-    void deleteByTablesId(Long tableId);
 }

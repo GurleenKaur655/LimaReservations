@@ -18,5 +18,4 @@ public interface ReservationRepository {
     Boolean existsBySeatingEventId(Long eventId);
     Reservation update(Reservation reservation);
     Boolean isTableAlreadyApprovedForSeating(Long seatingId, Long tableId, Long excludeReservationId);
-    void deleteBySeatingId(Long seatingId);
 }

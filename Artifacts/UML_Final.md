@@ -1,6 +1,5 @@
 
 ```mermaid
-%% Sprint 1
 
 classDiagram
     namespace Domain {
@@ -399,8 +398,7 @@ classDiagram
     Reservation --> ReservationStatus : has
 
 
-%% Application Layer 
-
+%% Application Layer
 %% Service -> Result usage
 EventService ..> Result : uses
 DiningTableService ..> Result : uses
@@ -420,7 +418,6 @@ MenuService ..> MenuValidationService : validated by
 MenuItemService ..> MenuItemValidationService : validated by
 ReservationService ..> ReservationValidationService : validated by
 
-
 %% Result Type Hierarchy
 Result~T~ <|-- ValidatedResult~T~ : extends
 
@@ -429,8 +426,6 @@ HasValidationErrors <|-- ValidatedResult~T~ : implements
 %% Validation structure
 HasValidationErrors ..> ValidationError : uses
 ValidatedResult~T~ ..> ValidationError : contains
-
-
 
 %% Repository Dependencies
 EventRepository ..> Event : uses
