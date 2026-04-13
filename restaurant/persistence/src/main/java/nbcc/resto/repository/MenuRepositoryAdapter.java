@@ -24,9 +24,10 @@ public class MenuRepositoryAdapter implements MenuRepository {
 
     @Override
     public List<Menu> getAll() {
-        var entities = menuJPARepository.findAll();
+        var entities = menuJPARepository.findByArchivedFalse();
         return menuMapper.toDTO(entities);
     }
+
 
     @Override
     public Optional<Menu> get(Long id) {

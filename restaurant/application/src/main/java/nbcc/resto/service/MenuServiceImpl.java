@@ -119,9 +119,31 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public ValidatedResult<Void> delete(Long id) {
         try {
-            menuRepository.delete(id);
-            logger.debug("Menu with id {} deleted", id);
+            var menuResult = menuRepository.get(id);
+
+            if (menuResult.isEmpty()) {
+                return ValidationResults.success();
+            }
+
+            var menu = menuResult.get();
+
+            var itemsResult = menuItemService.getAll(id);
+            var hasItems = itemsResult.isSuccessful()
+                    && itemsResult.getValue() != null
+                    && !itemsResult.getValue().isEmpty();
+
+            if (hasItems) {
+                menu.setArchived(true);
+                menuRepository.update(menu);
+
+                logger.debug("Menu archived because it has items");
+            } else {
+                menuRepository.delete(id);
+                logger.debug("Menu deleted (no items)");
+            }
+
             return ValidationResults.success();
+
         } catch (Exception e) {
             logger.error("Error deleting menu with id: {}", id, e);
             return ValidationResults.error(e);

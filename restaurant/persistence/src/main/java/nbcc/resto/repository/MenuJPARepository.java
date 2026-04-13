@@ -15,4 +15,5 @@ public interface MenuJPARepository extends JpaRepository<MenuEntity, Long> {
             WHERE (:name IS NULL OR LOWER(m.name) LIKE LOWER(CONCAT('%', :name, '%')))
             """)
     List<MenuEntity> search(@Param("name") String name);
+    List<MenuEntity> findByArchivedFalse();
 }
