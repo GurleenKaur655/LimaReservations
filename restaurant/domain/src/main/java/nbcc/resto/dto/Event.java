@@ -36,7 +36,7 @@ public class Event {
 
     private Boolean active;
 
-    @JsonIgnoreProperties({"description", "version"})
+    @JsonIgnoreProperties({"description", "version", "archived"})
     private Menu menu;
 
     @JsonIgnoreProperties({"event", "table", "version", "createdDate",

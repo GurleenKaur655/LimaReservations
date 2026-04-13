@@ -1,5 +1,6 @@
 package nbcc.resto.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
@@ -16,7 +17,8 @@ public class Menu {
 
     private String description;
 
-    private Boolean archived;
+    @JsonIgnore
+    private Boolean archived = false;
 
     private Long version;
 
