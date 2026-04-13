@@ -20,7 +20,8 @@ public class MenuMapper implements EntityMapper<Menu, MenuEntity>{
                 .setId(entity.getId())
                 .setName(entity.getName())
                 .setDescription(entity.getDescription())
-                .setVersion(entity.getVersion());
+                .setVersion(entity.getVersion())
+                .setArchived(entity.getArchived());
     }
 
     @Override
@@ -34,6 +35,7 @@ public class MenuMapper implements EntityMapper<Menu, MenuEntity>{
                 .setId(dto.getId())
                 .setName(dto.getName())
                 .setDescription(dto.getDescription())
-                .setVersion(dto.getVersion());
+                .setVersion(dto.getVersion())
+                .setArchived(dto.getArchived());
     }
 }

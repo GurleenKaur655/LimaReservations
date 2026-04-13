@@ -16,6 +16,8 @@ public class Menu {
 
     private String description;
 
+    private Boolean archived;
+
     private Long version;
 
     @JsonIgnoreProperties({"description", "version", "menu", "menuId"})
@@ -73,6 +75,14 @@ public class Menu {
         return this;
     }
 
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public Menu setArchived(Boolean archived) {
+        this.archived = archived;
+        return this;
+    }
     public Collection<MenuItem> getMenuItems() {
         return menuItems;
     }

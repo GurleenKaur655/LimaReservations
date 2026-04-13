@@ -26,6 +26,9 @@ public class MenuEntity {
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
+    @Column(nullable = false)
+    private Boolean archived = false;
+
     @Version
     private Long version;
 
@@ -65,6 +68,15 @@ public class MenuEntity {
 
     public MenuEntity setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+        return this;
+    }
+
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public MenuEntity setArchived(Boolean archived) {
+        this.archived = archived;
         return this;
     }
 
