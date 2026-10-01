@@ -54,6 +54,7 @@ public class ErrorControllerAdvice {
     public String exceptionHandler(Model model, Exception ex, HttpServletRequest request){
         logger.error("Unexpected Exception on uri {}: on method {} ", request.getRequestURI() , request.getMethod(), ex);
         model.addAttribute("message", "Unexpected Error Occurred");
+        addNav(model);
         return "error/errorPage";
     }
 }
