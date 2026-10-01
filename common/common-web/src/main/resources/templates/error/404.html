@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Application Error</title>
+    <th:block th:replace="~{partial :: bootstrap}"/>
 </head>
 <body>
-<h1>Error</h1>
+<header>
+    <nav th:replace="~{nav :: navbar}"></nav>
+</header>
 <!--/*@thymesVar id="message" type="java.lang.String"*/-->
-<p th:if="${message}" th:text="${message}"></p>
-<p>If this persists, please contact support</p>
+<!--<p th:if="${message}" th:text="${message}"></p>-->
+<!--<p>If this persists, please contact support</p>-->
+<!--<img th:src="@{/lima-404.png}" alt="Error"  style="width: 100%; height: 60%; display: block;" />-->
+<div class="mt-5" style="background: linear-gradient(#fdfaf2 0 100%, #fdfaf2 100% 100%);
+            display: flex; justify-content: center; padding: 1rem;">
+    <img th:src="@{/lima-404.png}" alt="404" style="width:100%; max-width:900px; height:auto;"/>
+</div>
 </body>
 </html>
