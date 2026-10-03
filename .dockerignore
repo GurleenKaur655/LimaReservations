@@ -1,0 +1,7 @@
+.idea/
+**/target/
+.git/
+logs/
+Artifacts/
+*.iml
+*.log
