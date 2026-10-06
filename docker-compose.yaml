@@ -1,0 +1,55 @@
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: restaurant
+      MYSQL_USER: devJPA
+      MYSQL_PASSWORD: "NBCC1234!"
+      MYSQL_ROOT_PASSWORD: "rootpass"
+    volumes: [dbdata:/var/lib/mysql]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass"]
+      interval: 5s
+      retries: 20
+
+  mail:
+    image: axllent/mailpit
+    ports: ["8025:8025"]
+
+  auth-api:
+    build:
+      context: .
+      args: { MODULE: app-auth-rest-api, PORT: 8082 }
+    ports: ["8082:8082"]
+    depends_on: { db: { condition: service_healthy } }
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/restaurant
+      SPRING_MAIL_HOST: mail
+      JWT_PRIVATE_KEY: ${JWT_PRIVATE_KEY}
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
+
+  restaurant-api:
+    build:
+      context: .
+      args: { MODULE: app-restaurant-rest-api, PORT: 8081 }
+    ports: ["8081:8081"]
+    depends_on: { db: { condition: service_healthy } }
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/restaurant
+      SPRING_MAIL_HOST: mail
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
+
+  app-web:
+    build:
+      context: .
+      args: { MODULE: app-web, PORT: 8080 }
+    ports: ["8080:8080"]
+    depends_on: { db: { condition: service_healthy } }
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/restaurant
+      SPRING_MAIL_HOST: mail
+      AUTH_REST_API_URL: http://auth-api
+      AUTH_REST_API_PORT: 8082
+
+volumes:
+  dbdata:
