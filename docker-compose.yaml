@@ -3,12 +3,12 @@ services:
     image: mysql:8
     environment:
       MYSQL_DATABASE: restaurant
-      MYSQL_USER: devJPA
-      MYSQL_PASSWORD: "NBCC1234!"
-      MYSQL_ROOT_PASSWORD: "rootpass"
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     volumes: [dbdata:/var/lib/mysql]
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-prootpass"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p\"$$MYSQL_ROOT_PASSWORD\""]
       interval: 5s
       retries: 20
 
@@ -24,6 +24,8 @@ services:
     depends_on: { db: { condition: service_healthy } }
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/restaurant
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
       SPRING_MAIL_HOST: mail
       JWT_PRIVATE_KEY: ${JWT_PRIVATE_KEY}
       JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
@@ -36,6 +38,8 @@ services:
     depends_on: { db: { condition: service_healthy } }
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/restaurant
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
       SPRING_MAIL_HOST: mail
       JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY}
 
@@ -47,6 +51,8 @@ services:
     depends_on: { db: { condition: service_healthy } }
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/restaurant
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
       SPRING_MAIL_HOST: mail
       AUTH_REST_API_URL: http://auth-api
       AUTH_REST_API_PORT: 8082
